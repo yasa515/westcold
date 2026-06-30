@@ -3,217 +3,1029 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الغرب البارد لصيانة معدات المطاعم والتكييف</title>
-    <!-- هذا السطر يجيب الأيقونات الجاهزة -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Tajawal', sans-serif; /* خط عربي جميل */
-            background-color: #f4f7f6;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-            position: relative;
-        }
-        .lang-switcher {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            display: flex;
-            gap: 5px;
-        }
-        body[dir="ltr"] .lang-switcher {
-            left: auto;
-            right: 15px;
-        }
-        .lang-btn {
-            background-color: #e9ecef;
-            border: 1px solid #dee2e6;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .lang-btn.active {
-            background-color: #007bff;
-            color: white;
-            border-color: #007bff;
-        }
-        .logo {
-            width: min(320px, 88%);
-            height: auto;
-            border-radius: 0;
-            margin-bottom: 20px;
-            margin-top: 40px; /* Add margin to avoid overlap with lang switcher */
-            object-fit: contain;
-            border: 0;
-        }
-        h1 {
-            color: #0056b3;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #555;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        .links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.1em;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .links a:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
-        .map-container {
-            margin-top: 30px;
-        }
-        .map-container h3 {
-            margin-bottom: 15px;
-            color: #0056b3;
-        }
-        .map-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px;
-            border-radius: 8px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            background-color: #188038;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .map-link:hover {
-            background-color: #146c2e;
-            transform: translateY(-2px);
-        }
-        /* Hide English by default */
-        .en { display: none; }
-    </style>
-    <!-- هذا السطر يجيب الخط من جوجل -->
+    <meta name="description" content="الغرب البارد لصيانة معدات المطاعم والتكييف، صيانة دورية، قطع غيار، توريد معدات، وخدمة سريعة للمطاعم والكافيهات.">
+    <title>الغرب البارد | صيانة معدات المطاعم والتكييف</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <div class="lang-switcher">
-            <button id="lang-ar" class="lang-btn active">العربية</button>
-            <button id="lang-en" class="lang-btn">English</button>
-        </div>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --ink: #10212d;
+            --muted: #60727f;
+            --brand: #126f91;
+            --brand-dark: #0b506a;
+            --accent: #e8b64d;
+            --ice: #eaf7fb;
+            --surface: #ffffff;
+            --line: rgba(16, 33, 45, 0.12);
+            --shadow: 0 22px 60px rgba(16, 33, 45, 0.14);
+            --radius: 8px;
+        }
 
-        <img src="logo-wide.png" alt="شعار الغرب البارد" class="logo">
+        * {
+            box-sizing: border-box;
+        }
 
-        <h1>
-            <span class="ar">الغرب البارد لصيانة معدات المطاعم والتكييف</span>
-            <span class="en">Cold West for Restaurant Equipment and AC Maintenance</span>
-        </h1>
-        <p>
-            <span class="ar">حلول متكاملة لمعدات المطاعم، أجهزة التبريد، وأنظمة التكييف.</span>
-            <span class="en">Integrated solutions for restaurant equipment, refrigeration units, and air conditioning systems.</span>
-        </p>
-        <p>
-            <span class="ar">صيانة احترافية، توفير قطع الغيار، توريد معدات جديدة، وضمان وصيانة دورية تساعد منشأتك على العمل بكفاءة واستمرارية.</span>
-            <span class="en">Professional maintenance, spare parts supply, new equipment sourcing, warranties, and periodic service that help your business operate efficiently and continuously.</span>
-        </p>
+        html {
+            scroll-behavior: smooth;
+        }
 
-        <div class="links">
-            <a href="https://wa.me/966550197070">
-                <i class="fab fa-whatsapp"></i>
-                <span class="ar">تواصل معنا الآن</span>
-                <span class="en">Contact Us Now</span>
-            </a>
-            <a href="tel:+966550197070">
-                <i class="fas fa-phone"></i>
-                <span class="ar">اتصال مباشر</span>
-                <span class="en">Direct Call</span>
-            </a>
-            <a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-tiktok"></i>
-                <span class="ar">حسابنا على تيك توك</span>
-                <span class="en">Our TikTok Account</span>
-            </a>
-            <a href="mailto:coldwest25@gmail.com">
-                <i class="fas fa-envelope"></i>
-                <span class="ar">راسلنا على الإيميل</span>
-                <span class="en">Email Us</span>
-            </a>
-        </div>
+        body {
+            margin: 0;
+            color: var(--ink);
+            font-family: "Tajawal", "Inter", sans-serif;
+            background:
+                radial-gradient(circle at 78% 8%, rgba(18, 111, 145, 0.16), transparent 26rem),
+                linear-gradient(180deg, #f3fbfd 0%, #ffffff 42%, #f6f8f9 100%);
+            line-height: 1.7;
+        }
 
-        <div class="map-container">
-            <h3>
-                <span class="ar">موقعنا</span>
-                <span class="en">Our Location</span>
-            </h3>
-            <a class="map-link" href="https://maps.app.goo.gl/LU3RFwT4GqB4kBoD8" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-map-location-dot"></i>
-                <span class="ar">افتح الموقع في خرائط Google</span>
-                <span class="en">Open location in Google Maps</span>
-            </a>
-        </div>
-    </div>
+        body[dir="ltr"] {
+            font-family: "Inter", "Tajawal", sans-serif;
+        }
 
-    <script>
-        const htmlEl = document.documentElement;
-        const arBtn = document.getElementById('lang-ar');
-        const enBtn = document.getElementById('lang-en');
-        const arElements = document.querySelectorAll('.ar');
-        const enElements = document.querySelectorAll('.en');
+        a {
+            color: inherit;
+        }
 
-        function setLanguage(lang) {
-            if (lang === 'ar') {
-                htmlEl.lang = 'ar';
-                htmlEl.dir = 'rtl';
-                document.body.style.fontFamily = "'Tajawal', sans-serif";
-                arElements.forEach(el => el.style.display = 'inline');
-                enElements.forEach(el => el.style.display = 'none');
-                arBtn.classList.add('active');
-                enBtn.classList.remove('active');
-            } else {
-                htmlEl.lang = 'en';
-                htmlEl.dir = 'ltr';
-                document.body.style.fontFamily = "'Roboto', sans-serif";
-                arElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'inline');
-                enBtn.classList.add('active');
-                arBtn.classList.remove('active');
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            border-bottom: 1px solid rgba(16, 33, 45, 0.08);
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(18px);
+        }
+
+        .nav {
+            width: min(1180px, calc(100% - 32px));
+            min-height: 74px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 104px;
+            height: auto;
+            display: block;
+        }
+
+        .brand strong {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        .brand span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.82rem;
+            margin-top: 2px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .lang-switcher {
+            display: flex;
+            padding: 3px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: #f6fafb;
+        }
+
+        .lang-btn {
+            border: 0;
+            border-radius: 999px;
+            padding: 8px 12px;
+            color: var(--muted);
+            background: transparent;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 0.85rem;
+        }
+
+        .lang-btn.active {
+            color: #fff;
+            background: var(--brand-dark);
+        }
+
+        .btn {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            border-radius: var(--radius);
+            padding: 11px 18px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            font-weight: 900;
+            line-height: 1.15;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            color: #fff;
+            background: linear-gradient(135deg, #168c54, #0e6b43);
+            box-shadow: 0 14px 28px rgba(14, 107, 67, 0.25);
+        }
+
+        .btn-secondary {
+            color: var(--brand-dark);
+            background: #fff;
+            border-color: rgba(11, 80, 106, 0.24);
+        }
+
+        .btn-dark {
+            color: #fff;
+            background: var(--ink);
+            box-shadow: 0 14px 28px rgba(16, 33, 45, 0.18);
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(16, 33, 45, 0.08);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(243, 251, 253, 0.95), rgba(243, 251, 253, 0.72)),
+                url("logo.jpg") center right 8% / min(540px, 68vw) no-repeat;
+            opacity: 0.28;
+            pointer-events: none;
+        }
+
+        body[dir="ltr"] .hero::before {
+            background:
+                linear-gradient(270deg, rgba(243, 251, 253, 0.95), rgba(243, 251, 253, 0.72)),
+                url("logo.jpg") center left 8% / min(540px, 68vw) no-repeat;
+        }
+
+        .hero-inner {
+            position: relative;
+            width: min(1180px, calc(100% - 32px));
+            min-height: calc(100vh - 74px);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+            align-items: center;
+            gap: 44px;
+            padding: 54px 0 64px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 14px;
+            color: var(--brand-dark);
+            font-weight: 900;
+        }
+
+        .eyebrow i {
+            color: var(--accent);
+        }
+
+        h1 {
+            margin: 0;
+            max-width: 780px;
+            font-size: clamp(2.45rem, 6vw, 5.7rem);
+            line-height: 0.98;
+            letter-spacing: 0;
+            font-weight: 900;
+        }
+
+        .lead {
+            max-width: 660px;
+            margin: 22px 0 0;
+            color: #334b59;
+            font-size: clamp(1.05rem, 2vw, 1.28rem);
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .trust-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            max-width: 680px;
+            margin-top: 34px;
+        }
+
+        .trust-item {
+            min-height: 96px;
+            padding: 15px;
+            border: 1px solid rgba(16, 33, 45, 0.1);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .trust-item strong {
+            display: block;
+            font-size: 1.45rem;
+            color: var(--brand-dark);
+            line-height: 1.1;
+        }
+
+        .trust-item span {
+            display: block;
+            color: var(--muted);
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-top: 6px;
+        }
+
+        .hero-panel {
+            position: relative;
+            padding: 24px;
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-panel img {
+            width: 100%;
+            max-width: 360px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .service-list {
+            display: grid;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            border: 1px solid rgba(16, 33, 45, 0.1);
+            border-radius: var(--radius);
+            background: #fbfdfe;
+            font-weight: 800;
+        }
+
+        .service-list i {
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 28px;
+            border-radius: 50%;
+            color: var(--brand-dark);
+            background: var(--ice);
+        }
+
+        section {
+            padding: 82px 0;
+        }
+
+        .section-inner {
+            width: min(1180px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 28px;
+            margin-bottom: 30px;
+        }
+
+        .section-head h2 {
+            margin: 0;
+            max-width: 680px;
+            font-size: clamp(1.8rem, 3.4vw, 3rem);
+            line-height: 1.08;
+            font-weight: 900;
+        }
+
+        .section-head p {
+            max-width: 470px;
+            margin: 0;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            min-height: 238px;
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fff;
+            box-shadow: 0 12px 34px rgba(16, 33, 45, 0.06);
+        }
+
+        .card i {
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            color: #fff;
+            background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+            font-size: 1.15rem;
+        }
+
+        .card h3 {
+            margin: 18px 0 8px;
+            font-size: 1.25rem;
+            line-height: 1.25;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .contract {
+            color: #fff;
+            background:
+                linear-gradient(135deg, rgba(11, 80, 106, 0.96), rgba(16, 33, 45, 0.96)),
+                url("logo-wide.png") center / 540px auto no-repeat;
+        }
+
+        .contract .section-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+            gap: 38px;
+            align-items: center;
+        }
+
+        .contract h2 {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 4rem);
+            line-height: 1.05;
+            font-weight: 900;
+        }
+
+        .contract p {
+            max-width: 690px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 1.12rem;
+            font-weight: 600;
+        }
+
+        .contract-points {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .contract-points li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.08);
+            font-weight: 800;
+        }
+
+        .contract-points i {
+            color: var(--accent);
+        }
+
+        .process {
+            background: #fff;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            counter-reset: step;
+        }
+
+        .step {
+            position: relative;
+            min-height: 190px;
+            padding: 24px;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            background: #f9fbfc;
+        }
+
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--ink);
+            font-weight: 900;
+        }
+
+        .step h3 {
+            margin: 18px 0 8px;
+            font-size: 1.18rem;
+        }
+
+        .step p {
+            margin: 0;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .contact-main,
+        .contact-side {
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            background: #fff;
+            box-shadow: 0 14px 38px rgba(16, 33, 45, 0.07);
+        }
+
+        .contact-main {
+            padding: 34px;
+        }
+
+        .contact-main h2 {
+            margin: 0;
+            font-size: clamp(1.9rem, 3vw, 3rem);
+            line-height: 1.1;
+        }
+
+        .contact-main p {
+            color: var(--muted);
+            font-size: 1.08rem;
+            font-weight: 600;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .contact-side {
+            padding: 22px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 58px;
+            padding: 12px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            text-decoration: none;
+            color: var(--ink);
+            background: #fbfdfe;
+            font-weight: 800;
+        }
+
+        .contact-link i {
+            color: var(--brand-dark);
+            width: 22px;
+            text-align: center;
+        }
+
+        .site-footer {
+            padding: 24px 0 96px;
+            color: var(--muted);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            inset-inline-end: 18px;
+            bottom: 18px;
+            z-index: 30;
+            min-width: 178px;
+        }
+
+        .ar,
+        .en {
+            display: none;
+        }
+
+        body[data-lang="ar"] .ar,
+        body[data-lang="en"] .en {
+            display: inline;
+        }
+
+        body[data-lang="ar"] .block-ar,
+        body[data-lang="en"] .block-en {
+            display: block;
+        }
+
+        @media (max-width: 920px) {
+            .hero-inner,
+            .contract .section-inner,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-inner {
+                min-height: auto;
+                padding-top: 42px;
+            }
+
+            .hero-panel {
+                max-width: 620px;
+            }
+
+            .cards,
+            .steps {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .section-head {
+                display: block;
+            }
+
+            .section-head p {
+                margin-top: 12px;
             }
         }
 
-        arBtn.addEventListener('click', () => setLanguage('ar'));
-        enBtn.addEventListener('click', () => setLanguage('en'));
+        @media (max-width: 640px) {
+            .nav {
+                min-height: 68px;
+                width: min(100% - 24px, 1180px);
+            }
 
-        // Set default language on load
-        setLanguage('ar');
+            .brand img {
+                width: 84px;
+            }
+
+            .brand strong,
+            .brand span {
+                display: none;
+            }
+
+            .nav-actions .btn-secondary {
+                display: none;
+            }
+
+            .hero-inner,
+            .section-inner {
+                width: min(100% - 24px, 1180px);
+            }
+
+            h1 {
+                font-size: clamp(2.35rem, 14vw, 4rem);
+            }
+
+            section {
+                padding: 58px 0;
+            }
+
+            .trust-row,
+            .cards,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-item,
+            .card,
+            .step {
+                min-height: auto;
+            }
+
+            .contact-main {
+                padding: 24px;
+            }
+
+            .hero-actions .btn,
+            .contact-actions .btn,
+            .floating-whatsapp {
+                width: 100%;
+            }
+
+            .floating-whatsapp {
+                inset-inline: 12px;
+                bottom: 12px;
+            }
+        }
+    </style>
+</head>
+<body data-lang="ar">
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a class="brand" href="#top">
+                <img src="logo-wide.png" alt="شعار الغرب البارد">
+                <span>
+                    <strong>
+                        <span class="ar">الغرب البارد</span>
+                        <span class="en">Cold West</span>
+                    </strong>
+                    <span class="ar">صيانة معدات المطاعم والتكييف</span>
+                    <span class="en">Restaurant equipment and AC maintenance</span>
+                </span>
+            </a>
+            <div class="nav-actions">
+                <div class="lang-switcher" aria-label="Language switcher">
+                    <button id="lang-ar" class="lang-btn active" type="button">AR</button>
+                    <button id="lang-en" class="lang-btn" type="button">EN</button>
+                </div>
+                <a class="btn btn-secondary" href="tel:+966550197070">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="ar">اتصل الآن</span>
+                    <span class="en">Call now</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="hero-inner">
+                <div>
+                    <p class="eyebrow">
+                        <i class="fa-solid fa-snowflake"></i>
+                        <span class="ar">شريكك التشغيلي للمطاعم والكافيهات</span>
+                        <span class="en">Your operating partner for restaurants and cafes</span>
+                    </p>
+                    <h1>
+                        <span class="ar">معداتك تشتغل. مطبخك ما يتوقف.</span>
+                        <span class="en">Keep your kitchen running without downtime.</span>
+                    </h1>
+                    <p class="lead">
+                        <span class="ar">الغرب البارد تقدم صيانة احترافية لمعدات المطاعم، أجهزة التبريد، وأنظمة التكييف مع توريد قطع الغيار وعقود متابعة دورية تقلل الأعطال المفاجئة.</span>
+                        <span class="en">Cold West provides professional maintenance for restaurant equipment, refrigeration, and AC systems with spare parts supply and periodic service contracts that reduce surprise breakdowns.</span>
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9%20%D9%85%D9%86%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A8%20%D8%A7%D9%84%D8%A8%D8%A7%D8%B1%D8%AF" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span class="ar">اطلب عرض صيانة</span>
+                            <span class="en">Request service quote</span>
+                        </a>
+                        <a class="btn btn-dark" href="#services">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <span class="ar">شاهد خدماتنا</span>
+                            <span class="en">View services</span>
+                        </a>
+                    </div>
+                    <div class="trust-row" aria-label="Highlights">
+                        <div class="trust-item">
+                            <strong>24/7</strong>
+                            <span class="ar">استقبال طلبات الصيانة</span>
+                            <span class="en">Service requests</span>
+                        </div>
+                        <div class="trust-item">
+                            <strong>PM</strong>
+                            <span class="ar">عقود صيانة وقائية</span>
+                            <span class="en">Preventive maintenance</span>
+                        </div>
+                        <div class="trust-item">
+                            <strong>Parts</strong>
+                            <span class="ar">توريد قطع الغيار</span>
+                            <span class="en">Spare parts supply</span>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="hero-panel" aria-label="Core services">
+                    <img src="logo-wide.png" alt="الغرب البارد">
+                    <ul class="service-list">
+                        <li>
+                            <i class="fa-solid fa-temperature-low"></i>
+                            <span class="ar">ثلاجات، فريزرات، وغرف تبريد</span>
+                            <span class="en">Fridges, freezers, and cold rooms</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-fire-burner"></i>
+                            <span class="ar">معدات طبخ وتحضير المطاعم</span>
+                            <span class="en">Cooking and preparation equipment</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-wind"></i>
+                            <span class="ar">تكييف وتهوية وشفاطات</span>
+                            <span class="en">AC, ventilation, and exhaust systems</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clipboard-check"></i>
+                            <span class="ar">زيارات دورية وتقارير متابعة</span>
+                            <span class="en">Scheduled visits and follow-up reports</span>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="section-inner">
+                <div class="section-head">
+                    <h2>
+                        <span class="ar">كل ما يحتاجه مطعمك في مكان واحد.</span>
+                        <span class="en">Everything your restaurant needs in one place.</span>
+                    </h2>
+                    <p>
+                        <span class="ar">نخدم المطاعم، الكافيهات، المطابخ المركزية، والفنادق بخدمات عملية تحافظ على التشغيل وتقلل الخسائر.</span>
+                        <span class="en">We support restaurants, cafes, central kitchens, and hotels with practical services that protect uptime and reduce losses.</span>
+                    </p>
+                </div>
+                <div class="cards">
+                    <article class="card">
+                        <i class="fa-solid fa-snowflake"></i>
+                        <h3>
+                            <span class="ar">تبريد وتجميد</span>
+                            <span class="en">Refrigeration</span>
+                        </h3>
+                        <p>
+                            <span class="ar">صيانة ثلاجات العرض، الفريزرات، غرف التبريد، ومتابعة درجات الحرارة.</span>
+                            <span class="en">Service for display fridges, freezers, cold rooms, and temperature performance.</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <i class="fa-solid fa-utensils"></i>
+                        <h3>
+                            <span class="ar">معدات مطاعم</span>
+                            <span class="en">Kitchen equipment</span>
+                        </h3>
+                        <p>
+                            <span class="ar">أفران، قلايات، سخانات، مكائن قهوة، معدات تحضير، وحلول تشغيل يومية.</span>
+                            <span class="en">Ovens, fryers, warmers, coffee machines, prep equipment, and daily operating support.</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <i class="fa-solid fa-fan"></i>
+                        <h3>
+                            <span class="ar">تكييف وتهوية</span>
+                            <span class="en">AC and ventilation</span>
+                        </h3>
+                        <p>
+                            <span class="ar">فحص وحدات التكييف، تنظيف، إصلاح أعطال، ورفع كفاءة التهوية والشفاطات.</span>
+                            <span class="en">AC inspection, cleaning, fault repair, and ventilation performance improvement.</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <i class="fa-solid fa-gears"></i>
+                        <h3>
+                            <span class="ar">قطع غيار</span>
+                            <span class="en">Spare parts</span>
+                        </h3>
+                        <p>
+                            <span class="ar">توفير وتركيب القطع المناسبة لتقليل وقت التوقف وإعادة المعدات للعمل بسرعة.</span>
+                            <span class="en">Sourcing and installing suitable parts to reduce downtime and restore equipment quickly.</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <h3>
+                            <span class="ar">توريد معدات</span>
+                            <span class="en">Equipment supply</span>
+                        </h3>
+                        <p>
+                            <span class="ar">مساعدة في اختيار وتوريد معدات جديدة تناسب احتياج المشروع ومساحة المطبخ.</span>
+                            <span class="en">Support in selecting and supplying new equipment that fits your operation and kitchen space.</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>
+                            <span class="ar">ضمان ومتابعة</span>
+                            <span class="en">Warranty and follow-up</span>
+                        </h3>
+                        <p>
+                            <span class="ar">تسجيل الأعمال، متابعة التوصيات، وجدولة الزيارات حسب أولوية التشغيل.</span>
+                            <span class="en">Work tracking, recommendation follow-up, and visit scheduling by operating priority.</span>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contract">
+            <div class="section-inner">
+                <div>
+                    <h2>
+                        <span class="ar">العطل المفاجئ يكلفك أكثر من الصيانة الدورية.</span>
+                        <span class="en">Unexpected failure costs more than scheduled maintenance.</span>
+                    </h2>
+                    <p>
+                        <span class="ar">نجهز لك عقد صيانة يناسب حجم منشأتك: زيارات منتظمة، فحص وقائي، أولوية استجابة، وتوصيات واضحة قبل ما تتحول المشكلة إلى توقف كامل.</span>
+                        <span class="en">We prepare a maintenance contract that fits your business: regular visits, preventive checks, priority response, and clear recommendations before small issues become shutdowns.</span>
+                    </p>
+                    <a class="btn btn-primary" href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%B9%D9%82%D8%AF%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9%20%D8%AF%D9%88%D8%B1%D9%8A%D8%A9" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span class="ar">ناقش عقد الصيانة</span>
+                        <span class="en">Discuss a contract</span>
+                    </a>
+                </div>
+                <ul class="contract-points">
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span class="ar">زيارات مجدولة حسب ضغط التشغيل</span>
+                        <span class="en">Scheduled visits by operating load</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span class="ar">فحص وقائي للمعدات الحرجة</span>
+                        <span class="en">Preventive checks for critical equipment</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span class="ar">تقارير وتوصيات واضحة للإدارة</span>
+                        <span class="en">Clear reports and recommendations</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="process">
+            <div class="section-inner">
+                <div class="section-head">
+                    <h2>
+                        <span class="ar">طريقة عمل سريعة وواضحة.</span>
+                        <span class="en">A clear and fast workflow.</span>
+                    </h2>
+                    <p>
+                        <span class="ar">من أول رسالة إلى رجوع المعدة للعمل، نركز على سرعة التشخيص ووضوح القرار.</span>
+                        <span class="en">From the first message to getting the equipment back online, we focus on fast diagnosis and clear decisions.</span>
+                    </p>
+                </div>
+                <div class="steps">
+                    <article class="step">
+                        <h3>
+                            <span class="ar">استقبال الطلب</span>
+                            <span class="en">Request</span>
+                        </h3>
+                        <p>
+                            <span class="ar">أرسل نوع المعدة والمشكلة والموقع عبر واتساب.</span>
+                            <span class="en">Send equipment type, issue, and location on WhatsApp.</span>
+                        </p>
+                    </article>
+                    <article class="step">
+                        <h3>
+                            <span class="ar">تشخيص مبدئي</span>
+                            <span class="en">Diagnosis</span>
+                        </h3>
+                        <p>
+                            <span class="ar">نحدد الأولوية ونرتب الزيارة أو القطعة المطلوبة.</span>
+                            <span class="en">We define priority and arrange the visit or needed part.</span>
+                        </p>
+                    </article>
+                    <article class="step">
+                        <h3>
+                            <span class="ar">تنفيذ الصيانة</span>
+                            <span class="en">Service</span>
+                        </h3>
+                        <p>
+                            <span class="ar">فحص، إصلاح، اختبار تشغيل، وتوضيح سبب العطل.</span>
+                            <span class="en">Inspection, repair, testing, and fault explanation.</span>
+                        </p>
+                    </article>
+                    <article class="step">
+                        <h3>
+                            <span class="ar">متابعة وضمان</span>
+                            <span class="en">Follow-up</span>
+                        </h3>
+                        <p>
+                            <span class="ar">نرفع التوصيات ونقترح خطة تمنع تكرار المشكلة.</span>
+                            <span class="en">We share recommendations and a plan to reduce recurrence.</span>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="section-inner">
+                <div class="contact-grid">
+                    <div class="contact-main">
+                        <h2>
+                            <span class="ar">جاهز تخلي صيانة مطعمك تحت السيطرة؟</span>
+                            <span class="en">Ready to put maintenance under control?</span>
+                        </h2>
+                        <p>
+                            <span class="ar">ارسل لنا الآن، واذكر نوع النشاط والمعدات الموجودة. بنرجع لك بخيار صيانة مناسب سواء طلب فوري أو عقد متابعة دورية.</span>
+                            <span class="en">Message us now with your business type and equipment list. We will suggest the right option for urgent service or periodic maintenance.</span>
+                        </p>
+                        <div class="contact-actions">
+                            <a class="btn btn-primary" href="https://wa.me/966550197070" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span class="ar">واتساب</span>
+                                <span class="en">WhatsApp</span>
+                            </a>
+                            <a class="btn btn-secondary" href="tel:+966550197070">
+                                <i class="fa-solid fa-phone"></i>
+                                <span class="ar">اتصال مباشر</span>
+                                <span class="en">Direct call</span>
+                            </a>
+                        </div>
+                    </div>
+                    <aside class="contact-side" aria-label="Contact links">
+                        <a class="contact-link" href="https://maps.app.goo.gl/LU3RFwT4GqB4kBoD8" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span class="ar">افتح موقعنا في خرائط Google</span>
+                            <span class="en">Open location in Google Maps</span>
+                        </a>
+                        <a class="contact-link" href="mailto:coldwest25@gmail.com">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>coldwest25@gmail.com</span>
+                        </a>
+                        <a class="contact-link" href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-tiktok"></i>
+                            <span class="ar">تابع أعمالنا على تيك توك</span>
+                            <span class="en">Follow our work on TikTok</span>
+                        </a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="section-inner">
+            <span class="ar">الغرب البارد لصيانة معدات المطاعم والتكييف</span>
+            <span class="en">Cold West for Restaurant Equipment and AC Maintenance</span>
+        </div>
+    </footer>
+
+    <a class="btn btn-primary floating-whatsapp" href="https://wa.me/966550197070" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="ar">تواصل واتساب</span>
+        <span class="en">WhatsApp us</span>
+    </a>
+
+    <script>
+        const htmlEl = document.documentElement;
+        const bodyEl = document.body;
+        const arBtn = document.getElementById("lang-ar");
+        const enBtn = document.getElementById("lang-en");
+
+        function setLanguage(lang) {
+            const isArabic = lang === "ar";
+            htmlEl.lang = isArabic ? "ar" : "en";
+            htmlEl.dir = isArabic ? "rtl" : "ltr";
+            bodyEl.dir = isArabic ? "rtl" : "ltr";
+            bodyEl.dataset.lang = lang;
+            arBtn.classList.toggle("active", isArabic);
+            enBtn.classList.toggle("active", !isArabic);
+        }
+
+        arBtn.addEventListener("click", () => setLanguage("ar"));
+        enBtn.addEventListener("click", () => setLanguage("en"));
+        setLanguage("ar");
     </script>
 </body>
 </html>
