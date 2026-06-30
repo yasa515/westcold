@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --ink: #10212d;
-            --muted: #60727f;
-            --brand: #126f91;
-            --brand-dark: #0b506a;
-            --accent: #e8b64d;
-            --ice: #eaf7fb;
+            --ink: #0e2433;
+            --muted: #627684;
+            --brand: #1b8a5a;
+            --brand-dark: #08354a;
+            --accent: #f2b84b;
+            --ice: #e7f6f8;
             --surface: #ffffff;
             --line: rgba(16, 33, 45, 0.12);
             --shadow: 0 22px 60px rgba(16, 33, 45, 0.14);
@@ -35,9 +35,7 @@
             margin: 0;
             color: var(--ink);
             font-family: "Tajawal", "Inter", sans-serif;
-            background:
-                radial-gradient(circle at 78% 8%, rgba(18, 111, 145, 0.16), transparent 26rem),
-                linear-gradient(180deg, #f3fbfd 0%, #ffffff 42%, #f6f8f9 100%);
+            background: #f4f7f8;
             line-height: 1.7;
         }
 
@@ -53,14 +51,45 @@
             position: sticky;
             top: 0;
             z-index: 20;
-            border-bottom: 1px solid rgba(16, 33, 45, 0.08);
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(18px);
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(14, 36, 51, 0.08);
+        }
+
+        .utility-bar {
+            color: #d9edf2;
+            background: var(--brand-dark);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        .utility-inner {
+            width: min(1180px, calc(100% - 32px));
+            min-height: 38px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .utility-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .utility-links a,
+        .utility-links span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            text-decoration: none;
         }
 
         .nav {
             width: min(1180px, calc(100% - 32px));
-            min-height: 74px;
+            min-height: 82px;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -77,7 +106,7 @@
         }
 
         .brand img {
-            width: 104px;
+            width: 118px;
             height: auto;
             display: block;
         }
@@ -94,6 +123,32 @@
             color: var(--muted);
             font-size: 0.82rem;
             margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 42px;
+            padding: 8px 12px;
+            border-radius: var(--radius);
+            color: #1f3a4a;
+            text-decoration: none;
+            font-size: 0.94rem;
+            font-weight: 900;
+        }
+
+        .nav-links a:hover {
+            background: #eef6f8;
+            color: var(--brand-dark);
         }
 
         .nav-actions {
@@ -148,9 +203,9 @@
         }
 
         .btn-primary {
-            color: #fff;
-            background: linear-gradient(135deg, #168c54, #0e6b43);
-            box-shadow: 0 14px 28px rgba(14, 107, 67, 0.25);
+            color: #082d22;
+            background: var(--accent);
+            box-shadow: 0 14px 28px rgba(242, 184, 75, 0.28);
         }
 
         .btn-secondary {
@@ -168,7 +223,10 @@
         .hero {
             position: relative;
             overflow: hidden;
-            border-bottom: 1px solid rgba(16, 33, 45, 0.08);
+            color: #fff;
+            background:
+                linear-gradient(110deg, rgba(8, 53, 74, 0.98) 0%, rgba(8, 53, 74, 0.96) 48%, rgba(12, 72, 79, 0.86) 100%),
+                url("logo.jpg") center right 9% / min(560px, 66vw) no-repeat;
         }
 
         .hero::before {
@@ -176,22 +234,22 @@
             position: absolute;
             inset: 0;
             background:
-                linear-gradient(90deg, rgba(243, 251, 253, 0.95), rgba(243, 251, 253, 0.72)),
-                url("logo.jpg") center right 8% / min(540px, 68vw) no-repeat;
-            opacity: 0.28;
+                linear-gradient(90deg, rgba(8, 53, 74, 0.2), rgba(255, 255, 255, 0.06)),
+                repeating-linear-gradient(135deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 18px);
+            opacity: 0.5;
             pointer-events: none;
         }
 
         body[dir="ltr"] .hero::before {
             background:
-                linear-gradient(270deg, rgba(243, 251, 253, 0.95), rgba(243, 251, 253, 0.72)),
-                url("logo.jpg") center left 8% / min(540px, 68vw) no-repeat;
+                linear-gradient(270deg, rgba(8, 53, 74, 0.2), rgba(255, 255, 255, 0.06)),
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 18px);
         }
 
         .hero-inner {
             position: relative;
             width: min(1180px, calc(100% - 32px));
-            min-height: calc(100vh - 74px);
+            min-height: calc(100vh - 120px);
             margin: 0 auto;
             display: grid;
             grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
@@ -205,7 +263,7 @@
             align-items: center;
             gap: 8px;
             margin: 0 0 14px;
-            color: var(--brand-dark);
+            color: #b7edf4;
             font-weight: 900;
         }
 
@@ -225,7 +283,7 @@
         .lead {
             max-width: 660px;
             margin: 22px 0 0;
-            color: #334b59;
+            color: rgba(255, 255, 255, 0.84);
             font-size: clamp(1.05rem, 2vw, 1.28rem);
             font-weight: 500;
         }
@@ -241,28 +299,28 @@
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 12px;
-            max-width: 680px;
+            max-width: 760px;
             margin-top: 34px;
         }
 
         .trust-item {
             min-height: 96px;
             padding: 15px;
-            border: 1px solid rgba(16, 33, 45, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: var(--radius);
-            background: rgba(255, 255, 255, 0.72);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .trust-item strong {
             display: block;
             font-size: 1.45rem;
-            color: var(--brand-dark);
+            color: var(--accent);
             line-height: 1.1;
         }
 
         .trust-item span {
             display: block;
-            color: var(--muted);
+            color: rgba(255, 255, 255, 0.78);
             font-weight: 700;
             font-size: 0.92rem;
             margin-top: 6px;
@@ -270,11 +328,11 @@
 
         .hero-panel {
             position: relative;
-            padding: 24px;
+            padding: 26px;
             border-radius: var(--radius);
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.9);
+            background: #fff;
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .hero-panel img {
@@ -299,7 +357,7 @@
             padding: 12px 14px;
             border: 1px solid rgba(16, 33, 45, 0.1);
             border-radius: var(--radius);
-            background: #fbfdfe;
+            background: #f6fafb;
             font-weight: 800;
         }
 
@@ -315,8 +373,56 @@
             background: var(--ice);
         }
 
+        .quick-services {
+            position: relative;
+            z-index: 2;
+            margin-top: -34px;
+        }
+
+        .quick-grid {
+            width: min(1180px, calc(100% - 32px));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 22px 52px rgba(14, 36, 51, 0.16);
+        }
+
+        .quick-item {
+            min-height: 116px;
+            padding: 20px;
+            color: var(--ink);
+            background: #fff;
+            border-inline-end: 1px solid var(--line);
+            text-decoration: none;
+        }
+
+        .quick-item:last-child {
+            border-inline-end: 0;
+        }
+
+        .quick-item i {
+            color: var(--brand);
+            font-size: 1.25rem;
+        }
+
+        .quick-item strong {
+            display: block;
+            margin-top: 10px;
+            line-height: 1.25;
+        }
+
+        .quick-item span {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
         section {
-            padding: 82px 0;
+            padding: 86px 0;
         }
 
         .section-inner {
@@ -370,7 +476,7 @@
             align-items: center;
             padding: 34px;
             border-radius: var(--radius);
-            background: linear-gradient(135deg, #f4fbfd, #ffffff);
+            background: #fff;
             border: 1px solid var(--line);
             box-shadow: 0 14px 38px rgba(16, 33, 45, 0.07);
         }
@@ -390,12 +496,13 @@
         }
 
         .card {
-            min-height: 238px;
-            padding: 24px;
+            min-height: 320px;
+            padding: 26px;
             border: 1px solid var(--line);
             border-radius: var(--radius);
             background: #fff;
             box-shadow: 0 12px 34px rgba(16, 33, 45, 0.06);
+            border-top: 5px solid var(--brand);
         }
 
         .card i {
@@ -638,12 +745,23 @@
             display: block;
         }
 
+        body[data-lang="ar"] .quick-item > .ar,
+        body[data-lang="en"] .quick-item > .en,
+        body[data-lang="ar"] .quick-item strong .ar,
+        body[data-lang="en"] .quick-item strong .en {
+            display: block;
+        }
+
         @media (max-width: 920px) {
             .hero-inner,
             .contract .section-inner,
             .why-box,
             .contact-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .quick-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .hero-inner {
@@ -675,6 +793,16 @@
                 width: min(100% - 24px, 1180px);
             }
 
+            .utility-inner {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .utility-links,
+            .nav-links {
+                display: none;
+            }
+
             .brand img {
                 width: 84px;
             }
@@ -703,8 +831,13 @@
 
             .trust-row,
             .cards,
+            .quick-grid,
             .steps {
                 grid-template-columns: 1fr;
+            }
+
+            .quick-services {
+                margin-top: 0;
             }
 
             .trust-item,
@@ -732,6 +865,25 @@
 </head>
 <body data-lang="ar">
     <header class="site-header">
+        <div class="utility-bar">
+            <div class="utility-inner">
+                <span>
+                    <i class="fa-solid fa-clock"></i>
+                    <span class="ar">طلبات الصيانة والتجهيز للمطاعم والكافيهات</span>
+                    <span class="en">Maintenance and fit-out requests for restaurants and cafes</span>
+                </span>
+                <div class="utility-links">
+                    <a href="tel:+966550197070">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+966 55 019 7070</span>
+                    </a>
+                    <a href="mailto:coldwest25@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>coldwest25@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
         <nav class="nav" aria-label="Main navigation">
             <a class="brand" href="#top">
                 <img src="logo-wide.png" alt="شعار الغرب البارد">
@@ -744,6 +896,26 @@
                     <span class="en">Restaurant equipment and AC maintenance</span>
                 </span>
             </a>
+            <ul class="nav-links">
+                <li>
+                    <a href="#services">
+                        <span class="ar">الخدمات</span>
+                        <span class="en">Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#process">
+                        <span class="ar">طريقة العمل</span>
+                        <span class="en">Process</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <span class="ar">التواصل</span>
+                        <span class="en">Contact</span>
+                    </a>
+                </li>
+            </ul>
             <div class="nav-actions">
                 <div class="lang-switcher" aria-label="Language switcher">
                     <button id="lang-ar" class="lang-btn active" type="button">AR</button>
@@ -833,6 +1005,47 @@
                 </aside>
             </div>
         </section>
+
+        <div class="quick-services" aria-label="Quick service links">
+            <div class="quick-grid">
+                <a class="quick-item" href="#services">
+                    <i class="fa-solid fa-temperature-low"></i>
+                    <strong>
+                        <span class="ar">تبريد تجاري</span>
+                        <span class="en">Commercial refrigeration</span>
+                    </strong>
+                    <span class="ar">غرف تبريد، ثلاجات عرض، ومكائن ثلج</span>
+                    <span class="en">Cold rooms, display fridges, and ice machines</span>
+                </a>
+                <a class="quick-item" href="#services">
+                    <i class="fa-solid fa-fire-burner"></i>
+                    <strong>
+                        <span class="ar">معدات مطابخ</span>
+                        <span class="en">Kitchen equipment</span>
+                    </strong>
+                    <span class="ar">أفران، شوايات، قلايات، وشفاطات</span>
+                    <span class="en">Ovens, grills, fryers, and hoods</span>
+                </a>
+                <a class="quick-item" href="#services">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <strong>
+                        <span class="ar">صيانة وقائية</span>
+                        <span class="en">Preventive maintenance</span>
+                    </strong>
+                    <span class="ar">زيارات مجدولة وتقارير أداء</span>
+                    <span class="en">Scheduled visits and performance reports</span>
+                </a>
+                <a class="quick-item" href="#services">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <strong>
+                        <span class="ar">توريد وتركيب</span>
+                        <span class="en">Supply and installation</span>
+                    </strong>
+                    <span class="ar">معدات وقطع غيار للمشاريع الجديدة</span>
+                    <span class="en">Equipment and parts for new projects</span>
+                </a>
+            </div>
+        </div>
 
         <section class="why">
             <div class="section-inner">
@@ -1003,7 +1216,7 @@
             </div>
         </section>
 
-        <section class="process">
+        <section id="process" class="process">
             <div class="section-inner">
                 <div class="section-head">
                     <h2>
