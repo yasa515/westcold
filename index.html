@@ -353,6 +353,10 @@
             gap: 16px;
         }
 
+        .service-cards {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
         .why {
             background: #fff;
             border-top: 1px solid rgba(16, 33, 45, 0.08);
@@ -416,6 +420,32 @@
             margin: 0;
             color: var(--muted);
             font-weight: 600;
+        }
+
+        .card ul {
+            display: grid;
+            gap: 8px;
+            margin: 16px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .card li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #334b59;
+            font-weight: 700;
+        }
+
+        .card li::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            flex: 0 0 7px;
+            margin-top: 10px;
+            border-radius: 50%;
+            background: var(--accent);
         }
 
         .contract {
@@ -831,39 +861,106 @@
                         <span class="en">We connect equipment selection, cooling and AC design, and maintenance planning so your operation starts right and keeps running steadily.</span>
                     </p>
                 </div>
-                <div class="cards">
-                    <article class="card">
-                        <i class="fa-solid fa-kitchen-set"></i>
-                        <h3>
-                            <span class="ar">توريد تجهيزات المطابخ</span>
-                            <span class="en">Kitchen equipment supply</span>
-                        </h3>
-                        <p>
-                            <span class="ar">أفران، شوايات، وأسطح ستانلس ستيل نوردها لك بناءً على حجم المنيو وضغط الشغل عندك. معدات مصممة عشان تعيش.</span>
-                            <span class="en">Ovens, grills, and stainless-steel work surfaces supplied around your menu size and operating load. Equipment chosen to last.</span>
-                        </p>
-                    </article>
+                <div class="cards service-cards">
                     <article class="card">
                         <i class="fa-solid fa-temperature-low"></i>
                         <h3>
-                            <span class="ar">غرف التبريد والتكييف المركزي</span>
-                            <span class="en">Cold rooms and central AC</span>
+                            <span class="ar">التبريد التجاري وغرف التجميد</span>
+                            <span class="en">Commercial refrigeration</span>
                         </h3>
                         <p>
-                            <span class="ar">من تصميم غرف التجميد إلى تكييف صالات الطعام والمطابخ. نضبط لك سحب الروائح وتوزيع البرودة عشان ما تختنق بيئة العمل.</span>
-                            <span class="en">From freezer room design to dining and kitchen AC. We tune odor extraction and cooling distribution so the workspace can breathe.</span>
+                            <span class="ar">نحافظ على برودة مخزونك عشان أرباحك ما تذوب. أنظمة تبريد تعتمد عليها في أوقات الذروة وتحمي سلامة الغذاء.</span>
+                            <span class="en">We keep your stock cold so your profit does not melt. Reliable cooling systems for rush hours and food safety.</span>
                         </p>
+                        <ul>
+                            <li>
+                                <span class="ar">تصميم وتركيب غرف تبريد وتجميد مخصصة.</span>
+                                <span class="en">Custom cold room and freezer room design and installation.</span>
+                            </li>
+                            <li>
+                                <span class="ar">صيانة ثلاجات العرض ومكائن الثلج.</span>
+                                <span class="en">Display fridge and ice machine maintenance.</span>
+                            </li>
+                            <li>
+                                <span class="ar">متابعة درجات الحرارة لتقليل تلف المواد.</span>
+                                <span class="en">Temperature checks to reduce food spoilage.</span>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <h3>
+                            <span class="ar">صيانة معدات المطابخ</span>
+                            <span class="en">Kitchen equipment repair</span>
+                        </h3>
+                        <p>
+                            <span class="ar">لما توقف معداتك، يوقف مطعمك. فريقنا يتدخل بسرعة عشان يرجع مطبخك للعمل بأسرع وقت ويقلل وقت التعطل.</span>
+                            <span class="en">When equipment stops, the restaurant stops. Our team moves quickly to bring your kitchen back and reduce downtime.</span>
+                        </p>
+                        <ul>
+                            <li>
+                                <span class="ar">إصلاح الأفران، الشوايات، والقلايات التجارية.</span>
+                                <span class="en">Repair for commercial ovens, grills, and fryers.</span>
+                            </li>
+                            <li>
+                                <span class="ar">صيانة الشفاطات وأنظمة سحب الدخان.</span>
+                                <span class="en">Ventilation and exhaust hood maintenance.</span>
+                            </li>
+                            <li>
+                                <span class="ar">تشخيص عملي يهدف لإصلاح المشكلة من أول زيارة.</span>
+                                <span class="en">Practical diagnosis focused on fixing the issue on the first visit.</span>
+                            </li>
+                        </ul>
                     </article>
                     <article class="card">
                         <i class="fa-solid fa-shield-halved"></i>
                         <h3>
-                            <span class="ar">عقود الصيانة وقطع الغيار</span>
-                            <span class="en">Maintenance contracts and parts</span>
+                            <span class="ar">عقود الصيانة الوقائية</span>
+                            <span class="en">Preventive maintenance</span>
                         </h3>
                         <p>
-                            <span class="ar">ما نخليك تورط وقت الزنقة. نوفر لك عقود صيانة وقائية تمنع العطل قبل لا يصير، مع توفير قطع الغيار الأساسية لتدخل سريع يرجع شغلك فوراً.</span>
-                            <span class="en">We do not leave you stuck at rush time. Preventive contracts help stop faults before they happen, with key spare parts ready for fast intervention.</span>
+                            <span class="ar">الوقاية أرخص من الإصلاح. عقودنا تضمن لك راحة البال وتخلي معداتك تعيش معاك أطول فترة ممكنة.</span>
+                            <span class="en">Prevention costs less than repair. Our contracts give you peace of mind and help your equipment last longer.</span>
                         </p>
+                        <ul>
+                            <li>
+                                <span class="ar">زيارات مجدولة لتنظيف الفلاتر وفحص الفريون.</span>
+                                <span class="en">Scheduled visits for filter cleaning and refrigerant checks.</span>
+                            </li>
+                            <li>
+                                <span class="ar">تقارير أداء لكل معدة في المطبخ.</span>
+                                <span class="en">Performance reports for each kitchen asset.</span>
+                            </li>
+                            <li>
+                                <span class="ar">أولوية استجابة للأعطال الطارئة للمشتركين.</span>
+                                <span class="en">Priority emergency response for contract clients.</span>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <h3>
+                            <span class="ar">توريد المعدات وقطع الغيار</span>
+                            <span class="en">Supply and installation</span>
+                        </h3>
+                        <p>
+                            <span class="ar">نوفر لك المعدات اللي تتحمل كرف المطاعم، ونركبها لك بمعايير تضمن لك أعلى أداء من أول يوم تشغيل.</span>
+                            <span class="en">We supply equipment built for restaurant pressure and install it to standards that support strong performance from day one.</span>
+                        </p>
+                        <ul>
+                            <li>
+                                <span class="ar">توريد معدات ستانلس ستيل مطابقة للمواصفات.</span>
+                                <span class="en">Specification-ready stainless-steel equipment supply.</span>
+                            </li>
+                            <li>
+                                <span class="ar">توفير قطع غيار أصلية لضمان كفاءة التشغيل.</span>
+                                <span class="en">Original spare parts to protect operating efficiency.</span>
+                            </li>
+                            <li>
+                                <span class="ar">تجهيز المطابخ المركزية من الصفر.</span>
+                                <span class="en">Central kitchen fit-out from the ground up.</span>
+                            </li>
+                        </ul>
                     </article>
                 </div>
             </div>
