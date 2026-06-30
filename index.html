@@ -732,10 +732,47 @@
         }
 
         .site-footer {
-            padding: 24px 0 96px;
-            color: var(--muted);
-            text-align: center;
+            padding: 46px 0 106px;
+            color: rgba(255, 255, 255, 0.78);
+            background: var(--brand-dark);
             font-weight: 700;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: minmax(220px, 1fr) repeat(3, minmax(150px, 0.6fr));
+            gap: 22px;
+            text-align: start;
+        }
+
+        .footer-grid h3,
+        .footer-grid h4 {
+            margin: 0 0 12px;
+            color: #fff;
+            line-height: 1.25;
+        }
+
+        .footer-grid p {
+            margin: 0;
+            max-width: 430px;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .footer-links a,
+        .footer-links span {
+            color: rgba(255, 255, 255, 0.82);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
         }
 
         .floating-whatsapp {
@@ -787,6 +824,10 @@
             }
 
             .quick-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .footer-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
@@ -864,6 +905,10 @@
 
             .quick-services {
                 margin-top: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
 
             .trust-item,
@@ -962,16 +1007,16 @@
                 <div>
                     <p class="eyebrow">
                         <i class="fa-solid fa-snowflake"></i>
-                        <span class="ar">تجهيز وصيانة للمطاعم اللي تشتغل تحت ضغط</span>
-                        <span class="en">Equipment and maintenance for high-pressure kitchens</span>
+                        <span class="ar">حل واحد للمطبخ والتبريد والتكييف</span>
+                        <span class="en">One partner for kitchen, cooling, and AC</span>
                     </p>
                     <h1>
-                        <span class="ar">مطبخك شغال.. ومعداتك ما توقف.</span>
-                        <span class="en">Your kitchen keeps moving. Your equipment does not stop.</span>
+                        <span class="ar">مطبخك، ثلاجاتك، وتكييفك.. كلها في يد واحدة.</span>
+                        <span class="en">Your kitchen, refrigeration, and AC in one hand.</span>
                     </h1>
                     <p class="lead">
-                        <span class="ar">في الغرب البارد، عارفين إن عطل ساعة في ثلاجة أو تكييف المطبخ يكلفك خسارة مواد وزباين. إحنا شريكك اللي يجهز مطعمك من الصفر، يورد لك أقوى المعدات، ويشيل عنك هم التبريد والصيانة بعقود تريح راسك.</span>
-                        <span class="en">At Cold West, we know one hour of fridge or kitchen AC failure can cost you stock and customers. We help build your restaurant from the ground up, supply durable equipment, and handle refrigeration and maintenance through contracts that take the pressure off your team.</span>
+                        <span class="ar">وفر وقتك وميزانيتك مع جهة واحدة تفهم المطبخ كمنظومة كاملة. من توريد معدات الطبخ وتركيب غرف التبريد، إلى عقود الصيانة الشاملة اللي تضمن استمرارية شغلك بدون أعطال أو زحمة موردين.</span>
+                        <span class="en">Save time and budget with one team that understands the kitchen as a full system: cooking equipment supply, cold room installation, and comprehensive maintenance contracts that keep work moving without supplier chaos.</span>
                     </p>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9" target="_blank" rel="noopener noreferrer">
@@ -1009,23 +1054,23 @@
                     <ul class="service-list">
                         <li>
                             <i class="fa-solid fa-temperature-low"></i>
-                            <span class="ar">تجهيز مطابخ من الصفر</span>
-                            <span class="en">Kitchen fit-out from zero</span>
+                            <span class="ar">معدات طبخ تتحمل ضغط المواسم</span>
+                            <span class="en">Cooking equipment built for peak seasons</span>
                         </li>
                         <li>
                             <i class="fa-solid fa-fire-burner"></i>
-                            <span class="ar">توريد معدات تتحمل ضغط التشغيل</span>
-                            <span class="en">Durable equipment supply</span>
+                            <span class="ar">تبريد تجاري يحمي مخزونك</span>
+                            <span class="en">Commercial cooling that protects stock</span>
                         </li>
                         <li>
                             <i class="fa-solid fa-wind"></i>
-                            <span class="ar">غرف تبريد وتكييف وتهوية</span>
-                            <span class="en">Cold rooms, AC, and ventilation</span>
+                            <span class="ar">تكييف وتهوية لمطبخ يتنفس</span>
+                            <span class="en">AC and ventilation for a breathable kitchen</span>
                         </li>
                         <li>
                             <i class="fa-solid fa-clipboard-check"></i>
-                            <span class="ar">عقود صيانة تقلل الأعطال</span>
-                            <span class="en">Maintenance contracts that reduce failures</span>
+                            <span class="ar">عقد واحد يغطي احتياجاتك</span>
+                            <span class="en">One contract covering your needs</span>
                         </li>
                     </ul>
                 </aside>
@@ -1077,12 +1122,12 @@
             <div class="section-inner">
                 <div class="why-box">
                     <h2>
-                        <span class="ar">فاهمين كرف المطاعم.</span>
-                        <span class="en">We understand restaurant pressure.</span>
+                        <span class="ar">ريح راسك من زحمة الموردين.</span>
+                        <span class="en">Remove supplier chaos from your day.</span>
                     </h2>
                     <p>
-                        <span class="ar">الشغلة مو بس بيع مكاين أو تعبئة فريون. إحنا نشتغل بنظام يدمج بين احتياج مطبخك لقوة التحمل، وبين أنظمة تبريد وتكييف تخلي بيئة العمل مريحة وتطول عمر أجهزتك. ننزل الميدان، نقيم الوضع، ونعطيك الحل اللي يشتغل معاك سنين، مو شهور.</span>
-                        <span class="en">This is not only about selling machines or refilling refrigerant. We connect your kitchen's need for durability with refrigeration and AC systems that improve the work environment and extend equipment life. We visit, assess, and recommend a setup built to serve you for years, not months.</span>
+                        <span class="ar">إدارة المرافق والمطابخ تصير معقدة لما تتعامل مع جهات مختلفة. في الغرب البارد، دمجنا لك صيانة المعدات الحارة والباردة مع أنظمة التكييف والتهوية. فريق واحد ينزل موقعك، يقيم المنظومة كاملة، ويضمن لك إن خط الإنتاج شغال بأعلى كفاءة.</span>
+                        <span class="en">Kitchen and facility management gets complicated when every system has a different supplier. At Cold West, we combine hot and cold equipment service with AC and ventilation. One team visits your site, reviews the full system, and helps keep production running efficiently.</span>
                     </p>
                 </div>
             </div>
@@ -1092,15 +1137,40 @@
             <div class="section-inner">
                 <div class="section-head">
                     <h2>
-                        <span class="ar">التجهيز، التبريد، والصيانة في مسار واحد.</span>
-                        <span class="en">Fit-out, cooling, and maintenance in one flow.</span>
+                        <span class="ar">خدمات تغطي منظومة المطعم كاملة.</span>
+                        <span class="en">Services covering the full restaurant system.</span>
                     </h2>
                     <p>
-                        <span class="ar">نربط بين اختيار المعدات، تصميم التبريد والتكييف، وخطة الصيانة عشان مشروعك يبدأ صح ويستمر بثبات.</span>
-                        <span class="en">We connect equipment selection, cooling and AC design, and maintenance planning so your operation starts right and keeps running steadily.</span>
+                        <span class="ar">من المعدات الحارة إلى التبريد والتكييف، نخلي التشغيل والصيانة تحت إدارة واحدة واضحة.</span>
+                        <span class="en">From hot-line equipment to refrigeration and AC, we keep operation and maintenance under one clear partner.</span>
                     </p>
                 </div>
                 <div class="cards service-cards">
+                    <article class="card">
+                        <i class="fa-solid fa-fire-burner"></i>
+                        <h3>
+                            <span class="ar">معدات المطابخ</span>
+                            <span class="en">Kitchen equipment</span>
+                        </h3>
+                        <p>
+                            <span class="ar">معدات تتحمل ضغط المواسم. نورد معدات المطبخ عند الطلب ونوفر لها دعم فني سريع وقت الذروة عشان خط الإنتاج ما يوقف.</span>
+                            <span class="en">Equipment built for peak seasons. We supply cooking equipment on demand and support it quickly during rush hours so production keeps moving.</span>
+                        </p>
+                        <ul>
+                            <li>
+                                <span class="ar">توريد أفران وقلايات وشوايات حسب احتياج التشغيل.</span>
+                                <span class="en">Ovens, fryers, and grills supplied around operating needs.</span>
+                            </li>
+                            <li>
+                                <span class="ar">دعم فني لإصلاح الأعطال وقت الذروة.</span>
+                                <span class="en">Technical support for peak-time faults.</span>
+                            </li>
+                            <li>
+                                <span class="ar">حلول تساعد خط الإنتاج يستمر بدون توقف.</span>
+                                <span class="en">Solutions that keep the production line running.</span>
+                            </li>
+                        </ul>
+                    </article>
                     <article class="card">
                         <i class="fa-solid fa-temperature-low"></i>
                         <h3>
@@ -1108,96 +1178,71 @@
                             <span class="en">Commercial refrigeration</span>
                         </h3>
                         <p>
-                            <span class="ar">نحافظ على برودة مخزونك عشان أرباحك ما تذوب. أنظمة تبريد تعتمد عليها في أوقات الذروة وتحمي سلامة الغذاء.</span>
-                            <span class="en">We keep your stock cold so your profit does not melt. Reliable cooling systems for rush hours and food safety.</span>
+                            <span class="ar">حماية تامة لمخزونك الغذائي. نصمم ونركب غرف التبريد والتجميد ونحافظ على استقرار درجات الحرارة لتقليل الهدر.</span>
+                            <span class="en">Full protection for food stock. We design and install cold and freezer rooms while keeping temperatures stable to reduce waste.</span>
                         </p>
                         <ul>
                             <li>
-                                <span class="ar">تصميم وتركيب غرف تبريد وتجميد مخصصة.</span>
-                                <span class="en">Custom cold room and freezer room design and installation.</span>
+                                <span class="ar">تصميم وتركيب غرف التبريد والتجميد.</span>
+                                <span class="en">Cold and freezer room design and installation.</span>
                             </li>
                             <li>
                                 <span class="ar">صيانة ثلاجات العرض ومكائن الثلج.</span>
                                 <span class="en">Display fridge and ice machine maintenance.</span>
                             </li>
                             <li>
-                                <span class="ar">متابعة درجات الحرارة لتقليل تلف المواد.</span>
-                                <span class="en">Temperature checks to reduce food spoilage.</span>
+                                <span class="ar">استقرار حرارة يحمي المواد من التلف.</span>
+                                <span class="en">Stable temperatures that protect ingredients from spoilage.</span>
                             </li>
                         </ul>
                     </article>
                     <article class="card">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        <i class="fa-solid fa-wind"></i>
                         <h3>
-                            <span class="ar">صيانة معدات المطابخ</span>
-                            <span class="en">Kitchen equipment repair</span>
+                            <span class="ar">التكييف وأنظمة التهوية</span>
+                            <span class="en">AC and ventilation</span>
                         </h3>
                         <p>
-                            <span class="ar">لما توقف معداتك، يوقف مطعمك. فريقنا يتدخل بسرعة عشان يرجع مطبخك للعمل بأسرع وقت ويقلل وقت التعطل.</span>
-                            <span class="en">When equipment stops, the restaurant stops. Our team moves quickly to bring your kitchen back and reduce downtime.</span>
+                            <span class="ar">مطبخ يتنفس وصالات مريحة. نصون ونؤسس التكييف المركزي وأنظمة الشفط وسحب الدخان لتحسين بيئة العمل وراحة الزباين.</span>
+                            <span class="en">A breathable kitchen and comfortable dining spaces. We service and set up central AC, extraction, and smoke exhaust systems.</span>
                         </p>
                         <ul>
                             <li>
-                                <span class="ar">إصلاح الأفران، الشوايات، والقلايات التجارية.</span>
-                                <span class="en">Repair for commercial ovens, grills, and fryers.</span>
+                                <span class="ar">صيانة وتأسيس التكييف المركزي.</span>
+                                <span class="en">Central AC setup and maintenance.</span>
                             </li>
                             <li>
-                                <span class="ar">صيانة الشفاطات وأنظمة سحب الدخان.</span>
-                                <span class="en">Ventilation and exhaust hood maintenance.</span>
+                                <span class="ar">أنظمة شفط وسحب دخان للمطابخ.</span>
+                                <span class="en">Kitchen extraction and smoke exhaust systems.</span>
                             </li>
                             <li>
-                                <span class="ar">تشخيص عملي يهدف لإصلاح المشكلة من أول زيارة.</span>
-                                <span class="en">Practical diagnosis focused on fixing the issue on the first visit.</span>
+                                <span class="ar">موازنة الهواء لتحسين بيئة الطاقم وراحة العملاء.</span>
+                                <span class="en">Air balancing for staff comfort and customer experience.</span>
                             </li>
                         </ul>
                     </article>
                     <article class="card">
                         <i class="fa-solid fa-shield-halved"></i>
                         <h3>
-                            <span class="ar">عقود الصيانة الوقائية</span>
-                            <span class="en">Preventive maintenance</span>
+                            <span class="ar">عقود الصيانة الشاملة</span>
+                            <span class="en">Comprehensive maintenance contracts</span>
                         </h3>
                         <p>
-                            <span class="ar">الوقاية أرخص من الإصلاح. عقودنا تضمن لك راحة البال وتخلي معداتك تعيش معاك أطول فترة ممكنة.</span>
-                            <span class="en">Prevention costs less than repair. Our contracts give you peace of mind and help your equipment last longer.</span>
+                            <span class="ar">عقد واحد يغطي كل احتياجاتك. بدل ما تشتت ميزانيتك، نوفر صيانة وقائية للمعدات الحارة، الثلاجات، والتكييف.</span>
+                            <span class="en">One contract covering your needs. Instead of splitting your budget, we cover hot equipment, refrigeration, and AC preventive maintenance.</span>
                         </p>
                         <ul>
                             <li>
-                                <span class="ar">زيارات مجدولة لتنظيف الفلاتر وفحص الفريون.</span>
-                                <span class="en">Scheduled visits for filter cleaning and refrigerant checks.</span>
+                                <span class="ar">زيارات مجدولة تمنع الأعطال قبل حدوثها.</span>
+                                <span class="en">Scheduled visits that prevent faults before they happen.</span>
                             </li>
                             <li>
-                                <span class="ar">تقارير أداء لكل معدة في المطبخ.</span>
-                                <span class="en">Performance reports for each kitchen asset.</span>
+                                <span class="ar">تغطية معدات الطبخ والثلاجات والتكييف.</span>
+                                <span class="en">Coverage for cooking equipment, refrigeration, and AC.</span>
                             </li>
                             <li>
-                                <span class="ar">أولوية استجابة للأعطال الطارئة للمشتركين.</span>
-                                <span class="en">Priority emergency response for contract clients.</span>
-                            </li>
-                        </ul>
-                    </article>
-                    <article class="card">
-                        <i class="fa-solid fa-truck-fast"></i>
-                        <h3>
-                            <span class="ar">توريد المعدات وقطع الغيار</span>
-                            <span class="en">Supply and installation</span>
-                        </h3>
-                        <p>
-                            <span class="ar">نوفر لك المعدات اللي تتحمل كرف المطاعم، ونركبها لك بمعايير تضمن لك أعلى أداء من أول يوم تشغيل.</span>
-                            <span class="en">We supply equipment built for restaurant pressure and install it to standards that support strong performance from day one.</span>
-                        </p>
-                        <ul>
-                            <li>
-                                <span class="ar">توريد معدات ستانلس ستيل مطابقة للمواصفات.</span>
-                                <span class="en">Specification-ready stainless-steel equipment supply.</span>
-                            </li>
-                            <li>
-                                <span class="ar">توفير قطع غيار أصلية لضمان كفاءة التشغيل.</span>
-                                <span class="en">Original spare parts to protect operating efficiency.</span>
-                            </li>
-                            <li>
-                                <span class="ar">تجهيز المطابخ المركزية من الصفر.</span>
-                                <span class="en">Central kitchen fit-out from the ground up.</span>
+                                <span class="ar">تدخل سريع وقت الطوارئ.</span>
+                                <span class="en">Fast intervention during emergencies.</span>
                             </li>
                         </ul>
                     </article>
@@ -1209,12 +1254,12 @@
             <div class="section-inner">
                 <div>
                     <h2>
-                        <span class="ar">لا تستنى العطل عشان تدور فني.</span>
-                        <span class="en">Do not wait for a breakdown to look for a technician.</span>
+                        <span class="ar">عقد واحد بدل زحمة الموردين.</span>
+                        <span class="en">One contract instead of supplier overload.</span>
                     </h2>
                     <p>
-                        <span class="ar">أمن شغلك بعقود صيانة تحمي استثمارك، أو ابدأ مشروعك الجديد بتجهيزات تعتمد عليها وتتحمل الضغط.</span>
-                        <span class="en">Protect your operation with maintenance contracts that safeguard your investment, or launch your new project with equipment you can rely on under pressure.</span>
+                        <span class="ar">خل معدات الطبخ، الثلاجات، والتكييف تحت متابعة واحدة. زيارات وقائية، تدخل سريع، وتوصيات واضحة تحمي تشغيلك وميزانيتك.</span>
+                        <span class="en">Keep cooking equipment, refrigeration, and AC under one maintenance plan: preventive visits, fast response, and clear recommendations that protect uptime and budget.</span>
                     </p>
                     <a class="btn btn-primary" href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D8%AE%D8%A8%D9%8A%D8%B1%20%D9%85%D9%86%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A8%20%D8%A7%D9%84%D8%A8%D8%A7%D8%B1%D8%AF" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-whatsapp"></i>
@@ -1225,18 +1270,18 @@
                 <ul class="contract-points">
                     <li>
                         <i class="fa-solid fa-circle-check"></i>
-                        <span class="ar">عقود صيانة تحمي وقت الذروة</span>
-                        <span class="en">Contracts that protect rush hours</span>
+                        <span class="ar">تغطية للمعدات الحارة والباردة</span>
+                        <span class="en">Coverage for hot and cold equipment</span>
                     </li>
                     <li>
                         <i class="fa-solid fa-circle-check"></i>
-                        <span class="ar">تجهيزات مناسبة لحجم المنيو</span>
-                        <span class="en">Equipment matched to your menu size</span>
+                        <span class="ar">زيارات مجدولة حسب ضغط التشغيل</span>
+                        <span class="en">Scheduled visits by operating pressure</span>
                     </li>
                     <li>
                         <i class="fa-solid fa-circle-check"></i>
-                        <span class="ar">تبريد وتكييف مصمم لبيئة العمل</span>
-                        <span class="en">Cooling and AC designed for the workspace</span>
+                        <span class="ar">أولوية تدخل وقت الطوارئ</span>
+                        <span class="en">Priority response during emergencies</span>
                     </li>
                 </ul>
             </div>
@@ -1246,53 +1291,53 @@
             <div class="section-inner">
                 <div class="section-head">
                     <h2>
-                        <span class="ar">طريقة عمل سريعة وواضحة.</span>
-                        <span class="en">A clear and fast workflow.</span>
+                        <span class="ar">من التقييم للتشغيل.. شغل واضح بدون تعقيد.</span>
+                        <span class="en">From assessment to operation, clear work without complexity.</span>
                     </h2>
                     <p>
-                        <span class="ar">من أول رسالة إلى رجوع المعدة للعمل، نركز على سرعة التشخيص ووضوح القرار.</span>
-                        <span class="en">From the first message to getting the equipment back online, we focus on fast diagnosis and clear decisions.</span>
+                        <span class="ar">نبدأ بفهم المنظومة كاملة، ثم نعطيك قرار واضح: إصلاح، توريد، أو عقد صيانة يناسب تشغيلك.</span>
+                        <span class="en">We start by understanding the full system, then give you a clear decision: repair, supply, or a maintenance contract that fits your operation.</span>
                     </p>
                 </div>
                 <div class="steps">
                     <article class="step">
                         <h3>
-                            <span class="ar">استقبال الطلب</span>
-                            <span class="en">Request</span>
+                            <span class="ar">تقييم شامل</span>
+                            <span class="en">Full assessment</span>
                         </h3>
                         <p>
-                            <span class="ar">أرسل نوع المعدة والمشكلة والموقع عبر واتساب.</span>
-                            <span class="en">Send equipment type, issue, and location on WhatsApp.</span>
+                            <span class="ar">نفحص مطبخك بالكامل: معدات طبخ، تبريد، وتكييف، ونعطيك تقرير واضح بالوضع الفعلي وأولويات التدخل.</span>
+                            <span class="en">We inspect the full kitchen: cooking equipment, refrigeration, and AC, then share the real condition and priorities.</span>
                         </p>
                     </article>
                     <article class="step">
                         <h3>
-                            <span class="ar">تشخيص مبدئي</span>
-                            <span class="en">Diagnosis</span>
+                            <span class="ar">تسعير شفاف</span>
+                            <span class="en">Transparent pricing</span>
                         </h3>
                         <p>
-                            <span class="ar">نحدد الأولوية ونرتب الزيارة أو القطعة المطلوبة.</span>
-                            <span class="en">We define priority and arrange the visit or needed part.</span>
+                            <span class="ar">نقدم عرض سعر يوضح تكلفة الإصلاح أو التوريد أو عقد الصيانة، بدون رسوم مفاجئة.</span>
+                            <span class="en">We present pricing for repair, supply, or maintenance contracts with no surprise fees.</span>
                         </p>
                     </article>
                     <article class="step">
                         <h3>
-                            <span class="ar">تنفيذ الصيانة</span>
-                            <span class="en">Service</span>
+                            <span class="ar">تنفيذ بمرونة</span>
+                            <span class="en">Flexible execution</span>
                         </h3>
                         <p>
-                            <span class="ar">فحص، إصلاح، اختبار تشغيل، وتوضيح سبب العطل.</span>
-                            <span class="en">Inspection, repair, testing, and fault explanation.</span>
+                            <span class="ar">نشتغل بأوقات تناسب تشغيل مطعمك، قبل الافتتاح أو بعد الإغلاق، عشان ما نأثر على زباينك.</span>
+                            <span class="en">We work around your restaurant hours, before opening or after closing, to avoid disrupting customers.</span>
                         </p>
                     </article>
                     <article class="step">
                         <h3>
                             <span class="ar">متابعة وضمان</span>
-                            <span class="en">Follow-up</span>
+                            <span class="en">Follow-up and warranty</span>
                         </h3>
                         <p>
-                            <span class="ar">نرفع التوصيات ونقترح خطة تمنع تكرار المشكلة.</span>
-                            <span class="en">We share recommendations and a plan to reduce recurrence.</span>
+                            <span class="ar">نرجع نتأكد إن المعدات شغالة بكفاءة بعد الزيارة، ونرفع توصيات تمنع تكرار نفس العطل.</span>
+                            <span class="en">We confirm the equipment is running efficiently after the visit and share recommendations to reduce repeat faults.</span>
                         </p>
                     </article>
                 </div>
@@ -1304,12 +1349,12 @@
                 <div class="contact-grid">
                     <div class="contact-main">
                         <h2>
-                            <span class="ar">خلنا نشوف احتياج مطبخك ونقول لك وش الأنسب.</span>
-                            <span class="en">Let us review your kitchen needs and recommend the right move.</span>
+                            <span class="ar">خلنا نقيم منظومة مطبخك بالكامل.</span>
+                            <span class="en">Let us assess your full kitchen system.</span>
                         </h2>
                         <p>
-                            <span class="ar">ارسل لنا نوع النشاط، حالة المعدات، وهل المطلوب صيانة أو تجهيز جديد. بنرد عليك بخطوة واضحة بدل التخمين.</span>
-                            <span class="en">Send your business type, equipment condition, and whether you need maintenance or a new setup. We will respond with a clear next step.</span>
+                            <span class="ar">ارسل لنا نوع النشاط، حالة معدات الطبخ والتبريد والتكييف، وهل المطلوب صيانة أو تجهيز جديد. بنرد عليك بخطوة واضحة بدل التخمين.</span>
+                            <span class="en">Send your business type, cooking equipment, refrigeration, and AC condition, and whether you need service or a new setup. We will respond with a clear next step.</span>
                         </p>
                         <div class="contact-actions">
                             <a class="btn btn-primary" href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D8%AE%D8%A8%D9%8A%D8%B1%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D9%85%D8%B7%D8%B9%D9%85%D9%8A" target="_blank" rel="noopener noreferrer">
@@ -1330,8 +1375,8 @@
                             <span>
                                 <small class="ar">العنوان</small>
                                 <small class="en">Address</small>
-                                <span class="ar">جدة، المملكة العربية السعودية</span>
-                                <span class="en">Jeddah, Saudi Arabia</span>
+                                <span class="ar">مكة المكرمة - البحيرات - شارع الأميرة الجوهرة بنت عبد العزيز</span>
+                                <span class="en">Makkah - Al Buhayrat - Princess Al Jawhara bint Abdulaziz Street</span>
                             </span>
                         </a>
                         <a class="contact-link" href="tel:+966550197070">
@@ -1374,8 +1419,61 @@
 
     <footer class="site-footer">
         <div class="section-inner">
-            <span class="ar">الغرب البارد لصيانة معدات المطاعم والتكييف</span>
-            <span class="en">Cold West for Restaurant Equipment and AC Maintenance</span>
+            <div class="footer-grid">
+                <div>
+                    <h3>
+                        <span class="ar">الغرب البارد</span>
+                        <span class="en">Cold West</span>
+                    </h3>
+                    <p>
+                        <span class="ar">جهة واحدة لتوريد وصيانة معدات المطابخ، التبريد التجاري، والتكييف للمطاعم والكافيهات.</span>
+                        <span class="en">One partner for restaurant kitchen equipment, commercial refrigeration, and AC service.</span>
+                    </p>
+                </div>
+                <div>
+                    <h4>
+                        <span class="ar">روابط سريعة</span>
+                        <span class="en">Quick links</span>
+                    </h4>
+                    <ul class="footer-links">
+                        <li><a href="#services"><span class="ar">الخدمات</span><span class="en">Services</span></a></li>
+                        <li><a href="#process"><span class="ar">طريقة العمل</span><span class="en">Process</span></a></li>
+                        <li><a href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact us</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>
+                        <span class="ar">التواصل</span>
+                        <span class="en">Contact</span>
+                    </h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+966550197070" dir="ltr">+966 55 019 7070</a></li>
+                        <li><a href="mailto:coldwest25@gmail.com">coldwest25@gmail.com</a></li>
+                        <li><a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer">@coldwest25</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>
+                        <span class="ar">الموقع والسجل</span>
+                        <span class="en">Location and CR</span>
+                    </h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://maps.app.goo.gl/LU3RFwT4GqB4kBoD8" target="_blank" rel="noopener noreferrer">
+                                <span class="ar">مكة المكرمة - البحيرات</span>
+                                <span class="en">Makkah - Al Buhayrat</span>
+                            </a>
+                        </li>
+                        <li>
+                            <span>
+                                <span class="ar">سجل تجاري رقم</span>
+                                <span class="en">CR number</span>
+                                <span dir="ltr">7049838308</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 
