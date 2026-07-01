@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="الغرب البارد لصيانة معدات المطاعم والتكييف، صيانة دورية، قطع غيار، توريد معدات، وخدمة سريعة للمطاعم والكافيهات.">
-    <title>الغرب البارد | صيانة معدات المطاعم والتكييف</title>
+    <meta name="description" content="الغرب البارد لصيانة وتوريد معدات المطابخ التجارية، التبريد التجاري، التكييف، والتهوية للمطاعم والكافيهات.">
+    <title>الغرب البارد | Cold West</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --ink: #0b2030;
-            --muted: #61717e;
-            --brand: #46b6d8;
-            --brand-dark: #092c45;
-            --accent: #d4af37;
-            --action: #b5952f;
-            --steel: #d9e0e5;
-            --steel-dark: #8795a1;
-            --ice: #eaf8fc;
-            --surface: #ffffff;
-            --line: rgba(16, 33, 45, 0.12);
-            --shadow: 0 22px 60px rgba(16, 33, 45, 0.14);
-            --radius: 8px;
+            --navy: #06101e;
+            --navy-2: #0a192f;
+            --line: #112240;
+            --gold: #d4af37;
+            --gold-2: #b5952f;
+            --ice: #9ad8ee;
+            --muted: #9aa8b6;
         }
 
         * {
@@ -35,1533 +30,643 @@
         }
 
         body {
-            margin: 0;
-            color: var(--ink);
             font-family: "Tajawal", "Inter", sans-serif;
-            background: linear-gradient(180deg, #f2f8fa 0%, #f7f8f9 44%, #ffffff 100%);
-            line-height: 1.7;
+            background: var(--navy);
+            color: #e2e8f0;
         }
 
-        body[dir="ltr"] {
+        html[dir="ltr"] body {
             font-family: "Inter", "Tajawal", sans-serif;
         }
 
-        a {
-            color: inherit;
+        .gold-gradient {
+            background: linear-gradient(135deg, #f4d56d 0%, var(--gold) 44%, var(--gold-2) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: #fff;
-            box-shadow: 0 10px 30px rgba(14, 36, 51, 0.08);
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #f4d56d 0%, var(--gold) 52%, var(--gold-2) 100%);
         }
 
-        .utility-bar {
-            color: #dff4fa;
-            background: var(--brand-dark);
-            font-size: 0.9rem;
-            font-weight: 800;
-        }
-
-        .utility-inner {
-            width: min(1180px, calc(100% - 32px));
-            min-height: 38px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-        }
-
-        .utility-links {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .utility-links a,
-        .utility-links span {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            text-decoration: none;
-        }
-
-        .nav {
-            width: min(1180px, calc(100% - 32px));
-            min-height: 82px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-width: 0;
-            text-decoration: none;
-        }
-
-        .brand img {
-            width: 118px;
-            height: auto;
-            display: block;
-        }
-
-        .brand strong {
-            display: block;
-            font-size: 1rem;
-            line-height: 1.2;
-            white-space: nowrap;
-        }
-
-        .brand span {
-            display: block;
-            color: var(--muted);
-            font-size: 0.82rem;
-            margin-top: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .nav-links a {
-            display: inline-flex;
-            align-items: center;
-            min-height: 42px;
-            padding: 8px 12px;
-            border-radius: var(--radius);
-            color: #1f3a4a;
-            text-decoration: none;
-            font-size: 0.94rem;
-            font-weight: 900;
-        }
-
-        .nav-links a:hover {
-            background: var(--ice);
-            color: var(--brand-dark);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-
-        .lang-switcher {
-            display: flex;
-            padding: 3px;
+        .dark-panel {
+            background: rgba(10, 25, 47, 0.72);
             border: 1px solid var(--line);
-            border-radius: 999px;
-            background: #f6fafb;
         }
 
-        .lang-btn {
-            border: 0;
-            border-radius: 999px;
-            padding: 8px 12px;
-            color: var(--muted);
-            background: transparent;
-            cursor: pointer;
+        .section-shell {
+            width: min(1180px, calc(100% - 32px));
+            margin-inline: auto;
+        }
+
+        .nav-link {
+            color: #cbd5e1;
             font-weight: 800;
-            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        .lang-btn.active {
-            color: #fff;
-            background: var(--brand-dark);
+        .nav-link:hover {
+            color: var(--gold);
         }
 
-        .btn {
+        .cta {
             min-height: 44px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 9px;
-            border-radius: var(--radius);
-            padding: 11px 18px;
-            border: 1px solid transparent;
-            text-decoration: none;
+            gap: 10px;
+            border-radius: 8px;
+            padding: 12px 20px;
+            color: #06101e;
             font-weight: 900;
+            text-decoration: none;
             line-height: 1.15;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .btn:hover {
+        .cta:hover {
             transform: translateY(-2px);
+            box-shadow: 0 18px 34px rgba(212, 175, 55, 0.18);
         }
 
-        .btn-primary {
-            color: #1c1708;
-            background: linear-gradient(135deg, #f4d56d 0%, var(--accent) 52%, var(--action) 100%);
-            box-shadow: 0 14px 28px rgba(212, 175, 55, 0.24);
+        .cta-outline {
+            color: #e2e8f0;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.48);
         }
 
-        .btn-secondary {
-            color: var(--brand-dark);
-            background: #fff;
-            border-color: rgba(9, 44, 69, 0.24);
-        }
-
-        .btn-dark {
-            color: #fff;
-            background: var(--ink);
-            box-shadow: 0 14px 28px rgba(16, 33, 45, 0.18);
-        }
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-            color: #fff;
-            background:
-                linear-gradient(110deg, rgba(9, 44, 69, 0.98) 0%, rgba(9, 44, 69, 0.96) 48%, rgba(34, 101, 126, 0.86) 100%),
-                url("logo.jpg") center right 9% / min(560px, 66vw) no-repeat;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(90deg, rgba(9, 44, 69, 0.2), rgba(255, 255, 255, 0.06)),
-                repeating-linear-gradient(135deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 18px);
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        body[dir="ltr"] .hero::before {
-            background:
-                linear-gradient(270deg, rgba(8, 53, 74, 0.2), rgba(255, 255, 255, 0.06)),
-                repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 18px);
-        }
-
-        .hero-inner {
-            position: relative;
-            width: min(1180px, calc(100% - 32px));
-            min-height: calc(100vh - 120px);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
-            align-items: center;
-            gap: 44px;
-            padding: 54px 0 64px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin: 0 0 14px;
-            color: #bfeefa;
-            font-weight: 900;
-        }
-
-        .eyebrow i {
-            color: var(--accent);
-        }
-
-        h1 {
-            margin: 0;
-            max-width: 780px;
-            font-size: clamp(2.45rem, 6vw, 5.7rem);
-            line-height: 0.98;
-            letter-spacing: 0;
-            font-weight: 900;
-        }
-
-        .lead {
-            max-width: 660px;
-            margin: 22px 0 0;
-            color: rgba(255, 255, 255, 0.84);
-            font-size: clamp(1.05rem, 2vw, 1.28rem);
-            font-weight: 500;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 28px;
-        }
-
-        .trust-row {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 12px;
-            max-width: 760px;
-            margin-top: 34px;
-        }
-
-        .trust-item {
-            min-height: 96px;
-            padding: 15px;
-            border: 1px solid rgba(217, 224, 229, 0.28);
-            border-radius: var(--radius);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .trust-item strong {
-            display: block;
-            font-size: 1.45rem;
-            color: #f4d56d;
-            line-height: 1.1;
-        }
-
-        .trust-item span {
-            display: block;
-            color: rgba(255, 255, 255, 0.78);
-            font-weight: 700;
-            font-size: 0.92rem;
-            margin-top: 6px;
-        }
-
-        .hero-panel {
-            position: relative;
-            padding: 26px;
-            border-radius: var(--radius);
-            background: #fff;
-            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-
-        .hero-panel img {
-            width: 100%;
-            max-width: 360px;
-            display: block;
-            margin: 0 auto 20px;
-        }
-
-        .service-list {
-            display: grid;
-            gap: 10px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .service-list li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 14px;
-            border: 1px solid rgba(16, 33, 45, 0.1);
-            border-radius: var(--radius);
-            background: #f6fafb;
-            color: var(--ink);
-            font-weight: 800;
-        }
-
-        .service-list i {
-            width: 28px;
-            height: 28px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 28px;
-            border-radius: 50%;
-            color: var(--brand-dark);
-            background: linear-gradient(135deg, var(--ice), #f7fafb);
-        }
-
-        .quick-services {
-            position: relative;
-            z-index: 2;
-            margin-top: -34px;
-        }
-
-        .quick-grid {
-            width: min(1180px, calc(100% - 32px));
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 22px 52px rgba(9, 44, 69, 0.16);
-        }
-
-        .quick-item {
-            min-height: 116px;
-            padding: 20px;
-            color: var(--ink);
-            background: #fff;
-            border-inline-end: 1px solid var(--line);
-            text-decoration: none;
-        }
-
-        .quick-item:last-child {
-            border-inline-end: 0;
-        }
-
-        .quick-item i {
-            color: #238cb0;
-            font-size: 1.25rem;
-        }
-
-        .quick-item strong {
-            display: block;
-            margin-top: 10px;
-            line-height: 1.25;
-        }
-
-        .quick-item span {
-            display: block;
-            margin-top: 4px;
-            color: var(--muted);
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
-        section {
-            padding: 86px 0;
-        }
-
-        .section-inner {
-            width: min(1180px, calc(100% - 32px));
-            margin: 0 auto;
-        }
-
-        .section-head {
-            display: flex;
-            align-items: end;
-            justify-content: space-between;
-            gap: 28px;
-            margin-bottom: 30px;
-        }
-
-        .section-head h2 {
-            margin: 0;
-            max-width: 680px;
-            font-size: clamp(1.8rem, 3.4vw, 3rem);
-            line-height: 1.08;
-            font-weight: 900;
-        }
-
-        .section-head p {
-            max-width: 470px;
-            margin: 0;
-            color: var(--muted);
-            font-weight: 600;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .service-cards {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .why {
-            background: #fff;
-            border-top: 1px solid rgba(16, 33, 45, 0.08);
-            border-bottom: 1px solid rgba(16, 33, 45, 0.08);
-        }
-
-        .why-box {
-            display: grid;
-            grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.24fr);
-            gap: 28px;
-            align-items: center;
-            padding: 34px;
-            border-radius: var(--radius);
-            background: linear-gradient(135deg, #ffffff, #f7fafb);
+        .feature-card,
+        .service-card,
+        .step-card,
+        .contact-card {
             border: 1px solid var(--line);
-            box-shadow: 0 14px 38px rgba(9, 44, 69, 0.08);
+            background: rgba(10, 25, 47, 0.68);
+            border-radius: 8px;
         }
 
-        .why-box h2 {
-            margin: 0;
-            font-size: clamp(2rem, 4vw, 4rem);
-            line-height: 1.05;
-            font-weight: 900;
+        .service-card {
+            min-height: 330px;
         }
 
-        .why-box p {
-            margin: 0;
-            color: #334b59;
-            font-size: clamp(1.05rem, 2vw, 1.26rem);
-            font-weight: 600;
-        }
-
-        .card {
-            min-height: 320px;
-            padding: 26px;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            background: linear-gradient(180deg, #ffffff, #f8fafb);
-            box-shadow: 0 12px 34px rgba(9, 44, 69, 0.07);
-            border-top: 5px solid var(--brand);
-        }
-
-        .card i {
-            width: 48px;
-            height: 48px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: var(--radius);
-            color: #fff;
-            background: linear-gradient(135deg, var(--brand-dark), #2aa7cf);
-            font-size: 1.15rem;
-        }
-
-        .card h3 {
-            margin: 18px 0 8px;
-            font-size: 1.25rem;
-            line-height: 1.25;
-        }
-
-        .card p {
-            margin: 0;
-            color: var(--muted);
-            font-weight: 600;
-        }
-
-        .card ul {
-            display: grid;
-            gap: 8px;
-            margin: 16px 0 0;
-            padding: 0;
+        .service-card ul,
+        .footer-list {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .card li {
+        .service-card li {
             display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            color: #334b59;
-            font-weight: 700;
+            gap: 10px;
+            color: #b7c4d2;
+            line-height: 1.65;
         }
 
-        .card li::before {
+        .service-card li::before {
             content: "";
             width: 7px;
             height: 7px;
             flex: 0 0 7px;
-            margin-top: 10px;
-            border-radius: 50%;
-            background: var(--action);
+            margin-top: 11px;
+            border-radius: 999px;
+            background: var(--gold);
         }
 
-        .contract {
-            color: #fff;
+        .hero-bg {
             background:
-                linear-gradient(135deg, rgba(9, 44, 69, 0.97), rgba(13, 32, 48, 0.96)),
-                url("logo-wide.png") center / 540px auto no-repeat;
+                linear-gradient(120deg, rgba(6, 16, 30, 0.96), rgba(10, 25, 47, 0.88)),
+                radial-gradient(circle at 18% 18%, rgba(154, 216, 238, 0.14), transparent 30rem),
+                radial-gradient(circle at 86% 20%, rgba(212, 175, 55, 0.12), transparent 28rem);
         }
 
-        .contract .section-inner {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
-            gap: 38px;
-            align-items: center;
-        }
-
-        .contract h2 {
-            margin: 0;
-            font-size: clamp(2rem, 4vw, 4rem);
-            line-height: 1.05;
-            font-weight: 900;
-        }
-
-        .contract p {
-            max-width: 690px;
-            color: rgba(255, 255, 255, 0.82);
-            font-size: 1.12rem;
-            font-weight: 600;
-        }
-
-        .contract-points {
-            display: grid;
-            gap: 12px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .contract-points li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: var(--radius);
+        .logo-mark {
             background: rgba(255, 255, 255, 0.08);
-            font-weight: 800;
-        }
-
-        .contract-points i {
-            color: #ffc84d;
-        }
-
-        .process {
-            background: #0a192f;
-            color: #e2e8f0;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 14px;
-            counter-reset: step;
-        }
-
-        .step {
-            position: relative;
-            min-height: 190px;
-            padding: 24px;
-            border-radius: var(--radius);
-            border: 1px solid #112240;
-            background: rgba(255, 255, 255, 0.025);
-        }
-
-        .step::before {
-            counter-increment: step;
-            content: counter(step);
-            width: 38px;
-            height: 38px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            color: #fff;
-            color: #06101e;
-            background: linear-gradient(135deg, #f4d56d, var(--accent));
-            font-weight: 900;
-        }
-
-        .step h3 {
-            margin: 18px 0 8px;
-            font-size: 1.18rem;
-        }
-
-        .step p {
-            margin: 0;
-            color: #aebbc7;
-            font-weight: 600;
-        }
-
-        .process .section-head p {
-            color: #aebbc7;
-        }
-
-        .process .section-head h2 {
-            color: #fff;
-        }
-
-        .field-work {
-            color: #e2e8f0;
-            background: #06101e;
-            border-top: 1px solid #112240;
-            border-bottom: 1px solid #112240;
-            text-align: center;
-        }
-
-        .field-work h2 {
-            margin: 0 0 12px;
-            font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-            line-height: 1.1;
-        }
-
-        .field-work p {
-            max-width: 680px;
-            margin: 0 auto 24px;
-            color: #aebbc7;
-            font-weight: 700;
-        }
-
-        .gold-text {
-            color: var(--accent);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
-            gap: 18px;
-            align-items: stretch;
-        }
-
-        .contact-main,
-        .contact-side {
-            border-radius: var(--radius);
-            border: 1px solid var(--line);
-            background: #fff;
-            box-shadow: 0 14px 38px rgba(16, 33, 45, 0.07);
-        }
-
-        .contact-main {
-            padding: 34px;
-        }
-
-        .contact-main h2 {
-            margin: 0;
-            font-size: clamp(1.9rem, 3vw, 3rem);
-            line-height: 1.1;
-        }
-
-        .contact-main p {
-            color: var(--muted);
-            font-size: 1.08rem;
-            font-weight: 600;
-        }
-
-        .contact-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 24px;
-        }
-
-        .contact-side {
-            padding: 22px;
-            display: grid;
-            gap: 10px;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-height: 58px;
-            padding: 12px;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            text-decoration: none;
-            color: var(--ink);
-            background: #f8fafb;
-            font-weight: 800;
-        }
-
-        .contact-link i {
-            color: var(--brand-dark);
-            width: 22px;
-            text-align: center;
-        }
-
-        .contact-link span {
-            display: block;
-        }
-
-        .contact-link small {
-            display: block;
-            color: var(--muted);
-            font-size: 0.82rem;
-            font-weight: 800;
-            line-height: 1.3;
-        }
-
-        .site-footer {
-            padding: 46px 0 106px;
-            color: rgba(255, 255, 255, 0.78);
-            background: var(--brand-dark);
-            font-weight: 700;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: minmax(220px, 1fr) repeat(3, minmax(150px, 0.6fr));
-            gap: 22px;
-            text-align: start;
-        }
-
-        .footer-grid h3,
-        .footer-grid h4 {
-            margin: 0 0 12px;
-            color: #fff;
-            line-height: 1.25;
-        }
-
-        .footer-grid p {
-            margin: 0;
-            max-width: 430px;
-        }
-
-        .footer-links {
-            display: grid;
-            gap: 8px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .footer-links a,
-        .footer-links span {
-            color: rgba(255, 255, 255, 0.82);
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 6px;
         }
 
         .floating-whatsapp {
             position: fixed;
             inset-inline-end: 18px;
             bottom: 18px;
-            z-index: 30;
-            min-width: 178px;
+            z-index: 60;
         }
 
-        .ar,
-        .en {
-            display: none;
-        }
-
-        body[data-lang="ar"] .ar,
-        body[data-lang="en"] .en {
-            display: inline;
-        }
-
-        body[data-lang="ar"] .en,
-        body[data-lang="en"] .ar {
-            display: none !important;
-        }
-
-        body[data-lang="ar"] .brand .ar,
-        body[data-lang="en"] .brand .en {
-            display: block !important;
-        }
-
-        body[data-lang="ar"] .block-ar,
-        body[data-lang="en"] .block-en {
-            display: block;
-        }
-
-        body[data-lang="ar"] .quick-item > .ar,
-        body[data-lang="en"] .quick-item > .en,
-        body[data-lang="ar"] .quick-item strong .ar,
-        body[data-lang="en"] .quick-item strong .en {
-            display: block;
-        }
-
-        @media (max-width: 920px) {
-            .hero-inner,
-            .contract .section-inner,
-            .why-box,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .quick-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .hero-inner {
-                min-height: auto;
-                padding-top: 42px;
-            }
-
-            .hero-panel {
-                max-width: 620px;
-            }
-
-            .cards,
-            .steps {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .section-head {
-                display: block;
-            }
-
-            .section-head p {
-                margin-top: 12px;
+        @media (max-width: 900px) {
+            .desktop-nav {
+                display: none;
             }
         }
 
         @media (max-width: 640px) {
-            .nav {
-                min-height: 68px;
+            .section-shell {
                 width: min(100% - 24px, 1180px);
             }
 
-            .utility-inner {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .utility-links,
-            .nav-links {
-                display: none;
-            }
-
-            .brand img {
-                width: 84px;
-            }
-
-            .brand strong,
-            .brand span {
-                display: none;
-            }
-
-            .nav-actions .btn-secondary {
-                display: none;
-            }
-
-            .hero-inner,
-            .section-inner {
-                width: min(100% - 24px, 1180px);
-            }
-
-            h1 {
-                font-size: clamp(2.35rem, 14vw, 4rem);
-            }
-
-            section {
-                padding: 58px 0;
-            }
-
-            .trust-row,
-            .cards,
-            .quick-grid,
-            .steps {
-                grid-template-columns: 1fr;
-            }
-
-            .quick-services {
-                margin-top: 0;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .trust-item,
-            .card,
-            .step {
-                min-height: auto;
-            }
-
-            .contact-main {
-                padding: 24px;
-            }
-
-            .hero-actions .btn,
-            .contact-actions .btn,
-            .floating-whatsapp {
-                width: 100%;
+            .hero-title {
+                font-size: 2.45rem;
             }
 
             .floating-whatsapp {
                 inset-inline: 12px;
-                bottom: 12px;
+                width: calc(100% - 24px);
             }
         }
     </style>
 </head>
-<body data-lang="ar">
-    <header class="site-header">
-        <div class="utility-bar">
-            <div class="utility-inner">
-                <span>
-                    <i class="fa-solid fa-clock"></i>
-                    <span class="ar">طلبات الصيانة والتجهيز للمطاعم والكافيهات</span>
-                    <span class="en">Maintenance and fit-out requests for restaurants and cafes</span>
-                </span>
-                <div class="utility-links">
-                    <a href="tel:+966550197070">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>+966 55 019 7070</span>
-                    </a>
-                    <a href="mailto:coldwest25@gmail.com">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>coldwest25@gmail.com</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <nav class="nav" aria-label="Main navigation">
-            <a class="brand" href="#top">
-                <img src="logo-wide.png" alt="شعار الغرب البارد">
-                <span>
-                    <strong>
-                        <span class="ar">الغرب البارد</span>
-                        <span class="en">Cold West</span>
-                    </strong>
-                    <span class="ar">صيانة معدات المطاعم والتكييف</span>
-                    <span class="en">Restaurant equipment and AC maintenance</span>
-                </span>
+<body class="antialiased">
+    <header class="sticky top-0 z-50 bg-[#0a192f]/95 backdrop-blur border-b border-[#112240]">
+        <nav class="section-shell min-h-20 flex items-center justify-between gap-4">
+            <a href="#top" class="flex items-center gap-3 no-underline">
+                <img src="logo-wide.png" alt="Cold West logo" class="h-12 w-auto logo-mark">
             </a>
-            <ul class="nav-links">
-                <li>
-                    <a href="#services">
-                        <span class="ar">الخدمات</span>
-                        <span class="en">Services</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#process">
-                        <span class="ar">طريقة العمل</span>
-                        <span class="en">Process</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#social">
-                        <span class="ar">أعمالنا</span>
-                        <span class="en">Our Work</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#contact">
-                        <span class="ar">التواصل</span>
-                        <span class="en">Contact</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="nav-actions">
-                <div class="lang-switcher" aria-label="Language switcher">
-                    <button id="lang-ar" class="lang-btn active" type="button">AR</button>
-                    <button id="lang-en" class="lang-btn" type="button">EN</button>
-                </div>
-                <a class="btn btn-secondary" href="tel:+966550197070">
-                    <i class="fa-solid fa-phone"></i>
-                    <span class="ar">اتصل الآن</span>
-                    <span class="en">Call now</span>
-                </a>
+
+            <div class="desktop-nav flex items-center gap-6">
+                <a href="#services" class="nav-link" data-i18n="navServices">خدماتنا</a>
+                <a href="#strengths" class="nav-link" data-i18n="navStrengths">نقاط القوة</a>
+                <a href="#process" class="nav-link" data-i18n="navProcess">طريقة العمل</a>
+                <a href="#social" class="nav-link" data-i18n="navWork">أعمالنا</a>
+                <a href="#contact" class="nav-link" data-i18n="navContact">تواصل معنا</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button type="button" onclick="toggleLang()" id="lang-btn" class="min-h-11 px-4 rounded-lg border border-[#d4af37]/50 text-[#d4af37] font-black hover:bg-[#d4af37] hover:text-[#06101e] transition">English</button>
+                <a href="https://wa.me/966550197070" class="cta bg-gold-gradient hidden sm:inline-flex" data-i18n="navAction">واتساب</a>
             </div>
         </nav>
     </header>
 
     <main id="top">
-        <section class="hero">
-            <div class="hero-inner">
+        <section class="hero-bg border-b border-[#112240]">
+            <div class="section-shell py-16 md:py-24 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
                 <div>
-                    <p class="eyebrow">
+                    <p class="inline-flex items-center gap-2 text-[#9ad8ee] font-black mb-4">
                         <i class="fa-solid fa-snowflake"></i>
-                        <span class="ar">حل واحد للمطبخ والتبريد والتكييف</span>
-                        <span class="en">One partner for kitchen, cooling, and AC</span>
+                        <span data-i18n="eyebrow">حل واحد للمطبخ والتبريد والتكييف</span>
                     </p>
-                    <h1>
-                        <span class="ar">مطبخك، ثلاجاتك، وتكييفك.. كلها في يد واحدة.</span>
-                        <span class="en">Your Kitchen, Refrigeration, and HVAC.. Managed by One Partner.</span>
+                    <h1 class="hero-title text-4xl md:text-6xl font-black leading-tight mb-6" data-i18n-html="heroTitle">
+                        مطبخك، ثلاجاتك، وتكييفك..<br><span class="gold-gradient">كلها في يد واحدة.</span>
                     </h1>
-                    <p class="lead">
-                        <span class="ar">وفر وقتك وميزانيتك مع جهة واحدة تفهم المطبخ كمنظومة كاملة. من توريد معدات الطبخ وتركيب غرف التبريد، إلى عقود الصيانة الشاملة اللي تضمن استمرارية شغلك بدون أعطال أو زحمة موردين.</span>
-                        <span class="en">Save time and budget with a single partner who understands your kitchen as a complete ecosystem. From supplying cooking equipment and installing cold rooms to comprehensive maintenance contracts that ensure continuous operation without the hassle of multiple vendors.</span>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed mb-8" data-i18n="heroDesc">
+                        وفر وقتك وميزانيتك مع جهة واحدة تفهم المطبخ كمنظومة كاملة. من توريد معدات الطبخ وتركيب غرف التبريد، إلى عقود الصيانة الشاملة اللي تضمن استمرارية شغلك بدون أعطال أو زحمة موردين.
                     </p>
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9" target="_blank" rel="noopener noreferrer">
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D8%B5%D9%8A%D8%A7%D9%86%D8%A9" class="cta bg-gold-gradient">
                             <i class="fa-brands fa-whatsapp"></i>
-                            <span class="ar">احجز موعد صيانة</span>
-                            <span class="en">Book a Service Call</span>
+                            <span data-i18n="bookService">احجز موعد صيانة</span>
                         </a>
-                        <a class="btn btn-dark" href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%D8%A9%20%D8%AA%D8%AC%D9%87%D9%8A%D8%B2%20%D9%85%D8%B7%D8%B9%D9%85" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%AA%D8%B3%D8%B9%D9%8A%D8%B1%D8%A9%20%D8%AA%D8%AC%D9%87%D9%8A%D8%B2%20%D9%85%D8%B7%D8%B9%D9%85" class="cta cta-outline">
                             <i class="fa-solid fa-file-invoice-dollar"></i>
-                            <span class="ar">اطلب تسعيرة تجهيز</span>
-                            <span class="en">Request a Fit-Out Quote</span>
+                            <span data-i18n="fitoutQuote">اطلب تسعيرة تجهيز</span>
                         </a>
-                    </div>
-                    <div class="trust-row" aria-label="Highlights">
-                        <div class="trust-item">
-                            <strong>24/7</strong>
-                            <span class="ar">استقبال طلبات الصيانة</span>
-                            <span class="en">Service requests</span>
-                        </div>
-                        <div class="trust-item">
-                            <strong>PM</strong>
-                            <span class="ar">عقود صيانة وقائية</span>
-                            <span class="en">Preventive maintenance</span>
-                        </div>
-                        <div class="trust-item">
-                            <strong>Parts</strong>
-                            <span class="ar">توريد قطع الغيار</span>
-                            <span class="en">Spare parts supply</span>
-                        </div>
                     </div>
                 </div>
 
-                <aside class="hero-panel" aria-label="Core services">
-                    <img src="logo-wide.png" alt="الغرب البارد">
-                    <ul class="service-list">
-                        <li>
-                            <i class="fa-solid fa-temperature-low"></i>
-                            <span class="ar">معدات طبخ تتحمل ضغط المواسم</span>
-                            <span class="en">Equipment built for peak seasons</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-fire-burner"></i>
-                            <span class="ar">تبريد تجاري يحمي مخزونك</span>
-                            <span class="en">Protection for food inventory</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-wind"></i>
-                            <span class="ar">تكييف وتهوية لمطبخ يتنفس</span>
-                            <span class="en">HVAC and ventilation systems</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-clipboard-check"></i>
-                            <span class="ar">عقد واحد يغطي احتياجاتك</span>
-                            <span class="en">One contract for all your needs</span>
-                        </li>
-                    </ul>
+                <aside class="dark-panel rounded-lg p-6 md:p-8">
+                    <img src="logo-wide.png" alt="Cold West" class="w-full max-w-sm mx-auto mb-8 opacity-90">
+                    <div class="grid gap-3">
+                        <div class="feature-card p-4 flex items-center gap-3">
+                            <i class="fa-solid fa-fire-burner text-[#d4af37] text-xl"></i>
+                            <span class="font-black" data-i18n="heroPoint1">معدات طبخ تتحمل ضغط المواسم</span>
+                        </div>
+                        <div class="feature-card p-4 flex items-center gap-3">
+                            <i class="fa-solid fa-temperature-low text-[#d4af37] text-xl"></i>
+                            <span class="font-black" data-i18n="heroPoint2">تبريد تجاري يحمي مخزونك</span>
+                        </div>
+                        <div class="feature-card p-4 flex items-center gap-3">
+                            <i class="fa-solid fa-wind text-[#d4af37] text-xl"></i>
+                            <span class="font-black" data-i18n="heroPoint3">تكييف وتهوية لمطبخ يتنفس</span>
+                        </div>
+                        <div class="feature-card p-4 flex items-center gap-3">
+                            <i class="fa-solid fa-clipboard-check text-[#d4af37] text-xl"></i>
+                            <span class="font-black" data-i18n="heroPoint4">عقد واحد يغطي احتياجاتك</span>
+                        </div>
+                    </div>
                 </aside>
             </div>
         </section>
 
-        <div class="quick-services" aria-label="Quick service links">
-            <div class="quick-grid">
-                <a class="quick-item" href="#services">
-                    <i class="fa-solid fa-temperature-low"></i>
-                    <strong>
-                        <span class="ar">تبريد تجاري</span>
-                        <span class="en">Commercial refrigeration</span>
-                    </strong>
-                    <span class="ar">غرف تبريد، ثلاجات عرض، ومكائن ثلج</span>
-                    <span class="en">Cold rooms, display fridges, and ice machines</span>
-                </a>
-                <a class="quick-item" href="#services">
-                    <i class="fa-solid fa-fire-burner"></i>
-                    <strong>
-                        <span class="ar">معدات مطابخ</span>
-                        <span class="en">Kitchen equipment</span>
-                    </strong>
-                    <span class="ar">أفران، شوايات، قلايات، وشفاطات</span>
-                    <span class="en">Ovens, grills, fryers, and hoods</span>
-                </a>
-                <a class="quick-item" href="#services">
-                    <i class="fa-solid fa-clipboard-check"></i>
-                    <strong>
-                        <span class="ar">صيانة وقائية</span>
-                        <span class="en">Preventive maintenance</span>
-                    </strong>
-                    <span class="ar">زيارات مجدولة وتقارير أداء</span>
-                    <span class="en">Scheduled visits and performance reports</span>
-                </a>
-                <a class="quick-item" href="#services">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <strong>
-                        <span class="ar">توريد وتركيب</span>
-                        <span class="en">Supply and installation</span>
-                    </strong>
-                    <span class="ar">معدات وقطع غيار للمشاريع الجديدة</span>
-                    <span class="en">Equipment and parts for new projects</span>
-                </a>
-            </div>
-        </div>
-
-        <section class="why">
-            <div class="section-inner">
-                <div class="why-box">
-                    <h2>
-                        <span class="ar">ريح راسك من زحمة الموردين.</span>
-                        <span class="en">Stop Juggling Multiple Vendors.</span>
-                    </h2>
-                    <p>
-                        <span class="ar">إدارة المرافق والمطابخ تصير معقدة لما تتعامل مع جهات مختلفة. في الغرب البارد، دمجنا لك صيانة المعدات الحارة والباردة مع أنظمة التكييف والتهوية. فريق واحد ينزل موقعك، يقيم المنظومة كاملة، ويضمن لك إن خط الإنتاج شغال بأعلى كفاءة.</span>
-                        <span class="en">Facility and kitchen management gets complicated when dealing with different contractors. At Cold West, we have integrated hot and cold equipment maintenance with HVAC and ventilation systems. One unified team assesses your entire operation, ensuring your production line runs at peak efficiency.</span>
+        <section id="strengths" class="py-16 bg-[#0a192f] border-b border-[#112240]">
+            <div class="section-shell">
+                <div class="max-w-3xl mb-9">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4" data-i18n="whyTitle">ريح راسك من زحمة الموردين.</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed" data-i18n="whyDesc">
+                        إدارة المرافق والمطابخ تصير معقدة لما تتعامل مع جهات مختلفة. في الغرب البارد، دمجنا لك صيانة المعدات الحارة والباردة مع أنظمة التكييف والتهوية. فريق واحد ينزل موقعك، يقيم المنظومة كاملة، ويضمن لك إن خط الإنتاج شغال بأعلى كفاءة.
                     </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <article class="feature-card p-6">
+                        <h3 class="text-[#d4af37] font-black text-xl mb-2" data-i18n="feat1Title">بيئة عمل مثالية</h3>
+                        <p class="text-slate-400" data-i18n="feat1Desc">تكييف وأنظمة تهوية متقدمة تناسب المطابخ والصالات التجارية.</p>
+                    </article>
+                    <article class="feature-card p-6">
+                        <h3 class="text-[#d4af37] font-black text-xl mb-2" data-i18n="feat2Title">تحمل التشغيل المستمر</h3>
+                        <p class="text-slate-400" data-i18n="feat2Desc">معدات مطابخ وتبريد مصممة لأوقات الذروة التجارية.</p>
+                    </article>
+                    <article class="feature-card p-6">
+                        <h3 class="text-[#d4af37] font-black text-xl mb-2" data-i18n="feat3Title">استجابة طارئة للأزمات</h3>
+                        <p class="text-slate-400" data-i18n="feat3Desc">فريق فني يتدخل بسرعة لتقليل تعطل خط الإنتاج.</p>
+                    </article>
+                    <article class="feature-card p-6">
+                        <h3 class="text-[#d4af37] font-black text-xl mb-2" data-i18n="feat4Title">حماية لاستثماراتك</h3>
+                        <p class="text-slate-400" data-i18n="feat4Desc">عقود صيانة وقائية تقلل الأعطال والهدر وتطيل عمر المعدات.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="services">
-            <div class="section-inner">
-                <div class="section-head">
-                    <h2>
-                        <span class="ar">خدمات تغطي منظومة المطعم كاملة.</span>
-                        <span class="en">The Balanced Fusion for Foodservice Operations.</span>
-                    </h2>
-                    <p>
-                        <span class="ar">من المعدات الحارة إلى التبريد والتكييف، نخلي التشغيل والصيانة تحت إدارة واحدة واضحة.</span>
-                        <span class="en">Commercial kitchen equipment, refrigeration, HVAC, and preventive maintenance managed under one clear service partner.</span>
-                    </p>
+        <section id="services" class="py-16 md:py-20 bg-[#06101e] border-b border-[#112240]">
+            <div class="section-shell">
+                <div class="max-w-3xl mb-10">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4" data-i18n="servicesTitle">خدمات تغطي منظومة المطعم كاملة.</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed" data-i18n="servicesDesc">من المعدات الحارة إلى التبريد والتكييف، نخلي التشغيل والصيانة تحت إدارة واحدة واضحة.</p>
                 </div>
-                <div class="cards service-cards">
-                    <article class="card">
-                        <i class="fa-solid fa-fire-burner"></i>
-                        <h3>
-                            <span class="ar">معدات المطابخ</span>
-                            <span class="en">Commercial Kitchen Equipment</span>
-                        </h3>
-                        <p>
-                            <span class="ar">معدات تتحمل ضغط المواسم. نورد معدات المطبخ عند الطلب ونوفر لها دعم فني سريع وقت الذروة عشان خط الإنتاج ما يوقف.</span>
-                            <span class="en">Equipment Built for Peak Seasons. We supply commercial kitchen equipment on demand for new setups and provide rapid technical support to fix breakdowns during rush hours so your production line never stops.</span>
-                        </p>
-                        <ul>
-                            <li>
-                                <span class="ar">توريد أفران وقلايات وشوايات حسب احتياج التشغيل.</span>
-                                <span class="en">Ovens, fryers, and grills supplied for new setups.</span>
-                            </li>
-                            <li>
-                                <span class="ar">دعم فني لإصلاح الأعطال وقت الذروة.</span>
-                                <span class="en">Rapid technical support during rush-hour breakdowns.</span>
-                            </li>
-                            <li>
-                                <span class="ar">حلول تساعد خط الإنتاج يستمر بدون توقف.</span>
-                                <span class="en">Support designed to keep your production line moving.</span>
-                            </li>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <article class="service-card p-6">
+                        <i class="fa-solid fa-fire-burner text-[#d4af37] text-3xl mb-5"></i>
+                        <h3 class="text-2xl font-black mb-3" data-i18n="svc1Title">معدات المطابخ</h3>
+                        <p class="text-slate-400 leading-relaxed mb-5" data-i18n="svc1Desc">معدات تتحمل ضغط المواسم. نورد معدات المطبخ عند الطلب ونوفر لها دعم فني سريع وقت الذروة عشان خط الإنتاج ما يوقف.</p>
+                        <ul class="grid gap-2">
+                            <li data-i18n="svc1Li1">توريد أفران وقلايات وشوايات حسب احتياج التشغيل.</li>
+                            <li data-i18n="svc1Li2">دعم فني لإصلاح الأعطال وقت الذروة.</li>
+                            <li data-i18n="svc1Li3">حلول تساعد خط الإنتاج يستمر بدون توقف.</li>
                         </ul>
                     </article>
-                    <article class="card">
-                        <i class="fa-solid fa-temperature-low"></i>
-                        <h3>
-                            <span class="ar">التبريد التجاري وغرف التجميد</span>
-                            <span class="en">Commercial Refrigeration & Freezers</span>
-                        </h3>
-                        <p>
-                            <span class="ar">حماية تامة لمخزونك الغذائي. نصمم ونركب غرف التبريد والتجميد ونحافظ على استقرار درجات الحرارة لتقليل الهدر.</span>
-                            <span class="en">Total Protection for Your Food Inventory. Design and installation of cold rooms and walk-in freezers, plus maintenance for display fridges and ice machines. We ensure temperature stability to protect your ingredients from spoilage and reduce waste.</span>
-                        </p>
-                        <ul>
-                            <li>
-                                <span class="ar">تصميم وتركيب غرف التبريد والتجميد.</span>
-                                <span class="en">Cold room and walk-in freezer design and installation.</span>
-                            </li>
-                            <li>
-                                <span class="ar">صيانة ثلاجات العرض ومكائن الثلج.</span>
-                                <span class="en">Maintenance for display fridges and ice machines.</span>
-                            </li>
-                            <li>
-                                <span class="ar">استقرار حرارة يحمي المواد من التلف.</span>
-                                <span class="en">Temperature stability that protects inventory and reduces waste.</span>
-                            </li>
+                    <article class="service-card p-6">
+                        <i class="fa-solid fa-temperature-low text-[#d4af37] text-3xl mb-5"></i>
+                        <h3 class="text-2xl font-black mb-3" data-i18n="svc2Title">التبريد التجاري وغرف التجميد</h3>
+                        <p class="text-slate-400 leading-relaxed mb-5" data-i18n="svc2Desc">حماية تامة لمخزونك الغذائي. نصمم ونركب غرف التبريد والتجميد ونحافظ على استقرار درجات الحرارة لتقليل الهدر.</p>
+                        <ul class="grid gap-2">
+                            <li data-i18n="svc2Li1">تصميم وتركيب غرف التبريد والتجميد.</li>
+                            <li data-i18n="svc2Li2">صيانة ثلاجات العرض ومكائن الثلج.</li>
+                            <li data-i18n="svc2Li3">استقرار حرارة يحمي المواد من التلف.</li>
                         </ul>
                     </article>
-                    <article class="card">
-                        <i class="fa-solid fa-wind"></i>
-                        <h3>
-                            <span class="ar">التكييف وأنظمة التهوية</span>
-                            <span class="en">HVAC & Ventilation Systems</span>
-                        </h3>
-                        <p>
-                            <span class="ar">مطبخ يتنفس وصالات مريحة. نصون ونؤسس التكييف المركزي وأنظمة الشفط وسحب الدخان لتحسين بيئة العمل وراحة الزباين.</span>
-                            <span class="en">A Breathing Kitchen and Comfortable Dining. Maintenance and installation of central AC and commercial kitchen exhaust hood systems. We balance airflow to improve the crew's working environment and maintain the comfort of your guests.</span>
-                        </p>
-                        <ul>
-                            <li>
-                                <span class="ar">صيانة وتأسيس التكييف المركزي.</span>
-                                <span class="en">Central AC maintenance and installation.</span>
-                            </li>
-                            <li>
-                                <span class="ar">أنظمة شفط وسحب دخان للمطابخ.</span>
-                                <span class="en">Commercial kitchen exhaust hood systems.</span>
-                            </li>
-                            <li>
-                                <span class="ar">موازنة الهواء لتحسين بيئة الطاقم وراحة العملاء.</span>
-                                <span class="en">Airflow balancing for crew productivity and guest comfort.</span>
-                            </li>
+                    <article class="service-card p-6">
+                        <i class="fa-solid fa-wind text-[#d4af37] text-3xl mb-5"></i>
+                        <h3 class="text-2xl font-black mb-3" data-i18n="svc3Title">التكييف وأنظمة التهوية</h3>
+                        <p class="text-slate-400 leading-relaxed mb-5" data-i18n="svc3Desc">مطبخ يتنفس وصالات مريحة. نصون ونؤسس التكييف المركزي وأنظمة الشفط وسحب الدخان لتحسين بيئة العمل وراحة الزباين.</p>
+                        <ul class="grid gap-2">
+                            <li data-i18n="svc3Li1">صيانة وتأسيس التكييف المركزي.</li>
+                            <li data-i18n="svc3Li2">أنظمة شفط وسحب دخان للمطابخ.</li>
+                            <li data-i18n="svc3Li3">موازنة الهواء لتحسين بيئة الطاقم وراحة العملاء.</li>
                         </ul>
                     </article>
-                    <article class="card">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <h3>
-                            <span class="ar">عقود الصيانة الشاملة</span>
-                            <span class="en">Comprehensive Maintenance Contracts (PMs)</span>
-                        </h3>
-                        <p>
-                            <span class="ar">عقد واحد يغطي كل احتياجاتك. بدل ما تشتت ميزانيتك، نوفر صيانة وقائية للمعدات الحارة، الثلاجات، والتكييف.</span>
-                            <span class="en">One Contract for All Your Needs. Stop fragmenting your budget. We offer preventive maintenance contracts covering cooking equipment, refrigeration, and AC. Scheduled visits prevent unexpected breakdowns, backed by rapid emergency response.</span>
-                        </p>
-                        <ul>
-                            <li>
-                                <span class="ar">زيارات مجدولة تمنع الأعطال قبل حدوثها.</span>
-                                <span class="en">Scheduled visits that prevent unexpected breakdowns.</span>
-                            </li>
-                            <li>
-                                <span class="ar">تغطية معدات الطبخ والثلاجات والتكييف.</span>
-                                <span class="en">Coverage for cooking equipment, refrigeration, and AC.</span>
-                            </li>
-                            <li>
-                                <span class="ar">تدخل سريع وقت الطوارئ.</span>
-                                <span class="en">Rapid emergency response when downtime is not an option.</span>
-                            </li>
+                    <article class="service-card p-6">
+                        <i class="fa-solid fa-shield-halved text-[#d4af37] text-3xl mb-5"></i>
+                        <h3 class="text-2xl font-black mb-3" data-i18n="svc4Title">عقود الصيانة الشاملة</h3>
+                        <p class="text-slate-400 leading-relaxed mb-5" data-i18n="svc4Desc">عقد واحد يغطي كل احتياجاتك. بدل ما تشتت ميزانيتك، نوفر صيانة وقائية للمعدات الحارة، الثلاجات، والتكييف.</p>
+                        <ul class="grid gap-2">
+                            <li data-i18n="svc4Li1">زيارات مجدولة تمنع الأعطال قبل حدوثها.</li>
+                            <li data-i18n="svc4Li2">تغطية معدات الطبخ والثلاجات والتكييف.</li>
+                            <li data-i18n="svc4Li3">تدخل سريع وقت الطوارئ.</li>
                         </ul>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="contract">
-            <div class="section-inner">
+        <section class="py-16 bg-[#0a192f] border-b border-[#112240]">
+            <div class="section-shell grid grid-cols-1 lg:grid-cols-[1fr_0.8fr] gap-8 items-center">
                 <div>
-                    <h2>
-                        <span class="ar">عقد واحد بدل زحمة الموردين.</span>
-                        <span class="en">One contract instead of supplier overload.</span>
-                    </h2>
-                    <p>
-                        <span class="ar">خل معدات الطبخ، الثلاجات، والتكييف تحت متابعة واحدة. زيارات وقائية، تدخل سريع، وتوصيات واضحة تحمي تشغيلك وميزانيتك.</span>
-                        <span class="en">Keep cooking equipment, refrigeration, and AC under one maintenance plan: preventive visits, fast response, and clear recommendations that protect uptime and budget.</span>
-                    </p>
-                    <a class="btn btn-primary" href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D8%AE%D8%A8%D9%8A%D8%B1%20%D9%85%D9%86%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A8%20%D8%A7%D9%84%D8%A8%D8%A7%D8%B1%D8%AF" target="_blank" rel="noopener noreferrer">
+                    <h2 class="text-3xl md:text-5xl font-black mb-5" data-i18n="contractTitle">عقد واحد بدل زحمة الموردين.</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-7" data-i18n="contractDesc">خل معدات الطبخ، الثلاجات، والتكييف تحت متابعة واحدة. زيارات وقائية، تدخل سريع، وتوصيات واضحة تحمي تشغيلك وميزانيتك.</p>
+                    <a href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D8%AE%D8%A8%D9%8A%D8%B1%20%D9%85%D9%86%20%D8%A7%D9%84%D8%BA%D8%B1%D8%A8%20%D8%A7%D9%84%D8%A8%D8%A7%D8%B1%D8%AF" class="cta bg-gold-gradient">
                         <i class="fa-brands fa-whatsapp"></i>
-                        <span class="ar">تواصل مع خبير الآن</span>
-                        <span class="en">Talk to an expert now</span>
+                        <span data-i18n="talkExpert">تواصل مع خبير الآن</span>
                     </a>
                 </div>
-                <ul class="contract-points">
-                    <li>
-                        <i class="fa-solid fa-circle-check"></i>
-                        <span class="ar">تغطية للمعدات الحارة والباردة</span>
-                        <span class="en">Coverage for hot and cold equipment</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-circle-check"></i>
-                        <span class="ar">زيارات مجدولة حسب ضغط التشغيل</span>
-                        <span class="en">Scheduled visits by operating pressure</span>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-circle-check"></i>
-                        <span class="ar">أولوية تدخل وقت الطوارئ</span>
-                        <span class="en">Priority response during emergencies</span>
-                    </li>
-                </ul>
+                <div class="grid gap-3">
+                    <div class="feature-card p-4 flex items-center gap-3"><i class="fa-solid fa-circle-check text-[#d4af37]"></i><span class="font-black" data-i18n="contractPoint1">تغطية للمعدات الحارة والباردة</span></div>
+                    <div class="feature-card p-4 flex items-center gap-3"><i class="fa-solid fa-circle-check text-[#d4af37]"></i><span class="font-black" data-i18n="contractPoint2">زيارات مجدولة حسب ضغط التشغيل</span></div>
+                    <div class="feature-card p-4 flex items-center gap-3"><i class="fa-solid fa-circle-check text-[#d4af37]"></i><span class="font-black" data-i18n="contractPoint3">أولوية تدخل وقت الطوارئ</span></div>
+                </div>
             </div>
         </section>
 
-        <section id="process" class="process">
-            <div class="section-inner">
-                <div class="section-head">
-                    <h2>
-                        <span class="ar">من التقييم للتشغيل.. شغل واضح بدون تعقيد.</span>
-                        <span class="en">From Assessment to Operation.. A Clear Process.</span>
-                    </h2>
-                    <p>
-                        <span class="ar">نبدأ بفهم المنظومة كاملة، ثم نعطيك قرار واضح: إصلاح، توريد، أو عقد صيانة يناسب تشغيلك.</span>
-                        <span class="en">We assess the full operation, define priorities, and execute around your service hours so maintenance supports the business instead of interrupting it.</span>
-                    </p>
+        <section id="process" class="py-16 md:py-20 bg-[#06101e] border-b border-[#112240]">
+            <div class="section-shell">
+                <div class="max-w-3xl mb-10">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4" data-i18n="processTitle">من التقييم للتشغيل.. شغل واضح بدون تعقيد.</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed" data-i18n="processDesc">نبدأ بفهم المنظومة كاملة، ثم نعطيك قرار واضح: إصلاح، توريد، أو عقد صيانة يناسب تشغيلك.</p>
                 </div>
-                <div class="steps">
-                    <article class="step">
-                        <h3>
-                            <span class="ar">تقييم شامل</span>
-                            <span class="en">Comprehensive Assessment</span>
-                        </h3>
-                        <p>
-                            <span class="ar">نفحص مطبخك بالكامل: معدات طبخ، تبريد، وتكييف، ونعطيك تقرير واضح بالوضع الفعلي وأولويات التدخل.</span>
-                            <span class="en">We inspect your entire kitchen, including cooking equipment, refrigeration, and AC, and provide a clear report on the actual condition and service priorities.</span>
-                        </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <article class="step-card p-6">
+                        <div class="w-10 h-10 rounded-full bg-gold-gradient text-[#06101e] flex items-center justify-center font-black mb-5">1</div>
+                        <h3 class="font-black text-xl mb-2" data-i18n="step1Title">تقييم شامل</h3>
+                        <p class="text-slate-400 leading-relaxed" data-i18n="step1Desc">نفحص مطبخك بالكامل: معدات طبخ، تبريد، وتكييف، ونعطيك تقرير واضح بالوضع الفعلي وأولويات التدخل.</p>
                     </article>
-                    <article class="step">
-                        <h3>
-                            <span class="ar">تسعير شفاف</span>
-                            <span class="en">Transparent Pricing</span>
-                        </h3>
-                        <p>
-                            <span class="ar">نقدم عرض سعر يوضح تكلفة الإصلاح أو التوريد أو عقد الصيانة، بدون رسوم مفاجئة.</span>
-                            <span class="en">We deliver a detailed quote covering repair, supply, or maintenance contracts, with zero hidden or surprise fees.</span>
-                        </p>
+                    <article class="step-card p-6">
+                        <div class="w-10 h-10 rounded-full bg-gold-gradient text-[#06101e] flex items-center justify-center font-black mb-5">2</div>
+                        <h3 class="font-black text-xl mb-2" data-i18n="step2Title">تسعير شفاف</h3>
+                        <p class="text-slate-400 leading-relaxed" data-i18n="step2Desc">نقدم عرض سعر يوضح تكلفة الإصلاح أو التوريد أو عقد الصيانة، بدون رسوم مفاجئة.</p>
                     </article>
-                    <article class="step">
-                        <h3>
-                            <span class="ar">تنفيذ بمرونة</span>
-                            <span class="en">Flexible Execution</span>
-                        </h3>
-                        <p>
-                            <span class="ar">نشتغل بأوقات تناسب تشغيل مطعمك، قبل الافتتاح أو بعد الإغلاق، عشان ما نأثر على زباينك.</span>
-                            <span class="en">We schedule our work around your operational hours, pre-opening or post-closing, to avoid disrupting your service or your customers.</span>
-                        </p>
+                    <article class="step-card p-6">
+                        <div class="w-10 h-10 rounded-full bg-gold-gradient text-[#06101e] flex items-center justify-center font-black mb-5">3</div>
+                        <h3 class="font-black text-xl mb-2" data-i18n="step3Title">تنفيذ بمرونة</h3>
+                        <p class="text-slate-400 leading-relaxed" data-i18n="step3Desc">نشتغل بأوقات تناسب تشغيل مطعمك، قبل الافتتاح أو بعد الإغلاق، عشان ما نأثر على زباينك.</p>
                     </article>
-                    <article class="step">
-                        <h3>
-                            <span class="ar">متابعة وضمان</span>
-                            <span class="en">Follow-Up & Warranty</span>
-                        </h3>
-                        <p>
-                            <span class="ar">نرجع نتأكد إن المعدات شغالة بكفاءة بعد الزيارة، ونرفع توصيات تمنع تكرار نفس العطل.</span>
-                            <span class="en">We follow up to ensure equipment is running efficiently after the service, providing recommendations to prevent recurring issues.</span>
-                        </p>
+                    <article class="step-card p-6">
+                        <div class="w-10 h-10 rounded-full bg-gold-gradient text-[#06101e] flex items-center justify-center font-black mb-5">4</div>
+                        <h3 class="font-black text-xl mb-2" data-i18n="step4Title">متابعة وضمان</h3>
+                        <p class="text-slate-400 leading-relaxed" data-i18n="step4Desc">نرجع نتأكد إن المعدات شغالة بكفاءة بعد الزيارة، ونرفع توصيات تمنع تكرار نفس العطل.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="social" class="field-work">
-            <div class="section-inner">
-                <h2>
-                    <span class="ar">شغلنا الميداني</span>
-                    <span class="en">Our Field Work</span>
-                </h2>
-                <p>
-                    <span class="ar">تابع أعمال الغرب البارد في الموقع وشاهد جانب من الصيانة والتجهيزات على تيك توك.</span>
-                    <span class="en">Follow Cold West field work and see maintenance and fit-out updates on TikTok.</span>
-                </p>
-                <a class="btn btn-primary" href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer">
+        <section id="social" class="py-16 bg-[#0a192f] border-b border-[#112240] text-center">
+            <div class="section-shell">
+                <h2 class="text-3xl md:text-4xl font-black mb-4" data-i18n="socialTitle">شغلنا الميداني</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-7" data-i18n="socialDesc">تابع أعمال الغرب البارد في الموقع وشاهد جانب من الصيانة والتجهيزات على تيك توك.</p>
+                <a href="https://www.tiktok.com/@coldwest25" class="cta bg-white text-black hover:bg-slate-200">
                     <i class="fa-brands fa-tiktok"></i>
-                    <span class="ar">تابعنا على تيك توك</span>
-                    <span class="en">Follow us on TikTok</span>
+                    <span data-i18n="followTikTok">تابعنا على تيك توك</span>
                 </a>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="section-inner">
-                <div class="contact-grid">
-                    <div class="contact-main">
-                        <h2>
-                            <span class="ar">خلنا نقيم منظومة مطبخك بالكامل.</span>
-                            <span class="en">Let us assess your full kitchen system.</span>
-                        </h2>
-                        <p>
-                            <span class="ar">ارسل لنا نوع النشاط، حالة معدات الطبخ والتبريد والتكييف، وهل المطلوب صيانة أو تجهيز جديد. بنرد عليك بخطوة واضحة بدل التخمين.</span>
-                            <span class="en">Send your business type, cooking equipment, refrigeration, and AC condition, and whether you need service or a new setup. We will respond with a clear next step.</span>
-                        </p>
-                        <div class="contact-actions">
-                            <a class="btn btn-primary" href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D8%AE%D8%A8%D9%8A%D8%B1%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D9%85%D8%B7%D8%B9%D9%85%D9%8A" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                <span class="ar">تواصل مع خبير الآن</span>
-                                <span class="en">Talk to an expert now</span>
-                            </a>
-                            <a class="btn btn-secondary" href="tel:+966550197070">
-                                <i class="fa-solid fa-phone"></i>
-                                <span class="ar">اتصال مباشر</span>
-                                <span class="en">Direct call</span>
-                            </a>
-                        </div>
-                    </div>
-                    <aside class="contact-side" aria-label="Contact links">
-                        <a class="contact-link" href="https://maps.app.goo.gl/LU3RFwT4GqB4kBoD8" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                            <span>
-                                <small class="ar">العنوان</small>
-                                <small class="en">Address</small>
-                                <span class="ar">مكة المكرمة - البحيرات - شارع الأميرة الجوهرة بنت عبد العزيز</span>
-                                <span class="en">Makkah - Al Buhayrat - Princess Al Jawhara bint Abdulaziz Street</span>
-                            </span>
+        <section id="contact" class="py-16 md:py-20 bg-[#06101e]">
+            <div class="section-shell grid grid-cols-1 lg:grid-cols-[1fr_0.78fr] gap-6">
+                <div class="contact-card p-7 md:p-9">
+                    <h2 class="text-3xl md:text-4xl font-black mb-4" data-i18n="contactTitle">خلنا نقيم منظومة مطبخك بالكامل.</h2>
+                    <p class="text-slate-400 text-lg leading-relaxed mb-7" data-i18n="contactDesc">ارسل لنا نوع النشاط، حالة معدات الطبخ والتبريد والتكييف، وهل المطلوب صيانة أو تجهيز جديد. بنرد عليك بخطوة واضحة بدل التخمين.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="https://wa.me/966550197070?text=%D8%A3%D8%A8%D9%8A%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D8%AE%D8%A8%D9%8A%D8%B1%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D9%85%D8%B7%D8%B9%D9%85%D9%8A" class="cta bg-gold-gradient">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span data-i18n="talkExpert">تواصل مع خبير الآن</span>
                         </a>
-                        <a class="contact-link" href="tel:+966550197070">
+                        <a href="tel:+966550197070" class="cta cta-outline">
                             <i class="fa-solid fa-phone"></i>
-                            <span>
-                                <small class="ar">رقم الاتصال</small>
-                                <small class="en">Phone</small>
-                                <span dir="ltr">+966 55 019 7070</span>
-                            </span>
+                            <span data-i18n="directCall">اتصال مباشر</span>
                         </a>
-                        <a class="contact-link" href="mailto:coldwest25@gmail.com">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>
-                                <small class="ar">البريد الإلكتروني</small>
-                                <small class="en">Email</small>
-                                <span>coldwest25@gmail.com</span>
-                            </span>
-                        </a>
-                        <a class="contact-link" href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-tiktok"></i>
-                            <span>
-                                <small class="ar">حساب تيك توك</small>
-                                <small class="en">TikTok</small>
-                                <span>@coldwest25</span>
-                            </span>
-                        </a>
-                        <div class="contact-link">
-                            <i class="fa-solid fa-file-signature"></i>
-                            <span>
-                                <small class="ar">رقم السجل التجاري</small>
-                                <small class="en">Commercial registration</small>
-                                <span dir="ltr">7049838308</span>
-                            </span>
-                        </div>
-                    </aside>
+                    </div>
                 </div>
+                <aside class="grid gap-3">
+                    <a class="contact-card p-4 flex gap-3 items-start no-underline text-slate-200" href="https://maps.app.goo.gl/LU3RFwT4GqB4kBoD8" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-map-location-dot text-[#d4af37] mt-1"></i>
+                        <span><strong class="block" data-i18n="addressLabel">العنوان</strong><span class="text-slate-400" data-i18n="addressValue">مكة المكرمة - البحيرات - شارع الأميرة الجوهرة بنت عبد العزيز</span></span>
+                    </a>
+                    <a class="contact-card p-4 flex gap-3 items-start no-underline text-slate-200" href="tel:+966550197070">
+                        <i class="fa-solid fa-phone text-[#d4af37] mt-1"></i>
+                        <span><strong class="block" data-i18n="phoneLabel">رقم الاتصال</strong><span class="text-slate-400" dir="ltr">+966 55 019 7070</span></span>
+                    </a>
+                    <a class="contact-card p-4 flex gap-3 items-start no-underline text-slate-200" href="mailto:coldwest25@gmail.com">
+                        <i class="fa-solid fa-envelope text-[#d4af37] mt-1"></i>
+                        <span><strong class="block" data-i18n="emailLabel">البريد الإلكتروني</strong><span class="text-slate-400">coldwest25@gmail.com</span></span>
+                    </a>
+                    <a class="contact-card p-4 flex gap-3 items-start no-underline text-slate-200" href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-tiktok text-[#d4af37] mt-1"></i>
+                        <span><strong class="block" data-i18n="tiktokLabel">حساب تيك توك</strong><span class="text-slate-400">@coldwest25</span></span>
+                    </a>
+                    <div class="contact-card p-4 flex gap-3 items-start text-slate-200">
+                        <i class="fa-solid fa-file-signature text-[#d4af37] mt-1"></i>
+                        <span><strong class="block" data-i18n="crLabel">رقم السجل التجاري</strong><span class="text-slate-400" dir="ltr">7049838308</span></span>
+                    </div>
+                </aside>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="section-inner">
-            <div class="footer-grid">
-                <div>
-                    <h3>
-                        <span class="ar">الغرب البارد</span>
-                        <span class="en">Cold West</span>
-                    </h3>
-                    <p>
-                        <span class="ar">جهة واحدة لتوريد وصيانة معدات المطابخ، التبريد التجاري، والتكييف للمطاعم والكافيهات.</span>
-                        <span class="en">One partner for restaurant kitchen equipment, commercial refrigeration, and AC service.</span>
-                    </p>
-                </div>
-                <div>
-                    <h4>
-                        <span class="ar">روابط سريعة</span>
-                        <span class="en">Quick Links</span>
-                    </h4>
-                    <ul class="footer-links">
-                        <li><a href="#services"><span class="ar">الخدمات</span><span class="en">Services</span></a></li>
-                        <li><a href="#process"><span class="ar">طريقة العمل</span><span class="en">Our Process</span></a></li>
-                        <li><a href="#social"><span class="ar">أعمالنا</span><span class="en">Our Work</span></a></li>
-                        <li><a href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact Us</span></a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>
-                        <span class="ar">التواصل</span>
-                        <span class="en">Contact</span>
-                    </h4>
-                    <ul class="footer-links">
-                        <li><a href="tel:+966550197070" dir="ltr">+966 55 019 7070</a></li>
-                        <li><a href="mailto:coldwest25@gmail.com">coldwest25@gmail.com</a></li>
-                        <li><a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer">@coldwest25</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>
-                        <span class="ar">الموقع والسجل</span>
-                        <span class="en">Location and CR</span>
-                    </h4>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="https://maps.app.goo.gl/LU3RFwT4GqB4kBoD8" target="_blank" rel="noopener noreferrer">
-                                <span class="ar">مكة المكرمة - البحيرات</span>
-                                <span class="en">Makkah - Al Buhayrat</span>
-                            </a>
-                        </li>
-                        <li>
-                            <span>
-                                <span class="ar">سجل تجاري رقم</span>
-                                <span class="en">CR number</span>
-                                <span dir="ltr">7049838308</span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+    <footer class="bg-[#040b14] pt-14 pb-24 border-t border-[#112240]">
+        <div class="section-shell grid grid-cols-1 md:grid-cols-4 gap-8 text-sm text-slate-400">
+            <div class="md:col-span-1">
+                <img src="logo-wide.png" alt="Cold West" class="h-12 mb-5 logo-mark">
+                <p data-i18n="footerDesc">جهة واحدة لتوريد وصيانة معدات المطابخ، التبريد التجاري، والتكييف للمطاعم والكافيهات.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-black mb-4" data-i18n="footerLinks">روابط سريعة</h4>
+                <ul class="footer-list grid gap-2">
+                    <li><a href="#services" class="hover:text-[#d4af37]" data-i18n="navServices">خدماتنا</a></li>
+                    <li><a href="#process" class="hover:text-[#d4af37]" data-i18n="navProcess">طريقة العمل</a></li>
+                    <li><a href="#social" class="hover:text-[#d4af37]" data-i18n="navWork">أعمالنا</a></li>
+                    <li><a href="#contact" class="hover:text-[#d4af37]" data-i18n="navContact">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-black mb-4" data-i18n="footerContact">تواصل معنا</h4>
+                <ul class="footer-list grid gap-2">
+                    <li><a href="tel:+966550197070" dir="ltr" class="hover:text-[#d4af37]">+966 55 019 7070</a></li>
+                    <li><a href="mailto:coldwest25@gmail.com" class="hover:text-[#d4af37]">coldwest25@gmail.com</a></li>
+                    <li><a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37]">@coldwest25</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-black mb-4" data-i18n="footerOfficial">المعلومات الرسمية</h4>
+                <ul class="footer-list grid gap-2">
+                    <li><a href="https://maps.app.goo.gl/LU3RFwT4GqB4kBoD8" target="_blank" rel="noopener noreferrer" class="hover:text-[#d4af37]" data-i18n="addressShort">مكة المكرمة - البحيرات</a></li>
+                    <li><span data-i18n="crFooter">سجل تجاري رقم: 7049838308</span></li>
+                </ul>
             </div>
         </div>
     </footer>
 
-    <a class="btn btn-primary floating-whatsapp" href="https://wa.me/966550197070" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <a class="cta bg-gold-gradient floating-whatsapp" href="https://wa.me/966550197070" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
-        <span class="ar">تواصل واتساب</span>
-        <span class="en">WhatsApp us</span>
+        <span data-i18n="whatsappFloat">تواصل واتساب</span>
     </a>
 
     <script>
-        const htmlEl = document.documentElement;
-        const bodyEl = document.body;
-        const arBtn = document.getElementById("lang-ar");
-        const enBtn = document.getElementById("lang-en");
+        let currentLang = "ar";
 
-        function setLanguage(lang) {
-            const isArabic = lang === "ar";
-            htmlEl.lang = isArabic ? "ar" : "en";
-            htmlEl.dir = isArabic ? "rtl" : "ltr";
-            bodyEl.dir = isArabic ? "rtl" : "ltr";
-            bodyEl.dataset.lang = lang;
-            arBtn.classList.toggle("active", isArabic);
-            enBtn.classList.toggle("active", !isArabic);
+        const translations = {
+            ar: {
+                navServices: "خدماتنا",
+                navStrengths: "نقاط القوة",
+                navProcess: "طريقة العمل",
+                navWork: "أعمالنا",
+                navContact: "تواصل معنا",
+                navAction: "واتساب",
+                langBtn: "English",
+                eyebrow: "حل واحد للمطبخ والتبريد والتكييف",
+                heroTitle: "مطبخك، ثلاجاتك، وتكييفك..<br><span class='gold-gradient'>كلها في يد واحدة.</span>",
+                heroDesc: "وفر وقتك وميزانيتك مع جهة واحدة تفهم المطبخ كمنظومة كاملة. من توريد معدات الطبخ وتركيب غرف التبريد، إلى عقود الصيانة الشاملة اللي تضمن استمرارية شغلك بدون أعطال أو زحمة موردين.",
+                bookService: "احجز موعد صيانة",
+                fitoutQuote: "اطلب تسعيرة تجهيز",
+                heroPoint1: "معدات طبخ تتحمل ضغط المواسم",
+                heroPoint2: "تبريد تجاري يحمي مخزونك",
+                heroPoint3: "تكييف وتهوية لمطبخ يتنفس",
+                heroPoint4: "عقد واحد يغطي احتياجاتك",
+                whyTitle: "ريح راسك من زحمة الموردين.",
+                whyDesc: "إدارة المرافق والمطابخ تصير معقدة لما تتعامل مع جهات مختلفة. في الغرب البارد، دمجنا لك صيانة المعدات الحارة والباردة مع أنظمة التكييف والتهوية. فريق واحد ينزل موقعك، يقيم المنظومة كاملة، ويضمن لك إن خط الإنتاج شغال بأعلى كفاءة.",
+                feat1Title: "بيئة عمل مثالية",
+                feat1Desc: "تكييف وأنظمة تهوية متقدمة تناسب المطابخ والصالات التجارية.",
+                feat2Title: "تحمل التشغيل المستمر",
+                feat2Desc: "معدات مطابخ وتبريد مصممة لأوقات الذروة التجارية.",
+                feat3Title: "استجابة طارئة للأزمات",
+                feat3Desc: "فريق فني يتدخل بسرعة لتقليل تعطل خط الإنتاج.",
+                feat4Title: "حماية لاستثماراتك",
+                feat4Desc: "عقود صيانة وقائية تقلل الأعطال والهدر وتطيل عمر المعدات.",
+                servicesTitle: "خدمات تغطي منظومة المطعم كاملة.",
+                servicesDesc: "من المعدات الحارة إلى التبريد والتكييف، نخلي التشغيل والصيانة تحت إدارة واحدة واضحة.",
+                svc1Title: "معدات المطابخ",
+                svc1Desc: "معدات تتحمل ضغط المواسم. نورد معدات المطبخ عند الطلب ونوفر لها دعم فني سريع وقت الذروة عشان خط الإنتاج ما يوقف.",
+                svc1Li1: "توريد أفران وقلايات وشوايات حسب احتياج التشغيل.",
+                svc1Li2: "دعم فني لإصلاح الأعطال وقت الذروة.",
+                svc1Li3: "حلول تساعد خط الإنتاج يستمر بدون توقف.",
+                svc2Title: "التبريد التجاري وغرف التجميد",
+                svc2Desc: "حماية تامة لمخزونك الغذائي. نصمم ونركب غرف التبريد والتجميد ونحافظ على استقرار درجات الحرارة لتقليل الهدر.",
+                svc2Li1: "تصميم وتركيب غرف التبريد والتجميد.",
+                svc2Li2: "صيانة ثلاجات العرض ومكائن الثلج.",
+                svc2Li3: "استقرار حرارة يحمي المواد من التلف.",
+                svc3Title: "التكييف وأنظمة التهوية",
+                svc3Desc: "مطبخ يتنفس وصالات مريحة. نصون ونؤسس التكييف المركزي وأنظمة الشفط وسحب الدخان لتحسين بيئة العمل وراحة الزباين.",
+                svc3Li1: "صيانة وتأسيس التكييف المركزي.",
+                svc3Li2: "أنظمة شفط وسحب دخان للمطابخ.",
+                svc3Li3: "موازنة الهواء لتحسين بيئة الطاقم وراحة العملاء.",
+                svc4Title: "عقود الصيانة الشاملة",
+                svc4Desc: "عقد واحد يغطي كل احتياجاتك. بدل ما تشتت ميزانيتك، نوفر صيانة وقائية للمعدات الحارة، الثلاجات، والتكييف.",
+                svc4Li1: "زيارات مجدولة تمنع الأعطال قبل حدوثها.",
+                svc4Li2: "تغطية معدات الطبخ والثلاجات والتكييف.",
+                svc4Li3: "تدخل سريع وقت الطوارئ.",
+                contractTitle: "عقد واحد بدل زحمة الموردين.",
+                contractDesc: "خل معدات الطبخ، الثلاجات، والتكييف تحت متابعة واحدة. زيارات وقائية، تدخل سريع، وتوصيات واضحة تحمي تشغيلك وميزانيتك.",
+                talkExpert: "تواصل مع خبير الآن",
+                contractPoint1: "تغطية للمعدات الحارة والباردة",
+                contractPoint2: "زيارات مجدولة حسب ضغط التشغيل",
+                contractPoint3: "أولوية تدخل وقت الطوارئ",
+                processTitle: "من التقييم للتشغيل.. شغل واضح بدون تعقيد.",
+                processDesc: "نبدأ بفهم المنظومة كاملة، ثم نعطيك قرار واضح: إصلاح، توريد، أو عقد صيانة يناسب تشغيلك.",
+                step1Title: "تقييم شامل",
+                step1Desc: "نفحص مطبخك بالكامل: معدات طبخ، تبريد، وتكييف، ونعطيك تقرير واضح بالوضع الفعلي وأولويات التدخل.",
+                step2Title: "تسعير شفاف",
+                step2Desc: "نقدم عرض سعر يوضح تكلفة الإصلاح أو التوريد أو عقد الصيانة، بدون رسوم مفاجئة.",
+                step3Title: "تنفيذ بمرونة",
+                step3Desc: "نشتغل بأوقات تناسب تشغيل مطعمك، قبل الافتتاح أو بعد الإغلاق، عشان ما نأثر على زباينك.",
+                step4Title: "متابعة وضمان",
+                step4Desc: "نرجع نتأكد إن المعدات شغالة بكفاءة بعد الزيارة، ونرفع توصيات تمنع تكرار نفس العطل.",
+                socialTitle: "شغلنا الميداني",
+                socialDesc: "تابع أعمال الغرب البارد في الموقع وشاهد جانب من الصيانة والتجهيزات على تيك توك.",
+                followTikTok: "تابعنا على تيك توك",
+                contactTitle: "خلنا نقيم منظومة مطبخك بالكامل.",
+                contactDesc: "ارسل لنا نوع النشاط، حالة معدات الطبخ والتبريد والتكييف، وهل المطلوب صيانة أو تجهيز جديد. بنرد عليك بخطوة واضحة بدل التخمين.",
+                directCall: "اتصال مباشر",
+                addressLabel: "العنوان",
+                addressValue: "مكة المكرمة - البحيرات - شارع الأميرة الجوهرة بنت عبد العزيز",
+                phoneLabel: "رقم الاتصال",
+                emailLabel: "البريد الإلكتروني",
+                tiktokLabel: "حساب تيك توك",
+                crLabel: "رقم السجل التجاري",
+                footerDesc: "جهة واحدة لتوريد وصيانة معدات المطابخ، التبريد التجاري، والتكييف للمطاعم والكافيهات.",
+                footerLinks: "روابط سريعة",
+                footerContact: "تواصل معنا",
+                footerOfficial: "المعلومات الرسمية",
+                addressShort: "مكة المكرمة - البحيرات",
+                crFooter: "سجل تجاري رقم: 7049838308",
+                whatsappFloat: "تواصل واتساب"
+            },
+            en: {
+                navServices: "Services",
+                navStrengths: "Strengths",
+                navProcess: "Our Process",
+                navWork: "Our Work",
+                navContact: "Contact Us",
+                navAction: "WhatsApp",
+                langBtn: "العربية",
+                eyebrow: "One partner for kitchen, refrigeration, and HVAC",
+                heroTitle: "Your Kitchen, Refrigeration, and HVAC..<br><span class='gold-gradient'>Managed by One Partner.</span>",
+                heroDesc: "Save time and budget with a single partner who understands your kitchen as a complete ecosystem. From supplying cooking equipment and installing cold rooms to comprehensive maintenance contracts that ensure continuous operation without the hassle of multiple vendors.",
+                bookService: "Book a Service Call",
+                fitoutQuote: "Request a Fit-Out Quote",
+                heroPoint1: "Equipment built for peak seasons",
+                heroPoint2: "Protection for food inventory",
+                heroPoint3: "HVAC and ventilation systems",
+                heroPoint4: "One contract for all your needs",
+                whyTitle: "Stop Juggling Multiple Vendors.",
+                whyDesc: "Facility and kitchen management gets complicated when dealing with different contractors. At Cold West, we have integrated hot and cold equipment maintenance with HVAC and ventilation systems. One unified team assesses your entire operation, ensuring your production line runs at peak efficiency.",
+                feat1Title: "Ideal Work Environment",
+                feat1Desc: "Advanced HVAC and ventilation systems suitable for commercial kitchens and dining areas.",
+                feat2Title: "Continuous Operation",
+                feat2Desc: "Kitchen and refrigeration equipment designed for commercial peak hours.",
+                feat3Title: "Emergency Response",
+                feat3Desc: "A technical team that responds quickly to reduce production downtime.",
+                feat4Title: "Protect Your Investments",
+                feat4Desc: "Preventive maintenance contracts that reduce failures, waste, and equipment wear.",
+                servicesTitle: "The Balanced Fusion for Foodservice Operations.",
+                servicesDesc: "Commercial kitchen equipment, refrigeration, HVAC, and preventive maintenance managed under one clear service partner.",
+                svc1Title: "Commercial Kitchen Equipment",
+                svc1Desc: "Equipment Built for Peak Seasons. We supply commercial kitchen equipment on demand for new setups and provide rapid technical support to fix breakdowns during rush hours so your production line never stops.",
+                svc1Li1: "Ovens, fryers, and grills supplied for new setups.",
+                svc1Li2: "Rapid technical support during rush-hour breakdowns.",
+                svc1Li3: "Support designed to keep your production line moving.",
+                svc2Title: "Commercial Refrigeration & Freezers",
+                svc2Desc: "Total Protection for Your Food Inventory. Design and installation of cold rooms and walk-in freezers, plus maintenance for display fridges and ice machines. We ensure temperature stability to protect your ingredients from spoilage and reduce waste.",
+                svc2Li1: "Cold room and walk-in freezer design and installation.",
+                svc2Li2: "Maintenance for display fridges and ice machines.",
+                svc2Li3: "Temperature stability that protects inventory and reduces waste.",
+                svc3Title: "HVAC & Ventilation Systems",
+                svc3Desc: "A Breathing Kitchen and Comfortable Dining. Maintenance and installation of central AC and commercial kitchen exhaust hood systems. We balance airflow to improve the crew's working environment and maintain the comfort of your guests.",
+                svc3Li1: "Central AC maintenance and installation.",
+                svc3Li2: "Commercial kitchen exhaust hood systems.",
+                svc3Li3: "Airflow balancing for crew productivity and guest comfort.",
+                svc4Title: "Comprehensive Maintenance Contracts (PMs)",
+                svc4Desc: "One Contract for All Your Needs. Stop fragmenting your budget. We offer preventive maintenance contracts covering cooking equipment, refrigeration, and AC. Scheduled visits prevent unexpected breakdowns, backed by rapid emergency response.",
+                svc4Li1: "Scheduled visits that prevent unexpected breakdowns.",
+                svc4Li2: "Coverage for cooking equipment, refrigeration, and AC.",
+                svc4Li3: "Rapid emergency response when downtime is not an option.",
+                contractTitle: "One Contract Instead of Multiple Vendors.",
+                contractDesc: "Keep cooking equipment, refrigeration, and AC under one maintenance plan: preventive visits, fast response, and clear recommendations that protect uptime and budget.",
+                talkExpert: "Talk to an Expert Now",
+                contractPoint1: "Coverage for hot and cold equipment",
+                contractPoint2: "Scheduled visits by operating pressure",
+                contractPoint3: "Priority response during emergencies",
+                processTitle: "From Assessment to Operation.. A Clear Process.",
+                processDesc: "We assess the full operation, define priorities, and execute around your service hours so maintenance supports the business instead of interrupting it.",
+                step1Title: "Comprehensive Assessment",
+                step1Desc: "We inspect your entire kitchen, including cooking equipment, refrigeration, and AC, and provide a clear report on the actual condition and service priorities.",
+                step2Title: "Transparent Pricing",
+                step2Desc: "We deliver a detailed quote covering repair, supply, or maintenance contracts, with zero hidden or surprise fees.",
+                step3Title: "Flexible Execution",
+                step3Desc: "We schedule our work around your operational hours, pre-opening or post-closing, to avoid disrupting your service or your customers.",
+                step4Title: "Follow-Up & Warranty",
+                step4Desc: "We follow up to ensure equipment is running efficiently after the service, providing recommendations to prevent recurring issues.",
+                socialTitle: "Our Field Work",
+                socialDesc: "Follow Cold West field work and see maintenance and fit-out updates on TikTok.",
+                followTikTok: "Follow us on TikTok",
+                contactTitle: "Let us assess your full kitchen system.",
+                contactDesc: "Send your business type, cooking equipment, refrigeration, and AC condition, and whether you need service or a new setup. We will respond with a clear next step.",
+                directCall: "Direct Call",
+                addressLabel: "Location",
+                addressValue: "Makkah - Al Buhayrat - Princess Al Jawhara bint Abdulaziz Street",
+                phoneLabel: "Contact Number",
+                emailLabel: "Email",
+                tiktokLabel: "TikTok",
+                crLabel: "Commercial Registration",
+                footerDesc: "One partner for restaurant kitchen equipment, commercial refrigeration, and HVAC service.",
+                footerLinks: "Quick Links",
+                footerContact: "Contact Us",
+                footerOfficial: "Official Info",
+                addressShort: "Makkah - Al Buhayrat",
+                crFooter: "CR Number: 7049838308",
+                whatsappFloat: "WhatsApp Us"
+            }
+        };
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            document.getElementById("lang-btn").innerText = translations[lang].langBtn;
+
+            document.querySelectorAll("[data-i18n]").forEach((node) => {
+                const key = node.getAttribute("data-i18n");
+                if (translations[lang][key]) node.innerText = translations[lang][key];
+            });
+
+            document.querySelectorAll("[data-i18n-html]").forEach((node) => {
+                const key = node.getAttribute("data-i18n-html");
+                if (translations[lang][key]) node.innerHTML = translations[lang][key];
+            });
         }
 
-        arBtn.addEventListener("click", () => setLanguage("ar"));
-        enBtn.addEventListener("click", () => setLanguage("en"));
-        setLanguage("ar");
+        function toggleLang() {
+            applyLanguage(currentLang === "ar" ? "en" : "ar");
+        }
+
+        applyLanguage("ar");
     </script>
 </body>
 </html>
