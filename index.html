@@ -1,219 +1,443 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الغرب البارد لصيانة معدات المطاعم والتكييف</title>
-    <!-- هذا السطر يجيب الأيقونات الجاهزة -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Tajawal', sans-serif; /* خط عربي جميل */
-            background-color: #f4f7f6;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-            position: relative;
-        }
-        .lang-switcher {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            display: flex;
-            gap: 5px;
-        }
-        body[dir="ltr"] .lang-switcher {
-            left: auto;
-            right: 15px;
-        }
-        .lang-btn {
-            background-color: #e9ecef;
-            border: 1px solid #dee2e6;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .lang-btn.active {
-            background-color: #007bff;
-            color: white;
-            border-color: #007bff;
-        }
-        .logo {
-            width: min(320px, 88%);
-            height: auto;
-            border-radius: 0;
-            margin-bottom: 20px;
-            margin-top: 40px; /* Add margin to avoid overlap with lang switcher */
-            object-fit: contain;
-            border: 0;
-        }
-        h1 {
-            color: #0056b3;
-            margin-bottom: 10px;
-        }
-        p {
-            color: #555;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        .links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 1.1em;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .links a:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
-        .map-container {
-            margin-top: 30px;
-        }
-        .map-container h3 {
-            margin-bottom: 15px;
-            color: #0056b3;
-        }
-        .map-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px;
-            border-radius: 8px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            background-color: #188038;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .map-link:hover {
-            background-color: #146c2e;
-            transform: translateY(-2px);
-        }
-        /* Hide English by default */
-        .en { display: none; }
-    </style>
-    <!-- هذا السطر يجيب الخط من جوجل -->
+    <meta name="description" content="الغرب البارد لصيانة وتوريد حلول التكييف ومعدات المطابخ التجارية وأنظمة التبريد للمطاعم والمنشآت التجارية.">
+    <title>الغرب البارد | Cold West - حلول متكاملة للمطاعم</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: "#06101e",
+                            800: "#0a192f",
+                            700: "#112240"
+                        },
+                        gold: {
+                            400: "#e6c875",
+                            500: "#d4af37",
+                            600: "#b5952f"
+                        },
+                        ice: {
+                            400: "#8cb4d6",
+                            500: "#6495ED"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Tajawal", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: "Tajawal", sans-serif; background-color: #06101e; color: #e2e8f0; }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #e6c875 50%, #b5952f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #b5952f 100%);
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <div class="lang-switcher">
-            <button id="lang-ar" class="lang-btn active">العربية</button>
-            <button id="lang-en" class="lang-btn">English</button>
-        </div>
-
-        <img src="logo-wide.png" alt="شعار الغرب البارد" class="logo">
-
-        <h1>
-            <span class="ar">الغرب البارد لصيانة معدات المطاعم والتكييف</span>
-            <span class="en">Cold West for Restaurant Equipment and AC Maintenance</span>
-        </h1>
-        <p>
-            <span class="ar">حلول متكاملة لمعدات المطاعم، أجهزة التبريد، وأنظمة التكييف.</span>
-            <span class="en">Integrated solutions for restaurant equipment, refrigeration units, and air conditioning systems.</span>
-        </p>
-        <p>
-            <span class="ar">صيانة احترافية، توفير قطع الغيار، توريد معدات جديدة، وضمان وصيانة دورية تساعد منشأتك على العمل بكفاءة واستمرارية.</span>
-            <span class="en">Professional maintenance, spare parts supply, new equipment sourcing, warranties, and periodic service that help your business operate efficiently and continuously.</span>
-        </p>
-
-        <div class="links">
-            <a href="https://wa.me/966550197070">
-                <i class="fab fa-whatsapp"></i>
-                <span class="ar">تواصل معنا الآن</span>
-                <span class="en">Contact Us Now</span>
-            </a>
-            <a href="tel:+966550197070">
-                <i class="fas fa-phone"></i>
-                <span class="ar">اتصال مباشر</span>
-                <span class="en">Direct Call</span>
-            </a>
-            <a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-tiktok"></i>
-                <span class="ar">حسابنا على تيك توك</span>
-                <span class="en">Our TikTok Account</span>
-            </a>
-            <a href="mailto:coldwest25@gmail.com">
-                <i class="fas fa-envelope"></i>
-                <span class="ar">راسلنا على الإيميل</span>
-                <span class="en">Email Us</span>
-            </a>
-        </div>
-
-        <div class="map-container">
-            <h3>
-                <span class="ar">موقعنا</span>
-                <span class="en">Our Location</span>
-            </h3>
-            <a class="map-link" href="https://maps.app.goo.gl/LU3RFwT4GqB4kBoD8" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-map-location-dot"></i>
-                <span class="ar">افتح الموقع في خرائط Google</span>
-                <span class="en">Open location in Google Maps</span>
-            </a>
+<body class="antialiased selection:bg-gold-500 selection:text-navy-900">
+    <div class="bg-navy-900 border-b border-navy-700 text-sm py-2 px-4 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-gray-400">
+            <div class="flex items-center gap-6" dir="ltr">
+                <a href="mailto:coldwest25@gmail.com" class="hover:text-gold-400 transition flex items-center gap-2"><i class="fa-solid fa-envelope text-gold-500"></i> coldwest25@gmail.com</a>
+                <a href="tel:0550197070" class="hover:text-gold-400 transition flex items-center gap-2"><i class="fa-solid fa-phone text-gold-500"></i> 055 019 7070</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span id="topEmergency"><i class="fa-solid fa-clock ml-2 text-gold-500"></i> خدمة طوارئ 24/7</span>
+            </div>
         </div>
     </div>
 
-    <script>
-        const htmlEl = document.documentElement;
-        const arBtn = document.getElementById('lang-ar');
-        const enBtn = document.getElementById('lang-en');
-        const arElements = document.querySelectorAll('.ar');
-        const enElements = document.querySelectorAll('.en');
+    <nav class="bg-navy-800/95 backdrop-blur-md sticky top-0 z-50 border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <img src="logo-wide.png" alt="شعار الغرب البارد" class="h-12 w-auto object-contain bg-white/10 rounded-md p-1">
+                </div>
 
-        function setLanguage(lang) {
-            if (lang === 'ar') {
-                htmlEl.lang = 'ar';
-                htmlEl.dir = 'rtl';
-                document.body.style.fontFamily = "'Tajawal', sans-serif";
-                arElements.forEach(el => el.style.display = 'inline');
-                enElements.forEach(el => el.style.display = 'none');
-                arBtn.classList.add('active');
-                enBtn.classList.remove('active');
-            } else {
-                htmlEl.lang = 'en';
-                htmlEl.dir = 'ltr';
-                document.body.style.fontFamily = "'Roboto', sans-serif";
-                arElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'inline');
-                enBtn.classList.add('active');
-                arBtn.classList.remove('active');
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#services" id="navServices" class="text-gray-300 hover:text-gold-500 font-medium transition">خدماتنا</a>
+                    <a href="#process" id="navFeatures" class="text-gray-300 hover:text-gold-500 font-medium transition">نقاط القوة</a>
+                    <a href="#social" id="navWorks" class="text-gray-300 hover:text-gold-500 font-medium transition">أعمالنا</a>
+                    <button onclick="toggleLang()" id="langBtn" class="text-gold-500 font-bold border border-gold-500/50 px-3 py-1 rounded hover:bg-gold-500 hover:text-navy-900 transition">English</button>
+                    <a href="https://wa.me/966550197070" class="bg-gold-gradient hover:opacity-90 text-navy-900 px-6 py-2 rounded-md font-bold transition flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span id="navContact">تواصل معنا</span>
+                    </a>
+                </div>
+
+                <div class="flex items-center md:hidden gap-4">
+                    <button onclick="toggleLang()" id="langBtnMobile" class="text-gold-500 font-bold text-sm border border-gold-500/50 px-2 py-1 rounded">EN</button>
+                    <a href="https://wa.me/966550197070" class="text-gold-500 p-2" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-24 pb-32 overflow-hidden border-b border-navy-700">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d4af37\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 border border-gold-500 text-gold-500 px-4 py-1.5 rounded-full text-sm font-bold mb-8 bg-navy-800/50">
+                <i class="fa-solid fa-gear"></i>
+                <span id="heroBadge">حلول متكاملة لقطاع الأعمال والمشاريع التجارية</span>
+            </div>
+
+            <h1 id="heroTitle" class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                شريكك الفني لحلول<br>
+                <span class="gold-gradient">التكييف ومعدات المطابخ التجارية.</span>
+            </h1>
+
+            <p id="heroDesc" class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+                في الغرب البارد، نساعد المنشآت التجارية على الحفاظ على كفاءة التشغيل من خلال صيانة وتوريد حلول التكييف ومعدات المطابخ. من الأعطال الطارئة إلى الاحتياج الدوري وقطع الغيار، نوفّر خدمة فنية واضحة تساعد أعمالك على الاستمرار بثبات وبدون توقف مكلف.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                <a href="https://wa.me/966550197070?text=السلام عليكم، أرغب بطلب زيارة هندسية" target="_blank" rel="noopener noreferrer" class="bg-gold-gradient text-navy-900 px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                    <span id="heroBtnVisit">طلب زيارة هندسية للموقع</span>
+                </a>
+                <a href="https://wa.me/966550197070?text=السلام عليكم، أرغب بمناقشة عقود الصيانة" target="_blank" rel="noopener noreferrer" class="border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-navy-900 px-8 py-4 rounded-md font-bold text-lg transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <span id="heroBtnContract">مناقشة عقود الصيانة</span>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400 opacity-80">
+                <div class="flex items-center gap-2 px-3 py-1 bg-navy-900/50 rounded-full border border-navy-700">
+                    <i class="fa-solid fa-shop"></i> <span id="sector1">المطاعم والمقاهي</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1 bg-navy-900/50 rounded-full border border-navy-700">
+                    <i class="fa-solid fa-hotel"></i> <span id="sector2">الفنادق والضيافة</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1 bg-navy-900/50 rounded-full border border-navy-700">
+                    <i class="fa-solid fa-industry"></i> <span id="sector3">المطابخ المركزية</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1 bg-navy-900/50 rounded-full border border-navy-700">
+                    <i class="fa-solid fa-building"></i> <span id="sector4">المنشآت التجارية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-12 bg-navy-800 border-b border-navy-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-navy-700">
+                <div class="p-4">
+                    <div class="text-gold-500 text-4xl mb-4"><i class="fa-solid fa-snowflake"></i></div>
+                    <h3 id="featT1" class="text-white font-bold text-lg mb-2">بيئة عمل مثالية</h3>
+                    <p id="featD1" class="text-gray-400 text-sm">أنظمة تكييف وتهوية متقدمة تناسب كافة المساحات التجارية</p>
+                </div>
+                <div class="p-4 pt-8 md:pt-4">
+                    <div class="text-gold-500 text-4xl mb-4"><i class="fa-solid fa-kitchen-set"></i></div>
+                    <h3 id="featT2" class="text-white font-bold text-lg mb-2">تحمل التشغيل المستمر</h3>
+                    <p id="featD2" class="text-gray-400 text-sm">معدات مطابخ وتبريد مصممة لأوقات الذروة التجارية</p>
+                </div>
+                <div class="p-4 pt-8 md:pt-4">
+                    <div class="text-gold-500 text-4xl mb-4"><i class="fa-solid fa-stopwatch"></i></div>
+                    <h3 id="featT3" class="text-white font-bold text-lg mb-2">استجابة طارئة للأزمات</h3>
+                    <p id="featD3" class="text-gray-400 text-sm">فريق فني يتدخل فوراً لضمان عدم تعطل خط الإنتاج</p>
+                </div>
+                <div class="p-4 pt-8 md:pt-4">
+                    <div class="text-gold-500 text-4xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 id="featT4" class="text-white font-bold text-lg mb-2">حماية لاستثماراتك</h3>
+                    <p id="featD4" class="text-gray-400 text-sm">ضمانات حقيقية وعقود صيانة تقلل تكاليف الهدر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 id="srvHeading" class="text-3xl md:text-4xl font-bold text-white mb-4">خدماتنا <span class="text-gold-500">التجارية</span></h2>
+                <div class="h-1 w-20 bg-gold-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-navy-800 border border-navy-700 p-8 rounded-xl hover:border-gold-500/50 transition group">
+                    <div class="w-14 h-14 bg-navy-900 rounded-lg flex items-center justify-center text-gold-500 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 id="srvT1" class="text-xl font-bold text-white mb-3">خطوط إنتاج ومعدات مطابخ</h3>
+                    <p id="srvS1" class="text-gold-400 font-medium text-sm mb-4">تتحدى ضغط العمل العالي.</p>
+                    <p id="srvD1" class="text-gray-400 leading-relaxed">
+                        نورد كافة معدات المطابخ التجارية وخطوط الإنتاج الشاملة لتأسيس مشروعك، ونوفر دعم فني سريع وموثوق لإصلاح الأعطال وقت الذروة لضمان عدم توقف خط الإنتاج.
+                    </p>
+                </div>
+
+                <div class="bg-navy-800 border border-navy-700 p-8 rounded-xl hover:border-ice-400/50 transition group">
+                    <div class="w-14 h-14 bg-navy-900 rounded-lg flex items-center justify-center text-ice-400 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-igloo"></i>
+                    </div>
+                    <h3 id="srvT2" class="text-xl font-bold text-white mb-3">أنظمة التبريد التجاري</h3>
+                    <p id="srvS2" class="text-ice-400 font-medium text-sm mb-4">تحافظ على مخزون المنتجات بأفضل أداء.</p>
+                    <p id="srvD2" class="text-gray-400 leading-relaxed">
+                        تصميم وتركيب غرف التبريد والتجميد، وصيانة ثلاجات العرض ومكائن الثلج. نضمن استقرار درجات الحرارة لحماية موادك الغذائية من التلف وتقليل الهدر.
+                    </p>
+                </div>
+
+                <div class="bg-navy-800 border border-navy-700 p-8 rounded-xl hover:border-gold-500/50 transition group">
+                    <div class="w-14 h-14 bg-navy-900 rounded-lg flex items-center justify-center text-gold-500 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <h3 id="srvT3" class="text-xl font-bold text-white mb-3">أنظمة التكييف والتهوية</h3>
+                    <p id="srvS3" class="text-gold-400 font-medium text-sm mb-4">حلول مناخية متكاملة لكافة المنشآت.</p>
+                    <p id="srvD3" class="text-gray-400 leading-relaxed">
+                        تصميم وتنفيذ وصيانة أنظمة التكييف المركزي وسحب الدخان بمرونة تامة. نوفر لك بيئة عمل مثالية تلبي متطلبات أي مساحة تجارية أو صناعية بأعلى كفاءة تشغيل.
+                    </p>
+                </div>
+
+                <div class="bg-navy-800 border border-navy-700 p-8 rounded-xl hover:border-gold-500/50 transition group">
+                    <div class="w-14 h-14 bg-navy-900 rounded-lg flex items-center justify-center text-gold-500 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h3 id="srvT4" class="text-xl font-bold text-white mb-3">عقود صيانة شاملة</h3>
+                    <p id="srvS4" class="text-gold-400 font-medium text-sm mb-4">عقود تضمن حقك وتوفر لك خدمة 24/7.</p>
+                    <p id="srvD4" class="text-gray-400 leading-relaxed">
+                        عقد صيانة وقائي يغطي معدات الطبخ، الثلاجات، والتكييف. زيارات هندسية مجدولة تمنع الأعطال قبل وقوعها، مع أولوية التدخل السريع وقت الطوارئ والأزمات.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="social" class="py-16 bg-navy-900 border-t border-b border-navy-700 relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl"></div>
+        <div class="absolute left-0 bottom-0 w-64 h-64 bg-ice-400/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-navy-800 border border-gold-500/30 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 justify-between shadow-[0_0_30px_rgba(212,175,55,0.05)]">
+                <div class="text-center md:text-right flex-1">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#000000] text-white text-3xl mb-4 border border-gray-700">
+                        <i class="fa-brands fa-tiktok text-[#ff0050] drop-shadow-[2px_2px_0_#00f2fe]"></i>
+                    </div>
+                    <h3 id="tkTitle" class="text-2xl font-bold text-white mb-3">ميدانياً.. شغلنا يتحدث عن نفسه!</h3>
+                    <p id="tkDesc" class="text-gray-400 mb-6 leading-relaxed">
+                        لمتابعة أحدث مشاريعنا، عمليات التجهيز والتوريد، وتوثيق أعمال الصيانة في قلب المطاعم.. تابع حسابنا المتخصص على منصة تيك توك وكن على اطلاع دائم بجودة عملنا.
+                    </p>
+                    <a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-md font-bold hover:bg-gray-200 transition">
+                        <i class="fa-brands fa-tiktok"></i>
+                        <span id="tkBtn">تابعنا على تيك توك</span>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <div class="relative w-48 h-80 bg-navy-900 border-4 border-gray-800 rounded-3xl overflow-hidden flex flex-col justify-center items-center">
+                        <i class="fa-brands fa-tiktok text-gray-700 text-6xl mb-4"></i>
+                        <span class="text-gray-500 text-sm font-bold">@coldwest25</span>
+                        <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#040b14] pt-16 pb-8 border-t border-navy-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="logo-wide.png" alt="شعار الغرب البارد" class="h-10 w-auto object-contain bg-white/10 rounded p-1">
+                    </div>
+                    <p id="ftDesc" class="text-gray-400 text-sm leading-relaxed mb-6">
+                        شريكك الموثوق لتكييف وتجهيز المطاعم. نقدم حلولاً هندسية متكاملة تضمن استمرارية الأعمال بأعلى كفاءة.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gray-400 hover:text-[#ff0050] hover:bg-white transition">
+                            <i class="fa-brands fa-tiktok text-lg"></i>
+                        </a>
+                        <a href="https://wa.me/966550197070" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gray-400 hover:text-green-500 transition">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 id="ftOfficial" class="text-white font-bold mb-6 text-lg">المعلومات الرسمية</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-gold-500"></i>
+                            <span>
+                                <strong id="ftHq" class="text-white block mb-1">المقر الرئيسي:</strong>
+                                <a id="ftHqVal" href="https://maps.app.goo.gl/6GceJFtazNQQGdbi6?g_st=ac" target="_blank" rel="noopener noreferrer" class="hover:text-gold-500 transition border-b border-dashed border-gray-600 hover:border-gold-500 pb-0.5">
+                                    شارع الاميرة الجوهرة بنت عبدالعزيز, مكة 24227
+                                </a>
+                            </span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-file-invoice mt-1 text-gold-500"></i>
+                            <span>
+                                <strong id="ftCr" class="text-white">سجل تجاري رقم:</strong>
+                                7049838308
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 id="ftContact" class="text-white font-bold mb-6 text-lg">تواصل معنا</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-gold-500"></i>
+                            <a href="tel:0550197070" dir="ltr" class="hover:text-white transition">055 019 7070</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-globe text-gold-500"></i>
+                            <span dir="ltr">www.coldwest.sa</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-gold-500"></i>
+                            <a href="mailto:coldwest25@gmail.com" dir="ltr" class="hover:text-white transition">coldwest25@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-navy-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+                <p id="ftCopy">&copy; 2026 مؤسسة الغرب البارد. جميع الحقوق محفوظة.</p>
+                <p id="ftB2b">صُمم خصيصاً لقطاع الأعمال (B2B)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let isArabic = true;
+        const translations = {
+            ar: {
+                langBtn: "English",
+                langBtnMobile: "EN",
+                topEmergency: "<i class='fa-solid fa-clock ml-2 text-gold-500'></i> خدمة طوارئ 24/7",
+                navServices: "خدماتنا",
+                navFeatures: "نقاط القوة",
+                navWorks: "أعمالنا",
+                navContact: "تواصل معنا",
+                heroBadge: "حلول متكاملة لقطاع الأعمال والمشاريع التجارية",
+                heroTitle: "شريكك الفني لحلول <br><span class='gold-gradient'>التكييف ومعدات المطابخ التجارية.</span>",
+                heroDesc: "في الغرب البارد، نساعد المنشآت التجارية على الحفاظ على كفاءة التشغيل من خلال صيانة وتوريد حلول التكييف ومعدات المطابخ. من الأعطال الطارئة إلى الاحتياج الدوري وقطع الغيار، نوفّر خدمة فنية واضحة تساعد أعمالك على الاستمرار بثبات وبدون توقف مكلف.",
+                heroBtnVisit: "طلب زيارة هندسية للموقع",
+                heroBtnContract: "مناقشة عقود الصيانة",
+                sector1: "المطاعم والمقاهي",
+                sector2: "الفنادق والضيافة",
+                sector3: "المطابخ المركزية",
+                sector4: "المنشآت التجارية",
+                featT1: "بيئة عمل مثالية",
+                featD1: "أنظمة تكييف وتهوية متقدمة تناسب كافة المساحات التجارية",
+                featT2: "تحمل التشغيل المستمر",
+                featD2: "معدات مطابخ وتبريد مصممة لأوقات الذروة التجارية",
+                featT3: "استجابة طارئة للأزمات",
+                featD3: "فريق فني يتدخل فوراً لضمان عدم تعطل خط الإنتاج",
+                featT4: "حماية لاستثماراتك",
+                featD4: "ضمانات حقيقية وعقود صيانة تقلل تكاليف الهدر",
+                srvHeading: "خدماتنا <span class='text-gold-500'>التجارية</span>",
+                srvT1: "خطوط إنتاج ومعدات مطابخ",
+                srvS1: "تتحدى ضغط العمل العالي.",
+                srvD1: "نورد كافة معدات المطابخ التجارية وخطوط الإنتاج الشاملة لتأسيس مشروعك، ونوفر دعم فني سريع وموثوق لإصلاح الأعطال وقت الذروة لضمان عدم توقف خط الإنتاج.",
+                srvT2: "أنظمة التبريد التجاري",
+                srvS2: "تحافظ على مخزون المنتجات بأفضل أداء.",
+                srvD2: "تصميم وتركيب غرف التبريد والتجميد، وصيانة ثلاجات العرض ومكائن الثلج. نضمن استقرار درجات الحرارة لحماية موادك الغذائية من التلف وتقليل الهدر.",
+                srvT3: "أنظمة التكييف والتهوية",
+                srvS3: "حلول مناخية متكاملة لكافة المنشآت.",
+                srvD3: "تصميم وتنفيذ وصيانة أنظمة التكييف المركزي وسحب الدخان بمرونة تامة. نوفر لك بيئة عمل مثالية تلبي متطلبات أي مساحة تجارية أو صناعية بأعلى كفاءة تشغيل.",
+                srvT4: "عقود صيانة شاملة",
+                srvS4: "عقود تضمن حقك وتوفر لك خدمة 24/7.",
+                srvD4: "عقد صيانة وقائي يغطي معدات الطبخ، الثلاجات، والتكييف. زيارات هندسية مجدولة تمنع الأعطال قبل وقوعها، مع أولوية التدخل السريع وقت الطوارئ والأزمات.",
+                tkTitle: "ميدانياً.. شغلنا يتحدث عن نفسه!",
+                tkDesc: "لمتابعة أحدث مشاريعنا، عمليات التجهيز والتوريد، وتوثيق أعمال الصيانة في قلب المطاعم.. تابع حسابنا المتخصص على منصة تيك توك وكن على اطلاع دائم بجودة عملنا.",
+                tkBtn: "تابعنا على تيك توك",
+                ftDesc: "شريكك الموثوق لتكييف وتجهيز المطاعم. نقدم حلولاً هندسية متكاملة تضمن استمرارية الأعمال بأعلى كفاءة.",
+                ftOfficial: "المعلومات الرسمية",
+                ftHq: "المقر الرئيسي:",
+                ftHqVal: "شارع الاميرة الجوهرة بنت عبدالعزيز, مكة 24227",
+                ftCr: "سجل تجاري رقم:",
+                ftContact: "تواصل معنا",
+                ftCopy: "&copy; 2026 مؤسسة الغرب البارد. جميع الحقوق محفوظة.",
+                ftB2b: "صُمم خصيصاً لقطاع الأعمال (B2B)"
+            },
+            en: {
+                langBtn: "العربية",
+                langBtnMobile: "AR",
+                topEmergency: "<i class='fa-solid fa-clock mr-2 text-gold-500'></i> 24/7 Emergency Service",
+                navServices: "Services",
+                navFeatures: "Core Strengths",
+                navWorks: "Our Work",
+                navContact: "Contact Us",
+                heroBadge: "Integrated Solutions for Commercial Projects",
+                heroTitle: "Your Technical Partner for Stable<br><span class='gold-gradient'>HVAC & Commercial Kitchen Equipment.</span>",
+                heroDesc: "At Cold West, we help commercial facilities maintain operational efficiency through the maintenance and supply of HVAC solutions and kitchen equipment. From emergency breakdowns to routine needs and spare parts, we provide a clear technical service that helps your business continue steadily without costly downtime.",
+                heroBtnVisit: "Request Site Engineering Visit",
+                heroBtnContract: "Discuss Maintenance Contracts",
+                sector1: "Restaurants & Cafes",
+                sector2: "Hotels & Hospitality",
+                sector3: "Central Kitchens",
+                sector4: "Commercial Facilities",
+                featT1: "Ideal Work Environment",
+                featD1: "Advanced HVAC systems suitable for all commercial spaces",
+                featT2: "Continuous Operation",
+                featD2: "Kitchen & refrigeration equipment built for peak commercial hours",
+                featT3: "Emergency Crisis Response",
+                featD3: "Technical team intervenes instantly to prevent downtime",
+                featT4: "Investment Protection",
+                featD4: "Real warranties and maintenance contracts that reduce waste costs",
+                srvHeading: "Our Commercial <span class='text-gold-500'>Services</span>",
+                srvT1: "Production Lines & Kitchen Eq.",
+                srvS1: "Built for high workloads.",
+                srvD1: "We supply all commercial kitchen equipment and complete production lines. We provide fast, reliable technical support to fix breakdowns during peak times.",
+                srvT2: "Commercial Refrigeration",
+                srvS2: "Keep inventory at peak performance.",
+                srvD2: "Design and installation of cold rooms, freezers, and maintenance of display fridges and ice machines. We ensure temperature stability to protect your food.",
+                srvT3: "HVAC & Ventilation Systems",
+                srvS3: "Integrated climate solutions.",
+                srvD3: "Design, implementation, and maintenance of central AC and smoke extraction systems. We provide an ideal work environment for any commercial or industrial space.",
+                srvT4: "Comprehensive Maintenance",
+                srvS4: "Contracts securing 24/7 service.",
+                srvD4: "Preventive maintenance contracts covering cooking equipment, refrigeration, and HVAC. Scheduled engineering visits prevent breakdowns before they happen.",
+                tkTitle: "On the Ground.. Our Work Speaks!",
+                tkDesc: "To follow our latest projects, supply operations, and maintenance work in the heart of restaurants.. Follow our TikTok account and stay updated with our quality.",
+                tkBtn: "Follow us on TikTok",
+                ftDesc: "Your reliable partner for HVAC and commercial kitchen preparation. We provide integrated engineering solutions ensuring business continuity.",
+                ftOfficial: "Official Information",
+                ftHq: "Headquarters:",
+                ftHqVal: "Princess Al-Jawhara bint Abdulaziz St, Makkah 24227",
+                ftCr: "Commercial Register (CR):",
+                ftContact: "Contact Us",
+                ftCopy: "&copy; 2026 Cold West Est. All rights reserved.",
+                ftB2b: "Designed specifically for the B2B sector"
+            }
+        };
+
+        function toggleLang() {
+            isArabic = !isArabic;
+            const lang = isArabic ? "ar" : "en";
+            document.getElementById("html-root").dir = isArabic ? "rtl" : "ltr";
+            document.getElementById("html-root").lang = lang;
+            for (const [key, value] of Object.entries(translations[lang])) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.innerHTML = value;
+                }
             }
         }
-
-        arBtn.addEventListener('click', () => setLanguage('ar'));
-        enBtn.addEventListener('click', () => setLanguage('en'));
-
-        // Set default language on load
-        setLanguage('ar');
     </script>
 </body>
 </html>
