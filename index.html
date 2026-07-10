@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="شريكك الموثوق لحلول التبريد وتجهيز المطابخ التجارية. نقدم حلولاً هندسية متكاملة تضمن استمرارية الأعمال بأعلى كفاءة.">
-    <title>الغرب البارد | شريكك الموثوق لحلول التبريد وتجهيز المطابخ التجارية</title>
+    <meta name="description" content="مؤسسة الغرب البارد - الخبراء في صيانة وتوريد أنظمة التكييف المركزي، التبريد التجاري، وتجهيز المطابخ التجارية. نقدم حلول هندسية متكاملة للمطاعم والفنادق تضمن استمرارية أعمالك بأعلى كفاءة.">
+    <meta name="keywords" content="صيانة تكييف, تكييف مركزي, معدات مطابخ تجارية, غرف تبريد, ثلاجات عرض, مطابخ مركزية, صيانة مطاعم, تهوية تجارية, الغرب البارد, تجهيز مطاعم, مكة, جدة, السعودية, عقود صيانة سنوية, شفاطات مطاعم, تبريد وتجميد, صيانة ثلاجات تجارية">
+    <meta name="author" content="مؤسسة الغرب البارد">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="الغرب البارد | حلول التكييف وتجهيز المطابخ التجارية">
+    <meta property="og:description" content="شريكك الموثوق لتكييف وتجهيز المطاعم والفنادق بأعلى كفاءة. حلول متكاملة للصيانة والتوريد في السعودية.">
+    <meta property="og:image" content="logo-wide.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="الغرب البارد | حلول التكييف وتجهيز المطابخ التجارية">
+    <meta property="twitter:description" content="شريكك الموثوق لتكييف وتجهيز المطاعم والفنادق بأعلى كفاءة. حلول متكاملة للصيانة والتوريد في السعودية.">
+    <meta property="twitter:image" content="logo-wide.png">
+
+    <title>الغرب البارد | حلول التكييف، التبريد، وتجهيز المطابخ التجارية للمطاعم والفنادق</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         navy: {
-                            900: "#06101e",
+                            900: "#030811",
                             800: "#0a192f",
                             700: "#112240"
                         },
@@ -31,6 +48,22 @@
                     },
                     fontFamily: {
                         sans: ["Tajawal", "sans-serif"]
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        glow: {
+                            'from': { boxShadow: '0 0 10px -5px #d4af37' },
+                            'to': { boxShadow: '0 0 25px 5px rgba(212, 175, 55, 0.5)' },
+                        }
                     }
                 }
             }
@@ -39,7 +72,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: "Tajawal", sans-serif; background-color: #06101e; color: #e2e8f0; }
+        body { font-family: "Tajawal", sans-serif; background-color: #030811; color: #e2e8f0; overflow-x: hidden; }
         .gold-gradient {
             background: linear-gradient(135deg, #d4af37 0%, #e6c875 50%, #b5952f 100%);
             -webkit-background-clip: text;
@@ -47,8 +80,55 @@
             background-clip: text;
         }
         .bg-gold-gradient {
-            background: linear-gradient(135deg, #d4af37 0%, #b5952f 100%);
+            background: linear-gradient(135deg, #d4af37 0%, #e6c875 50%, #b5952f 100%);
         }
+        
+        .glass-panel {
+            background: rgba(10, 25, 47, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .glass-panel:hover {
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: rgba(10, 25, 47, 0.85);
+            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.2);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+        .orb-gold { background: #d4af37; }
+        .orb-blue { background: #112240; }
+        
+        .btn-glow {
+            position: relative;
+        }
+        .btn-glow::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(135deg, #d4af37, #b5952f);
+            z-index: -1;
+            filter: blur(15px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: inherit;
+        }
+        .btn-glow:hover::after {
+            opacity: 0.8;
+        }
+        
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030811; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b5952f; }
     </style>
 </head>
 <body class="antialiased selection:bg-gold-500 selection:text-navy-900">
@@ -64,154 +144,160 @@
         </div>
     </div>
 
-    <nav class="bg-navy-800/95 backdrop-blur-md sticky top-0 z-50 border-b border-gold-500/20">
+    <nav class="bg-navy-800/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gold-500/20 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <img src="logo-wide.png" alt="شعار الغرب البارد" class="h-12 w-auto object-contain bg-white/10 rounded-md p-1">
+                <div class="flex items-center gap-3 animate-float">
+                    <img src="logo-wide.png" alt="شعار الغرب البارد" class="h-12 w-auto object-contain bg-white/5 rounded-md p-1 border border-white/10">
                 </div>
 
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#services" id="navServices" class="text-gray-300 hover:text-gold-500 font-medium transition">خدماتنا</a>
-                    <a href="#process" id="navFeatures" class="text-gray-300 hover:text-gold-500 font-medium transition">نقاط القوة</a>
-                    <a href="#social" id="navWorks" class="text-gray-300 hover:text-gold-500 font-medium transition">أعمالنا</a>
-                    <button onclick="toggleLang()" id="langBtn" class="text-gold-500 font-bold border border-gold-500/50 px-3 py-1 rounded hover:bg-gold-500 hover:text-navy-900 transition">English</button>
-                    <a href="https://wa.me/966550197070" class="bg-gold-gradient hover:opacity-90 text-navy-900 px-6 py-2 rounded-md font-bold transition flex items-center gap-2">
+                    <a href="#services" id="navServices" class="text-gray-300 hover:text-gold-500 font-medium transition-colors">خدماتنا</a>
+                    <a href="#process" id="navFeatures" class="text-gray-300 hover:text-gold-500 font-medium transition-colors">نقاط القوة</a>
+                    <a href="#social" id="navWorks" class="text-gray-300 hover:text-gold-500 font-medium transition-colors">أعمالنا</a>
+                    <button onclick="toggleLang()" id="langBtn" class="text-gold-500 font-bold border border-gold-500/50 px-4 py-1.5 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all">English</button>
+                    <a href="https://wa.me/966550197070" class="bg-gold-gradient hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] text-navy-900 px-6 py-2 rounded-full font-bold transition-all flex items-center gap-2 transform hover:scale-105">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span id="navContact">تواصل معنا</span>
                     </a>
                 </div>
 
                 <div class="flex items-center md:hidden gap-4">
-                    <button onclick="toggleLang()" id="langBtnMobile" class="text-gold-500 font-bold text-sm border border-gold-500/50 px-2 py-1 rounded">EN</button>
-                    <a href="https://wa.me/966550197070" class="text-gold-500 p-2" aria-label="WhatsApp">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <button onclick="toggleLang()" id="langBtnMobile" class="text-gold-500 font-bold text-sm border border-gold-500/50 px-3 py-1 rounded-full">EN</button>
+                    <a href="https://wa.me/966550197070" class="text-gold-500 p-2 hover:scale-110 transition-transform" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-2xl drop-shadow-md"></i>
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-24 pb-32 overflow-hidden border-b border-navy-700">
-        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d4af37\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center gap-2 border border-gold-500 text-gold-500 px-4 py-1.5 rounded-full text-sm font-bold mb-8 bg-navy-800/50">
-                <i class="fa-solid fa-gear"></i>
+    <section class="relative pt-32 pb-44 overflow-hidden border-b border-navy-700">
+        <!-- Animated Background Orbs -->
+        <div class="orb orb-gold w-[400px] h-[400px] top-0 right-0 -translate-y-1/2 translate-x-1/3 animate-pulse-slow"></div>
+        <div class="orb orb-blue w-[600px] h-[600px] bottom-0 left-0 translate-y-1/3 -translate-x-1/4 animate-pulse-slow" style="animation-delay: 2s;"></div>
+        
+        <div class="absolute inset-0 opacity-[0.02]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d4af37\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <div data-aos="fade-down" data-aos-duration="1000" class="inline-flex items-center gap-3 border border-gold-500/50 text-gold-400 px-6 py-2 rounded-full text-sm font-bold mb-8 glass-panel shadow-[0_0_20px_rgba(212,175,55,0.15)]">
+                <i class="fa-solid fa-gear animate-spin" style="animation-duration: 4s;"></i>
                 <span id="heroBadge">حلول متكاملة لقطاع الأعمال والمشاريع التجارية</span>
             </div>
 
-            <h1 id="heroTitle" class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+            <h1 data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100" id="heroTitle" class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-2xl">
                 شريكك الفني لحلول<br>
-                <span class="gold-gradient">التكييف ومعدات المطابخ التجارية.</span>
+                <span class="gold-gradient">التكييف ومعدات المطابخ.</span>
             </h1>
 
-            <p id="heroDesc" class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" id="heroDesc" class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
                 في الغرب البارد، نساعد المنشآت التجارية على الحفاظ على كفاءة التشغيل من خلال صيانة وتوريد حلول التكييف ومعدات المطابخ. من الأعطال الطارئة إلى الاحتياج الدوري وقطع الغيار، نوفّر خدمة فنية واضحة تساعد أعمالك على الاستمرار بثبات وبدون توقف مكلف.
             </p>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-                <a href="https://wa.me/966550197070?text=السلام عليكم، أرغب بطلب زيارة هندسية" target="_blank" rel="noopener noreferrer" class="bg-gold-gradient text-navy-900 px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
-                    <i class="fa-solid fa-helmet-safety"></i>
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="flex flex-col sm:flex-row justify-center gap-6 mb-16">
+                <a href="https://wa.me/966550197070?text=السلام عليكم، أرغب بطلب زيارة هندسية" target="_blank" rel="noopener noreferrer" class="bg-gold-gradient btn-glow text-navy-900 px-8 py-4 rounded-xl font-extrabold text-lg transition-transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-helmet-safety text-xl"></i>
                     <span id="heroBtnVisit">طلب زيارة هندسية للموقع</span>
                 </a>
-                <a href="https://wa.me/966550197070?text=السلام عليكم، أرغب بمناقشة عقود الصيانة" target="_blank" rel="noopener noreferrer" class="border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-navy-900 px-8 py-4 rounded-md font-bold text-lg transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-file-signature"></i>
+                <a href="https://wa.me/966550197070?text=السلام عليكم، أرغب بمناقشة عقود الصيانة" target="_blank" rel="noopener noreferrer" class="glass-panel text-gold-400 hover:text-gold-300 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:-translate-y-1 flex items-center justify-center gap-3 hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                    <i class="fa-solid fa-file-signature text-xl"></i>
                     <span id="heroBtnContract">مناقشة عقود الصيانة</span>
                 </a>
             </div>
 
-            <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400 opacity-80">
-                <div class="flex items-center gap-2 px-3 py-1 bg-navy-900/50 rounded-full border border-navy-700">
-                    <i class="fa-solid fa-shop"></i> <span id="sector1">المطاعم والمقاهي</span>
+            <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500" class="flex flex-wrap justify-center gap-4 text-sm text-gray-300 font-medium">
+                <div class="flex items-center gap-2 px-5 py-2.5 glass-panel rounded-full hover:border-gold-500/50 transition-colors cursor-default">
+                    <i class="fa-solid fa-shop text-gold-500"></i> <span id="sector1">المطاعم والمقاهي</span>
                 </div>
-                <div class="flex items-center gap-2 px-3 py-1 bg-navy-900/50 rounded-full border border-navy-700">
-                    <i class="fa-solid fa-hotel"></i> <span id="sector2">الفنادق والضيافة</span>
+                <div class="flex items-center gap-2 px-5 py-2.5 glass-panel rounded-full hover:border-gold-500/50 transition-colors cursor-default">
+                    <i class="fa-solid fa-hotel text-gold-500"></i> <span id="sector2">الفنادق والضيافة</span>
                 </div>
-                <div class="flex items-center gap-2 px-3 py-1 bg-navy-900/50 rounded-full border border-navy-700">
-                    <i class="fa-solid fa-industry"></i> <span id="sector3">المطابخ المركزية</span>
+                <div class="flex items-center gap-2 px-5 py-2.5 glass-panel rounded-full hover:border-gold-500/50 transition-colors cursor-default">
+                    <i class="fa-solid fa-industry text-gold-500"></i> <span id="sector3">المطابخ المركزية</span>
                 </div>
-                <div class="flex items-center gap-2 px-3 py-1 bg-navy-900/50 rounded-full border border-navy-700">
-                    <i class="fa-solid fa-building"></i> <span id="sector4">المنشآت التجارية</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="process" class="py-12 bg-navy-800 border-b border-navy-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-navy-700">
-                <div class="p-4">
-                    <div class="text-gold-500 text-4xl mb-4"><i class="fa-solid fa-snowflake"></i></div>
-                    <h3 id="featT1" class="text-white font-bold text-lg mb-2">بيئة عمل مثالية</h3>
-                    <p id="featD1" class="text-gray-400 text-sm">أنظمة تكييف وتهوية متقدمة تناسب كافة المساحات التجارية</p>
-                </div>
-                <div class="p-4 pt-8 md:pt-4">
-                    <div class="text-gold-500 text-4xl mb-4"><i class="fa-solid fa-kitchen-set"></i></div>
-                    <h3 id="featT2" class="text-white font-bold text-lg mb-2">تحمل التشغيل المستمر</h3>
-                    <p id="featD2" class="text-gray-400 text-sm">معدات مطابخ وتبريد مصممة لأوقات الذروة التجارية</p>
-                </div>
-                <div class="p-4 pt-8 md:pt-4">
-                    <div class="text-gold-500 text-4xl mb-4"><i class="fa-solid fa-stopwatch"></i></div>
-                    <h3 id="featT3" class="text-white font-bold text-lg mb-2">استجابة طارئة للأزمات</h3>
-                    <p id="featD3" class="text-gray-400 text-sm">فريق فني يتدخل فوراً لضمان عدم تعطل خط الإنتاج</p>
-                </div>
-                <div class="p-4 pt-8 md:pt-4">
-                    <div class="text-gold-500 text-4xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 id="featT4" class="text-white font-bold text-lg mb-2">حماية لاستثماراتك</h3>
-                    <p id="featD4" class="text-gray-400 text-sm">ضمانات حقيقية وعقود صيانة تقلل تكاليف الهدر</p>
+                <div class="flex items-center gap-2 px-5 py-2.5 glass-panel rounded-full hover:border-gold-500/50 transition-colors cursor-default">
+                    <i class="fa-solid fa-building text-gold-500"></i> <span id="sector4">المنشآت التجارية</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 id="srvHeading" class="text-3xl md:text-4xl font-bold text-white mb-4">خدماتنا <span class="text-gold-500">التجارية</span></h2>
-                <div class="h-1 w-20 bg-gold-500 mx-auto rounded"></div>
+    <section id="process" class="py-16 bg-[#030811] relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-28 relative">
+            <div class="glass-panel rounded-3xl grid grid-cols-1 md:grid-cols-4 gap-2 text-center p-4 shadow-[0_20px_50px_rgba(0,0,0,0.5)] divide-y md:divide-y-0 md:divide-x md:divide-x-reverse divide-navy-700/50">
+                <div data-aos="fade-up" data-aos-delay="0" class="p-6 hover:bg-navy-800/40 rounded-2xl transition-all duration-300 group">
+                    <div class="text-gold-500 text-4xl mb-5 transform group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300 drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]"><i class="fa-solid fa-snowflake"></i></div>
+                    <h3 id="featT1" class="text-white font-bold text-lg mb-3">بيئة عمل مثالية</h3>
+                    <p id="featD1" class="text-gray-400 text-sm leading-relaxed">أنظمة تكييف وتهوية متقدمة تناسب كافة المساحات التجارية</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100" class="p-6 pt-8 md:pt-6 hover:bg-navy-800/40 rounded-2xl transition-all duration-300 group">
+                    <div class="text-gold-500 text-4xl mb-5 transform group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300 drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]"><i class="fa-solid fa-kitchen-set"></i></div>
+                    <h3 id="featT2" class="text-white font-bold text-lg mb-3">تحمل التشغيل المستمر</h3>
+                    <p id="featD2" class="text-gray-400 text-sm leading-relaxed">معدات مطابخ وتبريد مصممة لأوقات الذروة التجارية</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="p-6 pt-8 md:pt-6 hover:bg-navy-800/40 rounded-2xl transition-all duration-300 group">
+                    <div class="text-gold-500 text-4xl mb-5 transform group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300 drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]"><i class="fa-solid fa-stopwatch"></i></div>
+                    <h3 id="featT3" class="text-white font-bold text-lg mb-3">استجابة طارئة للأزمات</h3>
+                    <p id="featD3" class="text-gray-400 text-sm leading-relaxed">فريق فني يتدخل فوراً لضمان عدم تعطل خط الإنتاج</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="p-6 pt-8 md:pt-6 hover:bg-navy-800/40 rounded-2xl transition-all duration-300 group">
+                    <div class="text-gold-500 text-4xl mb-5 transform group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300 drop-shadow-[0_0_10px_rgba(212,175,55,0.4)]"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 id="featT4" class="text-white font-bold text-lg mb-3">حماية لاستثماراتك</h3>
+                    <p id="featD4" class="text-gray-400 text-sm leading-relaxed">ضمانات حقيقية وعقود صيانة تقلل تكاليف الهدر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 relative overflow-hidden">
+        <div class="orb orb-blue w-[500px] h-[500px] top-1/4 right-0 translate-x-1/2 opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 id="srvHeading" class="text-4xl md:text-5xl font-extrabold text-white mb-6">خدماتنا <span class="gold-gradient">التجارية</span></h2>
+                <div class="h-1.5 w-24 bg-gold-gradient mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-navy-800 border border-navy-700 p-8 rounded-xl hover:border-gold-500/50 transition group">
-                    <div class="w-14 h-14 bg-navy-900 rounded-lg flex items-center justify-center text-gold-500 text-2xl mb-6 group-hover:scale-110 transition">
+                <div data-aos="fade-up" data-aos-delay="100" class="glass-panel p-10 rounded-2xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-navy-900 border border-gold-500/30 rounded-xl flex items-center justify-center text-gold-500 text-3xl mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
                         <i class="fa-solid fa-fire-burner"></i>
                     </div>
-                    <h3 id="srvT1" class="text-xl font-bold text-white mb-3">خطوط إنتاج ومعدات مطابخ</h3>
-                    <p id="srvS1" class="text-gold-400 font-medium text-sm mb-4">تتحدى ضغط العمل العالي.</p>
-                    <p id="srvD1" class="text-gray-400 leading-relaxed">
+                    <h3 id="srvT1" class="text-2xl font-bold text-white mb-3">خطوط إنتاج ومعدات مطابخ</h3>
+                    <p id="srvS1" class="text-gold-400 font-medium mb-4">تتحدى ضغط العمل العالي.</p>
+                    <p id="srvD1" class="text-gray-400 leading-relaxed text-lg">
                         نورد كافة معدات المطابخ التجارية وخطوط الإنتاج الشاملة لتأسيس مشروعك، ونوفر دعم فني سريع وموثوق لإصلاح الأعطال وقت الذروة لضمان عدم توقف خط الإنتاج.
                     </p>
                 </div>
 
-                <div class="bg-navy-800 border border-navy-700 p-8 rounded-xl hover:border-ice-400/50 transition group">
-                    <div class="w-14 h-14 bg-navy-900 rounded-lg flex items-center justify-center text-ice-400 text-2xl mb-6 group-hover:scale-110 transition">
+                <div data-aos="fade-up" data-aos-delay="200" class="glass-panel p-10 rounded-2xl hover:-translate-y-2 transition-all duration-300 group hover:border-ice-400/40">
+                    <div class="w-16 h-16 bg-navy-900 border border-ice-400/30 rounded-xl flex items-center justify-center text-ice-400 text-3xl mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(100,149,237,0.4)] transition-all duration-300">
                         <i class="fa-solid fa-igloo"></i>
                     </div>
-                    <h3 id="srvT2" class="text-xl font-bold text-white mb-3">أنظمة التبريد التجاري</h3>
-                    <p id="srvS2" class="text-ice-400 font-medium text-sm mb-4">تحافظ على مخزون المنتجات بأفضل أداء.</p>
-                    <p id="srvD2" class="text-gray-400 leading-relaxed">
+                    <h3 id="srvT2" class="text-2xl font-bold text-white mb-3">أنظمة التبريد التجاري</h3>
+                    <p id="srvS2" class="text-ice-400 font-medium mb-4">تحافظ على مخزون المنتجات بأفضل أداء.</p>
+                    <p id="srvD2" class="text-gray-400 leading-relaxed text-lg">
                         تصميم وتركيب غرف التبريد والتجميد، وصيانة ثلاجات العرض ومكائن الثلج. نضمن استقرار درجات الحرارة لحماية موادك الغذائية من التلف وتقليل الهدر.
                     </p>
                 </div>
 
-                <div class="bg-navy-800 border border-navy-700 p-8 rounded-xl hover:border-gold-500/50 transition group">
-                    <div class="w-14 h-14 bg-navy-900 rounded-lg flex items-center justify-center text-gold-500 text-2xl mb-6 group-hover:scale-110 transition">
+                <div data-aos="fade-up" data-aos-delay="300" class="glass-panel p-10 rounded-2xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-navy-900 border border-gold-500/30 rounded-xl flex items-center justify-center text-gold-500 text-3xl mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
                         <i class="fa-solid fa-wind"></i>
                     </div>
-                    <h3 id="srvT3" class="text-xl font-bold text-white mb-3">أنظمة التكييف والتهوية</h3>
-                    <p id="srvS3" class="text-gold-400 font-medium text-sm mb-4">حلول مناخية متكاملة لكافة المنشآت.</p>
-                    <p id="srvD3" class="text-gray-400 leading-relaxed">
+                    <h3 id="srvT3" class="text-2xl font-bold text-white mb-3">أنظمة التكييف والتهوية</h3>
+                    <p id="srvS3" class="text-gold-400 font-medium mb-4">حلول مناخية متكاملة لكافة المنشآت.</p>
+                    <p id="srvD3" class="text-gray-400 leading-relaxed text-lg">
                         تصميم وتنفيذ وصيانة أنظمة التكييف المركزي وسحب الدخان بمرونة تامة. نوفر لك بيئة عمل مثالية تلبي متطلبات أي مساحة تجارية أو صناعية بأعلى كفاءة تشغيل.
                     </p>
                 </div>
 
-                <div class="bg-navy-800 border border-navy-700 p-8 rounded-xl hover:border-gold-500/50 transition group">
-                    <div class="w-14 h-14 bg-navy-900 rounded-lg flex items-center justify-center text-gold-500 text-2xl mb-6 group-hover:scale-110 transition">
+                <div data-aos="fade-up" data-aos-delay="400" class="glass-panel p-10 rounded-2xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-navy-900 border border-gold-500/30 rounded-xl flex items-center justify-center text-gold-500 text-3xl mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300">
                         <i class="fa-solid fa-file-signature"></i>
                     </div>
-                    <h3 id="srvT4" class="text-xl font-bold text-white mb-3">عقود صيانة شاملة</h3>
-                    <p id="srvS4" class="text-gold-400 font-medium text-sm mb-4">عقود تضمن حقك وتوفر لك خدمة 24/7.</p>
-                    <p id="srvD4" class="text-gray-400 leading-relaxed">
+                    <h3 id="srvT4" class="text-2xl font-bold text-white mb-3">عقود صيانة شاملة</h3>
+                    <p id="srvS4" class="text-gold-400 font-medium mb-4">عقود تضمن حقك وتوفر لك خدمة 24/7.</p>
+                    <p id="srvD4" class="text-gray-400 leading-relaxed text-lg">
                         عقد صيانة وقائي يغطي معدات الطبخ، الثلاجات، والتكييف. زيارات هندسية مجدولة تمنع الأعطال قبل وقوعها، مع أولوية التدخل السريع وقت الطوارئ والأزمات.
                     </p>
                 </div>
@@ -219,33 +305,37 @@
         </div>
     </section>
 
-    <section id="social" class="py-16 bg-navy-900 border-t border-b border-navy-700 relative overflow-hidden">
-        <div class="absolute right-0 top-0 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl"></div>
-        <div class="absolute left-0 bottom-0 w-64 h-64 bg-ice-400/5 rounded-full blur-3xl"></div>
+    <section id="social" class="py-20 bg-[#02050a] border-t border-b border-navy-700 relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute left-0 bottom-0 w-96 h-96 bg-[#ff0050]/5 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
 
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-navy-800 border border-gold-500/30 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 justify-between shadow-[0_0_30px_rgba(212,175,55,0.05)]">
+            <div data-aos="zoom-in" class="glass-panel rounded-3xl p-8 md:p-14 flex flex-col md:flex-row items-center gap-10 justify-between shadow-[0_0_40px_rgba(212,175,55,0.08)] border-gold-500/20 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+                
                 <div class="text-center md:text-right flex-1">
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#000000] text-white text-3xl mb-4 border border-gray-700">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#000000] text-white text-4xl mb-6 border-2 border-[#ff0050]/30 shadow-[0_0_20px_rgba(255,0,80,0.2)] animate-float">
                         <i class="fa-brands fa-tiktok text-[#ff0050] drop-shadow-[2px_2px_0_#00f2fe]"></i>
                     </div>
-                    <h3 id="tkTitle" class="text-2xl font-bold text-white mb-3">ميدانياً.. شغلنا يتحدث عن نفسه!</h3>
-                    <p id="tkDesc" class="text-gray-400 mb-6 leading-relaxed">
+                    <h3 id="tkTitle" class="text-3xl font-extrabold text-white mb-4">ميدانياً.. شغلنا يتحدث عن نفسه!</h3>
+                    <p id="tkDesc" class="text-gray-400 mb-8 leading-relaxed text-lg">
                         لمتابعة أحدث مشاريعنا، عمليات التجهيز والتوريد، وتوثيق أعمال الصيانة في قلب المطاعم.. تابع حسابنا المتخصص على منصة تيك توك وكن على اطلاع دائم بجودة عملنا.
                     </p>
-                    <a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-md font-bold hover:bg-gray-200 transition">
-                        <i class="fa-brands fa-tiktok"></i>
+                    <a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-transform hover:-translate-y-1 shadow-lg text-lg">
+                        <i class="fa-brands fa-tiktok text-xl"></i>
                         <span id="tkBtn">تابعنا على تيك توك</span>
                     </a>
                 </div>
-                <div class="w-full md:w-1/3 flex justify-center">
-                    <div class="relative w-48 h-80 bg-navy-900 border-4 border-gray-800 rounded-3xl overflow-hidden flex flex-col justify-center items-center">
-                        <i class="fa-brands fa-tiktok text-gray-700 text-6xl mb-4"></i>
-                        <span class="text-gray-500 text-sm font-bold">@coldwest25</span>
-                        <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
-                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
-                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                <div class="w-full md:w-1/3 flex justify-center" data-aos="fade-right" data-aos-delay="200">
+                    <div class="relative w-56 h-96 bg-[#000000] border-4 border-gray-800/80 rounded-[2.5rem] overflow-hidden flex flex-col justify-center items-center shadow-2xl animate-float-delayed">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-800/80 rounded-b-2xl"></div>
+                        <i class="fa-brands fa-tiktok text-gray-700 text-7xl mb-6 opacity-50"></i>
+                        <span class="text-gray-400 text-lg font-bold">@coldwest25</span>
+                        <div class="mt-4 px-4 py-1.5 bg-[#ff0050] text-white text-xs font-bold rounded">متابعة</div>
+                        <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-3">
+                            <div class="w-2.5 h-2.5 bg-gray-600 rounded-full"></div>
+                            <div class="w-2.5 h-2.5 bg-gray-600 rounded-full"></div>
+                            <div class="w-2.5 h-2.5 bg-gray-600 rounded-full"></div>
                         </div>
                     </div>
                 </div>
@@ -253,40 +343,40 @@
         </div>
     </section>
 
-    <footer class="bg-[#040b14] pt-16 pb-8 border-t border-navy-700">
+    <footer class="bg-[#02050a] pt-20 pb-8 border-t border-navy-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                <div>
-                    <div class="flex items-center gap-2 mb-6">
-                        <img src="logo-wide.png" alt="شعار الغرب البارد" class="h-10 w-auto object-contain bg-white/10 rounded p-1">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-2 mb-8 animate-float">
+                        <img src="logo-wide.png" alt="شعار الغرب البارد" class="h-12 w-auto object-contain bg-white/5 border border-white/10 rounded-lg p-2">
                     </div>
-                    <p id="ftDesc" class="text-gray-400 text-sm leading-relaxed mb-6">
+                    <p id="ftDesc" class="text-gray-400 text-base leading-relaxed mb-8">
                         شريكك الموثوق لتكييف وتجهيز المطاعم. نقدم حلولاً هندسية متكاملة تضمن استمرارية الأعمال بأعلى كفاءة.
                     </p>
                     <div class="flex gap-4">
-                        <a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gray-400 hover:text-[#ff0050] hover:bg-white transition">
-                            <i class="fa-brands fa-tiktok text-lg"></i>
+                        <a href="https://www.tiktok.com/@coldwest25" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-navy-800 flex items-center justify-center text-gray-400 hover:text-[#ff0050] hover:bg-white transition-all transform hover:scale-110">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
                         </a>
-                        <a href="https://wa.me/966550197070" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gray-400 hover:text-green-500 transition">
-                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <a href="https://wa.me/966550197070" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-navy-800 flex items-center justify-center text-gray-400 hover:text-[#25D366] hover:bg-white transition-all transform hover:scale-110">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
                         </a>
                     </div>
                 </div>
 
-                <div>
-                    <h4 id="ftOfficial" class="text-white font-bold mb-6 text-lg">المعلومات الرسمية</h4>
-                    <ul class="space-y-4 text-sm text-gray-400">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-1 text-gold-500"></i>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 id="ftOfficial" class="text-white font-bold mb-8 text-xl">المعلومات الرسمية</h4>
+                    <ul class="space-y-5 text-base text-gray-400">
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-location-dot mt-1 text-gold-500 text-lg"></i>
                             <span>
                                 <strong id="ftHq" class="text-white block mb-1">المقر الرئيسي:</strong>
-                                <a id="ftHqVal" href="https://maps.app.goo.gl/6GceJFtazNQQGdbi6?g_st=ac" target="_blank" rel="noopener noreferrer" class="hover:text-gold-500 transition border-b border-dashed border-gray-600 hover:border-gold-500 pb-0.5">
+                                <a id="ftHqVal" href="https://maps.app.goo.gl/6GceJFtazNQQGdbi6?g_st=ac" target="_blank" rel="noopener noreferrer" class="hover:text-gold-500 transition-colors border-b border-dashed border-gray-600 hover:border-gold-500 pb-1 inline-block">
                                     شارع الاميرة الجوهرة بنت عبدالعزيز, مكة 24227
                                 </a>
                             </span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-file-invoice mt-1 text-gold-500"></i>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-file-invoice mt-1 text-gold-500 text-lg"></i>
                             <span>
                                 <strong id="ftCr" class="text-white">سجل تجاري رقم:</strong>
                                 7049838308
@@ -295,33 +385,44 @@
                     </ul>
                 </div>
 
-                <div>
-                    <h4 id="ftContact" class="text-white font-bold mb-6 text-lg">تواصل معنا</h4>
-                    <ul class="space-y-4 text-sm text-gray-400">
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-gold-500"></i>
-                            <a href="tel:0550197070" dir="ltr" class="hover:text-white transition">055 019 7070</a>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 id="ftContact" class="text-white font-bold mb-8 text-xl">تواصل معنا</h4>
+                    <ul class="space-y-5 text-base text-gray-400">
+                        <li class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gold-500"><i class="fa-solid fa-phone"></i></div>
+                            <a href="tel:0550197070" dir="ltr" class="hover:text-gold-400 transition-colors">055 019 7070</a>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-globe text-gold-500"></i>
+                        <li class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gold-500"><i class="fa-solid fa-globe"></i></div>
                             <span dir="ltr">www.coldwest.sa</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-gold-500"></i>
-                            <a href="mailto:coldwest25@gmail.com" dir="ltr" class="hover:text-white transition">coldwest25@gmail.com</a>
+                        <li class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gold-500"><i class="fa-solid fa-envelope"></i></div>
+                            <a href="mailto:coldwest25@gmail.com" dir="ltr" class="hover:text-gold-400 transition-colors">coldwest25@gmail.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-navy-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+            <div class="border-t border-navy-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
                 <p id="ftCopy">&copy; 2026 مؤسسة الغرب البارد. جميع الحقوق محفوظة.</p>
-                <p id="ftB2b">صُمم خصيصاً لقطاع الأعمال (B2B)</p>
+                <p id="ftB2b" class="flex items-center gap-2">
+                    صُمم خصيصاً لقطاع الأعمال (B2B)
+                    <i class="fa-solid fa-briefcase text-gold-500/50"></i>
+                </p>
             </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({
+            once: true, 
+            offset: 50,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
         let isArabic = true;
         const translations = {
             ar: {
@@ -333,7 +434,7 @@
                 navWorks: "أعمالنا",
                 navContact: "تواصل معنا",
                 heroBadge: "حلول متكاملة لقطاع الأعمال والمشاريع التجارية",
-                heroTitle: "شريكك الفني لحلول <br><span class='gold-gradient'>التكييف ومعدات المطابخ التجارية.</span>",
+                heroTitle: "شريكك الفني لحلول <br><span class='gold-gradient'>التكييف ومعدات المطابخ.</span>",
                 heroDesc: "في الغرب البارد، نساعد المنشآت التجارية على الحفاظ على كفاءة التشغيل من خلال صيانة وتوريد حلول التكييف ومعدات المطابخ. من الأعطال الطارئة إلى الاحتياج الدوري وقطع الغيار، نوفّر خدمة فنية واضحة تساعد أعمالك على الاستمرار بثبات وبدون توقف مكلف.",
                 heroBtnVisit: "طلب زيارة هندسية للموقع",
                 heroBtnContract: "مناقشة عقود الصيانة",
@@ -349,7 +450,7 @@
                 featD3: "فريق فني يتدخل فوراً لضمان عدم تعطل خط الإنتاج",
                 featT4: "حماية لاستثماراتك",
                 featD4: "ضمانات حقيقية وعقود صيانة تقلل تكاليف الهدر",
-                srvHeading: "خدماتنا <span class='text-gold-500'>التجارية</span>",
+                srvHeading: "خدماتنا <span class='gold-gradient'>التجارية</span>",
                 srvT1: "خطوط إنتاج ومعدات مطابخ",
                 srvS1: "تتحدى ضغط العمل العالي.",
                 srvD1: "نورد كافة معدات المطابخ التجارية وخطوط الإنتاج الشاملة لتأسيس مشروعك، ونوفر دعم فني سريع وموثوق لإصلاح الأعطال وقت الذروة لضمان عدم توقف خط الإنتاج.",
@@ -372,7 +473,7 @@
                 ftCr: "سجل تجاري رقم:",
                 ftContact: "تواصل معنا",
                 ftCopy: "&copy; 2026 مؤسسة الغرب البارد. جميع الحقوق محفوظة.",
-                ftB2b: "صُمم خصيصاً لقطاع الأعمال (B2B)"
+                ftB2b: "صُمم خصيصاً لقطاع الأعمال (B2B) <i class='fa-solid fa-briefcase text-gold-500/50'></i>"
             },
             en: {
                 langBtn: "العربية",
@@ -399,7 +500,7 @@
                 featD3: "Technical team intervenes instantly to prevent downtime",
                 featT4: "Investment Protection",
                 featD4: "Real warranties and maintenance contracts that reduce waste costs",
-                srvHeading: "Our Commercial <span class='text-gold-500'>Services</span>",
+                srvHeading: "Our Commercial <span class='gold-gradient'>Services</span>",
                 srvT1: "Production Lines & Kitchen Eq.",
                 srvS1: "Built for high workloads.",
                 srvD1: "We supply all commercial kitchen equipment and complete production lines. We provide fast, reliable technical support to fix breakdowns during peak times.",
@@ -422,7 +523,7 @@
                 ftCr: "Commercial Register (CR):",
                 ftContact: "Contact Us",
                 ftCopy: "&copy; 2026 Cold West Est. All rights reserved.",
-                ftB2b: "Designed specifically for the B2B sector"
+                ftB2b: "Designed specifically for the B2B sector <i class='fa-solid fa-briefcase text-gold-500/50'></i>"
             }
         };
 
@@ -437,6 +538,10 @@
                     element.innerHTML = value;
                 }
             }
+            
+            setTimeout(() => {
+                AOS.refresh();
+            }, 100);
         }
     </script>
 </body>
